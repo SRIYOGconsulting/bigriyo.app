@@ -1,13 +1,13 @@
 "use client";
 
-import { SearchIcon, SunIcon, MoonIcon, XIcon } from "lucide-react";
+import { SearchIcon, SunIcon, MoonIcon, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { navLinks } from "@/constants";
 import MobileDrawer from "@/components/MobileDrawer";
 import Link from "next/link";
 
-export default function Header() {
+export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,13 +49,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur-md transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6">
-        {/* using image logo later */}
-        <div className="flex items-center space-x-2 text-xl font-bold">
+        <div className="flex items-center space-x-2 text-lg md:text-xl font-bold">
           <Link href="/" className="text-foreground hover:opacity-90 transition-opacity">
             BIGRIYO
           </Link>
         </div>
-        <nav className="flex items-center space-x-4">
+        <nav className="flex items-center space-x-3 sm:space-x-4">
           <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
@@ -76,8 +75,8 @@ export default function Header() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleSearch();
                 }}
-                placeholder="Search services..."
-                className="w-36 sm:w-52 md:w-64 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
+                placeholder="Search..."
+                className="w-24 sm:w-44 md:w-64 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground"
               />
               {searchQuery && (
                 <button
@@ -94,10 +93,16 @@ export default function Header() {
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-full border border-border bg-card text-foreground hover:border-primary transition-all flex items-center justify-center w-9 h-9 cursor-pointer">
+            className="p-2 rounded-full border border-border bg-card text-foreground hover:border-primary transition-all flex items-center justify-center w-9 h-9 cursor-pointer shrink-0">
             {isDark ? <SunIcon className="w-4 h-4 text-amber-400" /> : <MoonIcon className="w-4 h-4 text-primary" />}
           </button>
-
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="p-2 rounded-lg border border-border bg-card text-foreground hover:border-primary transition-colors flex lg:hidden items-center justify-center w-9 h-9 shrink-0">
+            {isOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
+          </button>
           <MobileDrawer setIsOpen={setIsOpen} isOpen={isOpen} />
         </nav>
       </div>
