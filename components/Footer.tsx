@@ -1,218 +1,162 @@
-"use client"
+"use client";
 
+import { footerColumns } from "@/constants/footer";
+import NewsLetter from "@/components/NewsLetter";
 import Link from "next/link";
-import NewsLetter from "./NewsLetter";
+
+interface FootLink {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
+interface FootItemProps {
+  heading: string;
+  links: FootLink[];
+}
+
+function FootItem({ heading, links }: FootItemProps) {
+  return (
+    <div>
+      <h3 className="font-semibold mb-3 text-[16px]">{heading}</h3>
+      <ul className="space-y-2 text-[15px] leading-[1.6] pl-0">
+        {links.map((link, index) => (
+          <li key={index} className="py-1 cursor-pointer">
+            {link.isExternal ? (
+              <a href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-green-700">
+                {link.label}
+              </a>
+            ) : (
+              <Link href={link.href} className="hover:text-green-700">
+                {link.label}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <>
-    <NewsLetter/>
-    <footer className="relative footer pt-16 pb-10 border-t z-10">
+      <NewsLetter />
+      <footer className="relative footer pt-16 pb-10 z-10">
+        {/* TOP SECTION */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-10">
+          {/* LEFT SIDE */}
+          <div className="w-full lg:w-[45%]">
+            <div className="mb-6 text-2xl">
+              <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                BIGRIYO
+              </Link>
+            </div>
 
-      {/* TOP SECTION */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-10">
+            <p className="text-[15px] leading-relaxed mb-4">
+              Established on June 14, 2018, Bigriyo, based in Kamalpokhari, Kathmandu, Nepal, is a leading provider of
+              professional hygiene and deep cleaning solutions dedicated to delivering healthy, spotless environments
+              across the residential, commercial, and hospitality sectors.
+            </p>
 
-        {/* LEFT SIDE */}
-        <div className="w-full lg:w-[45%]">
-          <div className="mb-6">
-            <Link
-              href="/"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
+            <p className="text-[15px] leading-relaxed">
+              Our mission is to empower homes and businesses throughout the Valley with reliable, eco-friendly, and
+              standardized cleaning services that elevate indoor hygiene, protect property value, and foster safe,
+              healthy spaces.
+            </p>
+          </div>
+
+          {/* RIGHT COLUMNS - Cleanly mapped via FootItem */}
+          <div className="w-full lg:w-[50%] grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-8 pt-6">
+            {footerColumns.map((col, idx) => (
+              <FootItem key={idx} heading={col.heading} links={col.links} />
+            ))}
+          </div>
+        </div>
+
+        {/* SOCIAL + CONTACT SECTION */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
+          {/* SOCIAL ICONS */}
+          <div className="flex gap-6 justify-center">
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img src="/icons/x.svg" alt="X" className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img src="/icons/linkedin.svg" alt="LinkedIn" className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img src="/icons/youtube.svg" alt="YouTube" className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img src="/icons/trello.svg" alt="Trello" className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
               <img
-                src="/logo/wordmark-logo.svg"
-                alt="Sriyog Logo"
-                className="w-[200px] h-auto"
+                src="/icons/signal.svg"
+                alt="Signal"
+                className="h-[22px] w-[22px] sm:h-[26px] sm:w-[26px] cursor-pointer"
               />
-            </Link>
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+            </a>
+            <a href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
+              <img
+                src="/icons/viber.svg"
+                alt="Viber"
+                className="h-[22px] w-[22px] sm:h-[26px] sm:w-[26px] cursor-pointer"
+              />
+            </a>
           </div>
 
-          <p className="text-[15px] leading-relaxed  mb-4">
-            Established on June 14, 2018, SRIYOG Consulting Pvt. Ltd., based in
-            Kamalpokhari, Kathmandu, Nepal, is a leading provider of digital
-            solutions dedicated href driving digital transformation in the
-            healthcare, employment, and tourism sectors.
-          </p>
-
-          <p className="text-[15px] leading-relaxed ">
-            Our mission is href empower organizations in these vital industries
-            with innovative, scalable, technology-driven services that enhance
-            operational efficiency and support long-term growth.
-          </p>
-        </div>
-
-        {/* RIGHT COLUMNS */}
-        <div className="w-full lg:w-[50%] grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-8 pt-6">
-
-          {/* Browse More */}
-          <div>
-            <h3 className="font-semibold mb-3 text-[16px]">Browse More</h3>
-            <ul className="space-y-2 text-[15px] leading-[1.6] pl-0">
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/vmgo" className="hover:text-green-700">Mission & Vision</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/history" className="hover:text-green-700">History</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/why" className="hover:text-green-700">Why Us</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/certificates" className="hover:text-green-700">Certificates</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/timeline" className="hover:text-green-700">Timeline</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold mb-3 text-[16px]">Resources</h3>
-            <ul className="space-y-2 text-[15px] leading-[1.6] pl-0">
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/gallery" className="hover:text-green-700">Gallery</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/career" className="hover:text-green-700">Career</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/qr" className="hover:text-green-700">QR Code</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/glossary" className="hover:text-green-700">Glossary</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/message" className="hover:text-green-700">Message</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Links */}
-          <div>
-            <h3 className="font-semibold mb-3 text-[16px]">Links</h3>
-            <ul className="space-y-2 text-[15px] leading-[1.6] pl-0">
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/calendar" className="hover:text-green-700">Calendar</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/faq" className="hover:text-green-700">FAQ</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/payment" className="hover:text-green-700">Payment</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/internship" className="hover:text-green-700">Internship</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/download" className="hover:text-green-700">Download</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Explore */}
-          <div>
-            <h3 className="font-semibold mb-3 text-[16px]">Explore</h3>
-            <ul className="space-y-2 text-[15px] leading-[1.6] pl-0">
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/video" className="hover:text-green-700">Videos</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <a href="https://trello.com" target="_blank" className="hover:text-green-700">Trello Board</a>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/location" className="hover:text-green-700">Location</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/refund" className="hover:text-green-700">Refund Policy</Link>
-              </li>
-              <li className={`py-1 cursor-pointer `}>
-                <Link href="/cookie" className="hover:text-green-700">Cookie Policy</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* SOCIAL + CONTACT SECTION */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
-
-        {/* SOCIAL ICONS */}
-        <div className="flex gap-6 justify-center">
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/x.svg`} className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/linkedin.svg`}  className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110 ">
-              <img src={`/icons/youtube.svg`}  className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/trello.svg`}  className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/signal.svg`}  className="h-[22px] w-[22px] sm:h-[26px] sm:w-[26px] cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/discord.svg`}  className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
-            </a>
-            <a  href="#" className="flex items-center hover:opacity-60 transition hover:scale-110">
-              <img src={`/icons/viber.svg`} className="h-[22px] w-[22px] sm:h-[26px] sm:w-[26px] cursor-pointer" />
-            </a>
-        </div>
-
-        {/* CONTACT BOXES */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-
-          {/* EMAIL + PHONE */}
-            <a href="mailto:info@sriyog.com" className={`flex items-center gap-2 border-2 rounded-lg px-7 py-3 w-full sm:w-auto `}>
+          {/* CONTACT BOXES */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="mailto:info@sriyog.com"
+              className="flex items-center gap-2 border-2 rounded-lg px-7 py-3 w-full sm:w-auto">
               <img src="/icons/email.svg" alt="email" className="h-6 w-6" />
               <span className="text-sm">info@sriyog.com</span>
             </a>
 
-
-            <a href="tel:+977014548068" className={`flex items-center gap-2 border-2 rounded-lg px-7 py-3 w-full sm:w-auto `}>
+            <a
+              href="tel:+977014548068"
+              className="flex items-center gap-2 border-2 rounded-lg px-7 py-3 w-full sm:w-auto">
               <img src="/icons/phone.svg" alt="phone" className="h-6 w-6" />
               <span className="text-sm">+977-01-4548068</span>
             </a>
-      
-          {/* WHATSAPP */}
-          <a
-            href="https://wa.me/9779852024365"
-            target="_blank"
-            className={`flex items-center gap-2 border-2 rounded-lg px-6 py-3 w-full sm:w-auto `}
-          >
-            <img src="/icons/whatsapp.svg" alt="whatsapp" className="h-6 w-6" />
-            <span className="text-sm">+977 98520-24-365</span>
-          </a>
+
+            <a
+              href="https://wa.me/9779852024365"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border-2 rounded-lg px-6 py-3 w-full sm:w-auto">
+              <img src="/icons/whatsapp.svg" alt="whatsapp" className="h-6 w-6" />
+              <span className="text-sm">+977 98520-24-365</span>
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* HORIZONTAL LINE */}
-      <div className="w-full border-t  mt-14 mb-6"></div>
+        {/* HORIZONTAL LINE */}
+        <div className="w-full border-t mt-14 mb-6"></div>
 
-      {/* FOOTER BOTTOM */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px]  gap-3 text-center md:text-left font-semibold">
-        <p className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
-          <span>All Rights Reserved. © 2018-{currentYear}</span>
-          <span>SRIYOG Consulting Pvt. Ltd.</span>
-          <span>Built with : <a href="https://broadpress.org" target="_blank" className="hover:border-b hover:border-black text-gray-500">BroadPress</a></span>
-        </p>
-            
+        {/* FOOTER BOTTOM */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
+          <p className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
+            <span>All Rights Reserved. &copy; 2018-{currentYear}</span>
+            <span>BIGRIYO Pvt. Ltd.</span>
+          </p>
 
-        <div className="flex gap-4 justify-center md:justify-end font-semibold mt-2 lg:mt-0">
-          <Link href="/privacy" className={` cursor-pointer `}>Privacy Policy</Link>
-          <span>|</span>
-          <Link href="/disclaimer" className={` cursor-pointer `}>Disclaimer</Link>
-          <span>|</span>
-          <Link href="/tos" className={` cursor-pointer `}>Terms of Service</Link>
+          <div className="flex gap-4 justify-center md:justify-end font-semibold mt-2 lg:mt-0">
+            <Link href="/policy/privacy">Privacy Policy</Link>
+            <span>|</span>
+            <Link href="/policy/disclaimer">Disclaimer</Link>
+            <span>|</span>
+            <Link href="policy/terms">Terms of Service</Link>
+          </div>
         </div>
-      </div>
-
-    </footer>
+      </footer>
     </>
   );
 };
