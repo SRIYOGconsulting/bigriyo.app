@@ -1,83 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --mainBackground : #e1e1e1;
-  --text : black;
-  --text2 : #6a7282;
-  --border : #d1d5dc;
-   --app-font-size: 1rem;
-  --black:white;
+@theme {
+  --color-primary: #0f52ba;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f2994a;
+  --color-secondary-foreground: #0f172a;
+  --color-success: #10b981;
+  --color-success-foreground: #ffffff;
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-border: #e2e8f0;
 }
 
-.dark{
-  --background : #212121;
-  --mainBackground : #1d1d1d;
-  --text : rgb(203, 203, 203);
-  --text2 : #a5a5a5;
-  --border : #e1e1e1;
-  --black: black;
-}
-
-.showScroll{
-  --overflow : auto;
-}
-
-.hideScroll{
-  --overflow : hidden;
-}
-
-body{
-  background: var(--background);
-  color: var(--text);
-  font-size: var(--app-font-size);
-  overflow: var(--overflow);
-}
-
-.header{
-  background: var(--background);
-  color: var(--text2);
-}
-
-.footer{
-  background: var(--background);
-  color: var(--text2);
-
-}
-
-.sidekick{
-  background: var(--mainBackground);
-}
-
-.text{
-  color: var(--text2);
-}
-
-.text2{
-  color: var(--text);
-}
-
-.card{
-  background: var(--mainBackground);
-}
-
-.card2{
-  background: var(--black);
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 28s linear infinite;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
+.dark {
+  --color-primary: #2563eb;
+  --color-secondary: #f59e0b;
+  --color-success: #34d399;
+  --color-background: #090d16;
+  --color-foreground: #f8fafc;
+  --color-card: #111827;
+  --color-card-foreground: #f8fafc;
+  --color-muted: #1e293b;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #1e293b;
 }
