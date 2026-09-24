@@ -13,10 +13,9 @@ export default function BookButton({ type, message }: BookButtonProps) {
 
   return (
     <button
-      type="button"
       onClick={() => showStatus(type, message)}
-      className="w-full bg-primary text-primary-foreground font-semibold py-3 px-4 rounded-xl hover:opacity-90 transition-all text-sm shadow-md cursor-pointer">
-      Book This Repair
+      className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+      Book Appointment
     </button>
   );
 }
