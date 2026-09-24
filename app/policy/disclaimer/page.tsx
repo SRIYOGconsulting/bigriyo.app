@@ -1,31 +1,27 @@
-import React from "react";
-// import Ribbon from "../../components/Ribbon";
+import Ribbon from "@/components/Ribbon";
 
 const Disclaimer = () => {
   return (
     <div className="h-full">
       {/* Header / Ribbon */}
-      {/* <Ribbon name="Disclaimer" showfont={false}/> */}
+      <Ribbon name="Disclaimer" showFontSize={true} />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 space-y-6">
         <section className="footer p-6 rounded-xl shadow-md space-y-6">
-
           <p className="about leading-relaxed">
             <span className="font-medium">Effective Date:</span> 1st June, 2025
           </p>
 
           <p className="about leading-relaxed">
-            SRIYOG Consulting Pvt. Ltd. (also referred to as “us”, “we” or “our”) operates the 
-            www.sriyog.com website and mobile application (the “Service”). This Privacy Policy 
-            describes our policies regarding the collection, use, and disclosure of personal data 
-            while using the Service.
+            SRIYOG Consulting Pvt. Ltd. (also referred to as “us”, “we” or “our”) operates the www.sriyog.com website
+            and mobile application (the “Service”). This Privacy Policy describes our policies regarding the collection,
+            use, and disclosure of personal data while using the Service.
           </p>
 
           <p className="about leading-relaxed">
-            By using Sriyog.com, you agree to the collection and use of information as described 
-            in this Privacy Policy. Terms defined here have the same meaning as in our Terms & 
-            Conditions unless otherwise redefined.
+            By using Sriyog.com, you agree to the collection and use of information as described in this Privacy Policy.
+            Terms defined here have the same meaning as in our Terms & Conditions unless otherwise redefined.
           </p>
 
           {/* Section: Uses and Collection of Information */}
@@ -42,7 +38,8 @@ const Disclaimer = () => {
 
             <h3 className="text-lg font-medium text-teal-600 mt-3">Personal Information</h3>
             <p className="about leading-relaxed">
-              To create your identity, you may provide personally identifiable information that we use to analyze and improve our services, including for marketing purposes. This includes:
+              To create your identity, you may provide personally identifiable information that we use to analyze and
+              improve our services, including for marketing purposes. This includes:
             </p>
             <ul className="list-disc list-inside about space-y-1">
               <li>Mobile Number</li>
@@ -55,7 +52,8 @@ const Disclaimer = () => {
 
             <h3 className="text-lg font-medium text-teal-600 mt-4">Usage Information</h3>
             <p className="about leading-relaxed">
-              We may collect Usage Data, including IP address, browser details, pages visited, time spent, engagements, and unique device identifiers (UDIDs).
+              We may collect Usage Data, including IP address, browser details, pages visited, time spent, engagements,
+              and unique device identifiers (UDIDs).
             </p>
           </div>
 
@@ -63,7 +61,9 @@ const Disclaimer = () => {
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Tracking and Cookies Data</h2>
             <p className="about leading-relaxed">
-              We use cookies and similar tracking technologies to track activity and store certain information. Cookies may include anonymous unique identifiers. You can refuse cookies via your browser, but some services may not function properly.
+              We use cookies and similar tracking technologies to track activity and store certain information. Cookies
+              may include anonymous unique identifiers. You can refuse cookies via your browser, but some services may
+              not function properly.
             </p>
 
             <h3 className="text-lg font-medium text-teal-600 mt-4">Examples of Cookies</h3>
@@ -92,7 +92,8 @@ const Disclaimer = () => {
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Transfer of Data</h2>
             <p className="about leading-relaxed">
-              Your information may be transferred and maintained on servers. By submitting data, you consent to its transfer to servers in Nepal. We take necessary steps to ensure data security.
+              Your information may be transferred and maintained on servers. By submitting data, you consent to its
+              transfer to servers in Nepal. We take necessary steps to ensure data security.
             </p>
           </div>
 
@@ -121,7 +122,8 @@ const Disclaimer = () => {
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Service Providers</h2>
             <p className="about leading-relaxed">
-              Third-party companies and individuals may provide services on our behalf. They may access personal data but are obligated not to misuse it.
+              Third-party companies and individuals may provide services on our behalf. They may access personal data
+              but are obligated not to misuse it.
             </p>
           </div>
 
@@ -129,7 +131,8 @@ const Disclaimer = () => {
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Other Sites</h2>
             <p className="about leading-relaxed">
-              Our Service may contain links to third-party websites. We are not responsible for their content, privacy policies, or practices.
+              Our Service may contain links to third-party websites. We are not responsible for their content, privacy
+              policies, or practices.
             </p>
           </div>
 
@@ -145,18 +148,16 @@ const Disclaimer = () => {
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Changes to This Privacy Policy</h2>
             <p className="about leading-relaxed">
-              We may update this Privacy Policy and will notify you via email or prominent notice before changes take effect. The updated effective date will also be posted.
+              We may update this Privacy Policy and will notify you via email or prominent notice before changes take
+              effect. The updated effective date will also be posted.
             </p>
           </div>
 
           {/* Section: Contact Us */}
           <div>
             <h2 className="text-2xl font-semibold text-teal-800 mb-2">Contact Us</h2>
-            <p className="about leading-relaxed">
-              Email: privacy@sriyog.com
-            </p>
+            <p className="about leading-relaxed">Email: privacy@sriyog.com</p>
           </div>
-
         </section>
       </div>
     </div>

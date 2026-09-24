@@ -1,11 +1,8 @@
-// app/aipolicy/page.tsx
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Usage Policy | Home Sewa",
-  description:
-    "Read Home Sewa's Artificial Intelligence Usage Policy.",
+  description: "Read Home Sewa's Artificial Intelligence Usage Policy."
 };
 
 export default function AIUsagePolicy() {
@@ -21,10 +18,9 @@ export default function AIUsagePolicy() {
 
       <h2>1. Purpose</h2>
       <p>
-        This policy explains how Home Sewa designs, develops, and uses Artificial
-        Intelligence (AI) across its home service platform. It ensures AI is used
-        responsibly, securely, and transparently while protecting the privacy and
-        rights of customers and service professionals.
+        This policy explains how Home Sewa designs, develops, and uses Artificial Intelligence (AI) across its home
+        service platform. It ensures AI is used responsibly, securely, and transparently while protecting the privacy
+        and rights of customers and service professionals.
       </p>
 
       <h2>2. Scope</h2>
@@ -81,34 +77,30 @@ export default function AIUsagePolicy() {
 
       <h2>6. Human Oversight</h2>
       <p>
-        Important decisions such as account suspension, payment processing, and
-        worker deactivation always require human review.
+        Important decisions such as account suspension, payment processing, and worker deactivation always require human
+        review.
       </p>
 
       <h2>7. Data Privacy</h2>
       <p>
-        Home Sewa protects personal information in accordance with Nepal's
-        privacy laws. Voice recordings, location data, and personal information
-        are processed securely and only for the intended purpose.
+        Home Sewa protects personal information in accordance with Nepal's privacy laws. Voice recordings, location
+        data, and personal information are processed securely and only for the intended purpose.
       </p>
 
       <h2>8. Quality Assurance</h2>
       <p>
-        AI systems are regularly tested for accuracy, fairness, security, and
-        performance. Any issues are reviewed and corrected before deployment.
+        AI systems are regularly tested for accuracy, fairness, security, and performance. Any issues are reviewed and
+        corrected before deployment.
       </p>
 
       <h2>9. Policy Updates</h2>
       <p>
-        This policy may be updated as AI technologies evolve. The latest version
-        will always be available on the Home Sewa website.
+        This policy may be updated as AI technologies evolve. The latest version will always be available on the Home
+        Sewa website.
       </p>
 
       <h2>10. Contact</h2>
-      <p>
-        If you have any questions regarding this AI Usage Policy, please contact
-        Home Sewa Customer Support.
-      </p>
+      <p>If you have any questions regarding this AI Usage Policy, please contact Home Sewa Customer Support.</p>
     </main>
   );
 }

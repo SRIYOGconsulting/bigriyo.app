@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-inter);
   --color-primary: #0f52ba;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #f2994a;
+  --color-secondary: #134e4a;
   --color-secondary-foreground: #0f172a;
   --color-success: #10b981;
   --color-success-foreground: #ffffff;
@@ -18,7 +19,6 @@
 
 .dark {
   --color-primary: #2563eb;
-  --color-secondary: #f59e0b;
   --color-success: #34d399;
   --color-background: #090d16;
   --color-foreground: #f8fafc;

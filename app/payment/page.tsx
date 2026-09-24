@@ -1,20 +1,18 @@
-'use client';
+"use client";
 
-import React from "react";
-// import Ribbon from "../../components/Ribbon";
+import Ribbon from "@/components/Ribbon";
 import Image from "next/image";
 
-const Payment = () => {
-  const breadcrumbItems = [
-    { label: "Home", path: "/" },
-    { label: "Payment", path: "/payment" },
-  ];
+const breadcrumbItems = [
+  { label: "Home", path: "/" },
+  { label: "Payment", path: "/payment" }
+];
 
+const Payment = () => {
   return (
     <div>
-
       {/* Page Header */}
-      {/* <Ribbon name="Payment" showfont={false}/> */}
+      <Ribbon name="Payment" showfont={false} />
 
       {/* Main Payment Section */}
       <section className=" flex flex-col justify-center items-center px-4 sm:px-0 py-8 sm:py-10">
@@ -32,29 +30,16 @@ const Payment = () => {
             <p className="flex flex-col text-xl">
               <span>Account Name:</span> <span className="font-semibold">Sriyog Consulting Pvt Ltd.</span>
             </p>
-            <p className="text-xl">
-              Account number: 00701017502051
-            </p>
-            <p className="text-xl">
-              Branch: Kathmandu
-            </p>
-            <p className="text-xl">
-              SWIFT CODE: NARBNPKA
-            </p>
+            <p className="text-xl">Account number: 00701017502051</p>
+            <p className="text-xl">Branch: Kathmandu</p>
+            <p className="text-xl">SWIFT CODE: NARBNPKA</p>
             <p className="text-xl">
               URL:{" "}
-              <a
-                href="https://www.nabilbank.com"
-                target="_blank"
-                rel="noreferrer"
-                className=" underline"
-              >
+              <a href="https://www.nabilbank.com" target="_blank" rel="noreferrer" className=" underline">
                 www.nabilbank.com
               </a>
             </p>
-            <p className="pt-8 text-2xl ">
-              VAT Number: 606683203
-            </p>
+            <p className="pt-8 text-2xl ">VAT Number: 606683203</p>
           </div>
 
           {/* ===== Right: QR Code Section ===== */}
@@ -64,7 +49,7 @@ const Payment = () => {
               alt="Sriyog Consulting Logo"
               className="w-48 sm:w-60 mb-4 object-contain"
             /> */}
-           <Image
+            <Image
               width={600}
               height={800}
               src="/images/payment/image2.webp"
@@ -72,7 +57,7 @@ const Payment = () => {
               className="w-full h-full rounded-3xl object-contain "
             />
 
-            {/* <div className="text-center  font-semibold space-y-2 text-sm sm:text-base">
+            <div className="text-center  font-semibold space-y-2 text-sm sm:text-base">
               <p className="text-lg sm:text-xl">Sriyog Consulting Pvt Ltd.</p>
               <p>Account No: 00701017502051</p>
               <p>Branch: Kathmandu</p>
@@ -93,11 +78,10 @@ const Payment = () => {
                 href="https://www.sriyogconsulting.com"
                 target="_blank"
                 rel="noreferrer"
-                className="underline block pt-2 font-medium"
-              >
+                className="underline block pt-2 font-medium">
                 www.sriyogconsulting.com
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
