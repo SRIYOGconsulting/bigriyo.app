@@ -1,64 +1,105 @@
 import { notFound } from "next/navigation";
 import { CheckIcon } from "lucide-react";
 import { SERVICES_DATA } from "@/data";
-import BookButton from "@/components/service/BookBtn";
+import Image from "next/image";
 import Link from "next/link";
+import BookButton from "@/components/service/BookBtn";
 
-interface ServiceDetailProps {
+interface ServicePageProps {
   params: Promise<{ category: string; slug: string }>;
 }
 
-export default async function ServiceDetailPage({ params }: ServiceDetailProps) {
-  const { category: categorySlug, slug } = await params;
+export async function generateStaticParams() {
+  const paths: { category: string; slug: string }[] = [];
 
+  SERVICES_DATA.forEach((categoryItem) => {
+    categoryItem.services.forEach((serviceItem) => {
+      paths.push({
+        category: categoryItem.slug,
+        slug: serviceItem.slug
+      });
+    });
+  });
+
+  return paths;
+}
+
+export async function generateMetadata({ params }: ServicePageProps) {
+  const { category: categorySlug, slug: serviceSlug } = await params;
   const category = SERVICES_DATA.find((c) => c.slug === categorySlug);
-  const service = category?.services.find((s) => s.slug === slug);
+  const service = category?.services.find((s) => s.slug === serviceSlug);
 
-  if (!category || !service) notFound();
+  if (!service) return { title: "Service Not Found" };
+
+  return {
+    title: `${service.name} | Service Details`,
+    description: service.shortDesc
+  };
+}
+
+export default async function ServiceDetailPage({ params }: ServicePageProps) {
+  const { category: categorySlug, slug: serviceSlug } = await params;
+  const category = SERVICES_DATA.find((c) => c.slug === categorySlug);
+  const service = category?.services.find((s) => s.slug === serviceSlug);
+
+  if (!category || !service) {
+    notFound();
+  }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <nav className="text-muted-foreground text-sm flex mb-8">
-        <Link href="/services" className="hover:text-foreground transition-colors">
-          Services
-        </Link>
-        <span className="mx-2">/</span>
-        <Link href={`/services/${category.slug}`} className="hover:text-foreground transition-colors">
-          {category.name}
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-foreground font-medium">{service.name}</span>
-      </nav>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2 space-y-8">
-          <div>
-            <h1 className="text-foreground text-3xl sm:text-4xl font-extrabold mb-4">{service.name}</h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">{service.description}</p>
-          </div>
-          <div className="border-t border-border pt-8">
-            <h2 className="text-foreground text-xl font-bold mb-4">What's Included?</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {service.features.map((feature, i) => (
-                <div key={i} className="bg-card flex items-start gap-3 p-3.5 rounded-xl border border-border">
-                  <CheckIcon className="w-4 h-4 text-success shrink-0 mt-0.5" />
-                  <span className="text-foreground text-sm font-medium">{feature}</span>
-                </div>
-              ))}
+    <main className="pb-16">
+      <div className="relative min-h-[420px] w-full flex items-end overflow-hidden bg-muted">
+        <Image src={service.image} alt={service.name} fill priority sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+        <div className="relative z-10 container mx-auto px-4 py-12 text-white">
+          <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-gray-300">
+            <Link href="/services" className="hover:text-white transition-colors">
+              Services
+            </Link>
+            <span>/</span>
+            <Link href={`/services/${category.slug}`} className="hover:text-white transition-colors">
+              {category.name}
+            </Link>
+            <span>/</span>
+            <span className="font-medium text-white">{service.name}</span>
+          </nav>
+
+          <div className="max-w-3xl">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl drop-shadow-sm">{service.name}</h1>
+            <p className="mt-3 text-base sm:text-lg text-gray-200 drop-shadow-sm">{service.shortDesc}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <BookButton type="info" message="Coming Soon!" />
+              <Link
+                href={`/services/${category.slug}`}
+                className="rounded-lg border border-white/30 bg-black/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20">
+                Explore More in {category.name}
+              </Link>
             </div>
-          </div>
-        </div>
-        <div className="lg:col-span-1">
-          <div className="sticky top-8 bg-card border border-border rounded-2xl p-6 shadow-sm space-y-6">
-            <div>
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                Starting From
-              </span>
-              <p className="text-3xl font-extrabold text-foreground mt-1">{service.startingPrice}</p>
-            </div>
-            <BookButton type="info" message="Coming Soon!" />
           </div>
         </div>
       </div>
-    </div>
+      <div className="container mx-auto px-4 pt-10">
+        <div className="max-w-4xl">
+          <section>
+            <h2 className="text-2xl font-bold tracking-tight">Service Description</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.description}</p>
+          </section>
+          <hr className="my-8 border-border" />
+          <section>
+            <h2 className="text-2xl font-bold tracking-tight">Key Features Included</h2>
+            <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {service.features.map((feature, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-center gap-3 rounded-full border bg-primary/10 border-border bg-card p-4 text-sm font-medium shadow-sm">
+                  <CheckIcon className="h-5 w-5 shrink-0 text-primary" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
   );
 }
