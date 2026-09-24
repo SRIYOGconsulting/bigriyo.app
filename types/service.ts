@@ -1,15 +1,16 @@
-export interface ServiceDetail {
+export interface ServiceItem {
   slug: string;
   name: string;
   shortDesc: string;
   description: string;
+  image: string;
   features: string[];
-  startingPrice: string;
 }
 
 export interface ServiceCategory {
   slug: string;
   name: string;
   description: string;
-  services: ServiceDetail[];
+  services: ServiceItem[];
+  image: string;
 }
