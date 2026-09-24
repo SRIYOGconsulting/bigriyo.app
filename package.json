@@ -1,9 +1,10 @@
 {
-  "name": "nextjs",
+  "name": "bigriyo",
   "version": "0.1.0",
   "private": true,
+  "description": "website for repair center based in Kathmandu",
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
