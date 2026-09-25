@@ -4,7 +4,7 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Ribbon from "@/components/Ribbon";
 
-type Feedbackform = {
+interface Feedbackform {
   firstname: string;
   middlename: string;
   lastname: string;
@@ -16,6 +16,20 @@ type Feedbackform = {
   headshot: File | null;
   service: string;
   message: string;
+}
+
+const initialFormData: Feedbackform = {
+  firstname: "",
+  middlename: "",
+  lastname: "",
+  organization: "",
+  designation: "",
+  phone: null,
+  email: "",
+  country: "",
+  headshot: null,
+  service: "",
+  message: ""
 };
 
 export default function Feedback() {
@@ -33,24 +47,12 @@ export default function Feedback() {
     service: "",
     message: ""
   });
-  const initialFormData: Feedbackform = {
-    firstname: "",
-    middlename: "",
-    lastname: "",
-    organization: "",
-    designation: "",
-    phone: null,
-    email: "",
-    country: "",
-    headshot: null,
-    service: "",
-    message: ""
-  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     if (!captchaToken) {
       alert("Please verify you're not a robot!");
@@ -68,14 +70,14 @@ export default function Feedback() {
       <Ribbon name="Feedback" showFontSize={false} />
 
       {/* FORM SECTION */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-0 pt-8 pb-12 max-w-6xl mx-auto font-sans">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-0 pt-8 pb-12 max-w-7xl mx-auto">
         <p className="text-center  mb-10 px-2">
           Please share your experience with our services. Your feedback helps us improve.
         </p>
 
         <form
           onSubmit={handleSubmit}
-          className=" space-y-6 md:space-y-0 md:grid sm:grid-cols-2 gap-4  p-6 sm:p-8 rounded-xl shadow-sm shadow-gray-300 border-gray-200">
+          className=" space-y-6 md:space-y-0 md:grid sm:grid-cols-2 gap-4 p-6 sm:p-8 rounded-xl border-foreground/20 border-2">
           {/* Name */}
           <div className="flex flex-col">
             <label className="mb-2 font-medium">First Name *</label>
@@ -92,14 +94,13 @@ export default function Feedback() {
 
           {/* Middle Name */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Middle Name *</label>
+            <label className="mb-2 font-medium">Middle Name</label>
             <input
               type="text"
               name="middlename"
               value={formData.middlename}
               onChange={handleChange}
               placeholder="Your Middle Name"
-              required
               className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
             />
           </div>
