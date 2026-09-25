@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import StatusToast from "@/components/status/Toast";
 import RoadBlock from "@/components/Roadblock";
+import BacktoTop from "@/components/BacktoTop";
 import PromoBar from "@/components/PromoBar";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <PromoBar />
           <NavBar />
           <main className="flex-1">{children}</main>
+          <BacktoTop />
           <Footer />
           <CookieConsent />
           <RoadBlock />

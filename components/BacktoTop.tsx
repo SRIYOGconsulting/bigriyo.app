@@ -1,33 +1,29 @@
-'use client'
-import React, { useEffect, useState } from 'react'
+"use client";
+
+import { useEffect, useState } from "react";
+import { ArrowUpIcon } from "lucide-react";
 
 const BacktoTop = () => {
-  const [scrolled,setScrolled] = useState(false);
-  useEffect(()=>{
-    const handleScroll = ()=>{
-      if(window.scrollY > 0){
-        setScrolled(true)
-      }else{
-        setScrolled(false);
-    }}
-    window.addEventListener('scroll', handleScroll);
-    return ()=>{removeEventListener('scroll',handleScroll)}
-  },[])
+  const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTopBtn(window.scrollY > 100);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  if (!showBackToTopBtn) return null;
 
   return (
-    <>
-    {scrolled &&
-    <div className='fixed top-[67%] sm:top-[80%] right-4 z-20 rounded-full bg-[#888888] scale-[0.8] border-2 border-[#ebebeb]'>
-      <div>
-        <img onClick={scrollToTop} src="/icons/next-arrow.svg" className='h-12 w-12 -rotate-90 cursor-pointer hover:scale-[1.1] transition-all duration-200' alt="" />
-      </div>
-    </div>}
-    </>
-  )
-}
+    <div className="fixed bottom-[10%] right-4 z-50 rounded-full bg-secondary md:bottom-[20%]">
+      <button onClick={scrollToTop} aria-label="Scroll to Top" className="p-2 cursor-pointer">
+        <ArrowUpIcon className="h-8 w-8 transition-transform duration-200 hover:scale-110" />
+      </button>
+    </div>
+  );
+};
 
-export default BacktoTop
+export default BacktoTop;
