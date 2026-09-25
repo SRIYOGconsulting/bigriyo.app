@@ -20,7 +20,7 @@ const BacktoTop = () => {
   return (
     <div className="fixed bottom-[10%] right-4 z-50 rounded-full bg-secondary md:bottom-[20%]">
       <button onClick={scrollToTop} aria-label="Scroll to Top" className="p-2 cursor-pointer">
-        <ArrowUpIcon className="h-8 w-8 transition-transform duration-200 hover:scale-110" />
+        <ArrowUpIcon className="h-8 w-8 text-white transition-transform duration-200 hover:scale-110" />
       </button>
     </div>
   );
