@@ -35,7 +35,7 @@ export default function Contact() {
     <div className="">
       {/* Header Section */}
       <Ribbon name="Contact" showFontSize={false} />
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Left Side - Map and Services */}

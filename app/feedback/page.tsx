@@ -65,7 +65,7 @@ export default function Feedback() {
   return (
     <div className="w-full">
       {/* Full-width Ribbon Header */}
-      <Ribbon name="Feedback" showfont={false} />
+      <Ribbon name="Feedback" showFontSize={false} />
 
       {/* FORM SECTION */}
       <div className="px-4 sm:px-6 md:px-8 lg:px-0 pt-8 pb-12 max-w-6xl mx-auto font-sans">
@@ -229,9 +229,8 @@ export default function Feedback() {
                   xmlns="http://www.w3.org/2000/svg"
                   stroke="#4b4b4b">
                   <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                  <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
                   <g id="SVGRepo_iconCarrier">
-                    {" "}
                     <title>dropdown</title>{" "}
                     <path d="M18.813 11.406l-7.906 9.906c-0.75 0.906-1.906 0.906-2.625 0l-7.906-9.906c-0.75-0.938-0.375-1.656 0.781-1.656h16.875c1.188 0 1.531 0.719 0.781 1.656z" />{" "}
                   </g>

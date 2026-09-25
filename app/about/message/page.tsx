@@ -7,11 +7,11 @@ const Message = () => {
   return (
     <div className="message-page">
       {/* Full-width Teal Ribbon Header */}
-      <Ribbon name="Message" showFontSize={false} />
+      <Ribbon name="Message" showFontSize={true} />
 
       {/* Main Content */}
-      <main className=" py-14 px-4 md:px-10 lg:px-16">
-        <div className="card rounded-2xl p-10 md:p-14 max-w-5xl mx-auto">
+      <main className="py-8 px-4 md:px-12">
+        <div className="max-w-5xl mx-auto">
           {/* Message Paragraphs */}
           <section className="space-y-6 text-justify leading-relaxed mb-10">
             <p>
