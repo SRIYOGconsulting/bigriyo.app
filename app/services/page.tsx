@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import { SERVICES_DATA } from "@/data";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Our Services | Service Catalog",
@@ -9,9 +9,8 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-12">
       <div className="mb-10 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Our Services</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Select a category to explore specialized repair and maintenance solutions.
         </p>
@@ -44,6 +43,6 @@ export default function ServicesPage() {
           </Link>
         ))}
       </div>
-    </main>
+    </div>
   );
 }
