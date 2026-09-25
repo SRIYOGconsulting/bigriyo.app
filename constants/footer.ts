@@ -23,7 +23,7 @@ export const footerColumns = [
     heading: "Links",
     links: [
       { label: "Calendar", href: "/calendar" },
-      { label: "FAQ", href: "/faq" },
+      { label: "FAQ", href: "/contact/faq" },
       { label: "Payment", href: "/payment" },
       { label: "Internship", href: "/internship" },
       { label: "Download", href: "/download" }

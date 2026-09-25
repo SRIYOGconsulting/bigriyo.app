@@ -1,13 +1,13 @@
 export const certificates = [
-  { title: "Certificate 1", img: "/images/certificates/1.jpg" },
-  { title: "Certificate 2", img: "/images/certificates/2.jpg" },
-  { title: "Certificate 3", img: "/images/certificates/3.jpg" },
-  { title: "Certificate 4", img: "/images/certificates/4.jpg" },
-  { title: "Certificate 5", img: "/images/certificates/5.jpg" },
-  { title: "Certificate 6", img: "/images/certificates/6.jpg" },
-  { title: "Certificate 7", img: "/images/certificates/7.jpg" },
-  { title: "Certificate 8", img: "/images/certificates/8.jpg" },
-  { title: "Certificate 9", img: "/images/certificates/9.jpg" }
+  { title: "Certificate 1", img: "/certificates/1.jpg" },
+  { title: "Certificate 2", img: "/certificates/2.jpg" },
+  { title: "Certificate 3", img: "/certificates/3.jpg" },
+  { title: "Certificate 4", img: "/certificates/4.jpg" },
+  { title: "Certificate 5", img: "/certificates/5.jpg" },
+  { title: "Certificate 6", img: "/certificates/6.jpg" },
+  { title: "Certificate 7", img: "/certificates/7.jpg" },
+  { title: "Certificate 8", img: "/certificates/8.jpg" },
+  { title: "Certificate 9", img: "/certificates/9.jpg" }
 ];
 
 export const events = [
