@@ -1,3 +1,6 @@
+import ServiceCategoryItem from "@/components/service/ServiceItem";
+import { certificates } from "@/constants";
+import { SERVICES_DATA } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -69,6 +72,40 @@ export default function HomePage() {
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto text-center py-32 px-4">
+        <h2 className="text-2xl md:text-3xl font-bold mb-16">Top Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+          {SERVICES_DATA[1].services.slice(0, 3).map((service) => (
+            <ServiceCategoryItem key={service.slug} service={service} category={SERVICES_DATA[1].slug} />
+          ))}
+        </div>
+      </section>
+
+      <section className="text-center py-32 px-4 bg-secondary-foreground">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-16">Happy Stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+            {certificates.slice(0, 3).map((cert, index) => (
+              <div
+                key={index}
+                className="card rounded-lg bg-background shadow-md overflow-hidden w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
+                <Image
+                  height={600}
+                  width={800}
+                  src={cert.img}
+                  alt={cert.title}
+                  className="h-56 object-cover cursor-pointer"
+                />
+                <div className="px-4 py-5">
+                  <h2 className="text-lg font-medium ">{cert.title}</h2>
+                  <p className="card2 text-sm mt-2">Short description about the certificate.</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>
