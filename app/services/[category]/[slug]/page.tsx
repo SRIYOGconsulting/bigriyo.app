@@ -42,16 +42,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const category = SERVICES_DATA.find((c) => c.slug === categorySlug);
   const service = category?.services.find((s) => s.slug === serviceSlug);
 
-  if (!category || !service) {
-    notFound();
-  }
+  if (!category || !service) notFound();
 
   return (
-    <main className="pb-16">
-      <div className="relative min-h-[420px] w-full flex items-end overflow-hidden bg-muted">
+    <div className="pb-16">
+      <div className="relative left-[50%] right-[50%] -mx-[50vw] w-screen min-h-[360px] flex items-end overflow-hidden bg-muted mb-12">
         <Image src={service.image} alt={service.name} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-        <div className="relative z-10 container mx-auto px-4 py-12 text-white">
+        <div className="relative z-10 max-w-7xl container mx-auto px-4 pb-12 text-white">
           <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-gray-300">
             <Link href="/services" className="hover:text-white transition-colors">
               Services
@@ -78,20 +76,23 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
         </div>
       </div>
+
       <div className="container mx-auto px-4 pt-10">
         <div className="max-w-4xl">
           <section>
             <h2 className="text-2xl font-bold tracking-tight">Service Description</h2>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.description}</p>
           </section>
+
           <hr className="my-8 border-border" />
+
           <section>
             <h2 className="text-2xl font-bold tracking-tight">Key Features Included</h2>
             <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {service.features.map((feature, idx) => (
                 <li
                   key={idx}
-                  className="flex items-center gap-3 rounded-full border bg-primary/10 border-border bg-card p-4 text-sm font-medium shadow-sm">
+                  className="flex items-center gap-3 rounded-full border border-border bg-card p-4 text-sm font-medium shadow-sm">
                   <CheckIcon className="h-5 w-5 shrink-0 text-primary" />
                   <span>{feature}</span>
                 </li>
@@ -100,6 +101,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
