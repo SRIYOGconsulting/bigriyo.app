@@ -2,71 +2,53 @@
 
 import { useEffect, useState } from "react";
 
-// Font size scale in percentage
-const FONT_SIZES = {
-  SM: 85, // 85%
-  MD: 100, // 100% (Default)
-  LG: 115 // 115%
-};
+type FontSize = "85" | "100" | "115"; // Font size scale in percentage
 
-const FontSizeChanger = () => {
-  const [currentSize, setCurrentSize] = useState<number>(FONT_SIZES.MD);
+interface FontSizeBtnProps {
+  label: string;
+  isSelected: boolean;
+  onClick: () => void;
+}
+
+function FontSizeBtn({ label, isSelected, onClick }: FontSizeBtnProps) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label="Smaller font size"
+      className={`px-2 py-1 text-xs rounded transition-colors ${
+        isSelected
+          ? "bg-primary font-bold text-primary-foreground"
+          : "text-muted-foreground hover:bg-secondary/50 hover:text-secondary-foreground"
+      }`}>
+      {label}
+    </button>
+  );
+}
+
+export default function FontSizeChanger() {
+  const [currentSize, setCurrentSize] = useState<FontSize>("100");
 
   // Load saved font size on mount
   useEffect(() => {
-    const savedSize = localStorage.getItem("app-font-size");
+    const savedSize = localStorage.getItem("app-font-size") as FontSize;
     if (savedSize) {
-      const parsedSize = Number(savedSize);
-      setCurrentSize(parsedSize);
-      document.documentElement.style.fontSize = `${parsedSize}%`;
+      setCurrentSize(savedSize);
+      document.documentElement.style.fontSize = `${savedSize}%`;
     }
   }, []);
 
-  const updateFontSize = (sizePercentage: number) => {
-    setCurrentSize(sizePercentage);
-    document.documentElement.style.fontSize = `${sizePercentage}%`;
-    localStorage.setItem("app-font-size", sizePercentage.toString());
+  const updateFontSize = (size: FontSize) => {
+    setCurrentSize(size);
+    document.documentElement.style.fontSize = `${size}%`;
+    localStorage.setItem("app-font-size", size);
   };
 
   return (
-    <div className="flex items-center space-x-1 bg-teal-900/60 p-1 rounded-md border border-teal-700/50">
-      <button
-        type="button"
-        onClick={() => updateFontSize(FONT_SIZES.SM)}
-        aria-label="Smaller font size"
-        className={`px-2 py-1 text-xs rounded transition-colors ${
-          currentSize === FONT_SIZES.SM
-            ? "bg-teal-600 font-bold text-white"
-            : "text-teal-200 hover:bg-teal-700/50 hover:text-white"
-        }`}>
-        A-
-      </button>
-
-      <button
-        type="button"
-        onClick={() => updateFontSize(FONT_SIZES.MD)}
-        aria-label="Reset font size"
-        className={`px-2 py-1 text-sm rounded transition-colors ${
-          currentSize === FONT_SIZES.MD
-            ? "bg-teal-600 font-bold text-white"
-            : "text-teal-200 hover:bg-teal-700/50 hover:text-white"
-        }`}>
-        A
-      </button>
-
-      <button
-        type="button"
-        onClick={() => updateFontSize(FONT_SIZES.LG)}
-        aria-label="Larger font size"
-        className={`px-2 py-1 text-base rounded transition-colors ${
-          currentSize === FONT_SIZES.LG
-            ? "bg-teal-600 font-bold text-white"
-            : "text-teal-200 hover:bg-teal-700/50 hover:text-white"
-        }`}>
-        A+
-      </button>
+    <div className="flex items-center space-x-1 bg-secondary/60 p-1 rounded-md border border-border/50">
+      <FontSizeBtn label="A-" isSelected={currentSize === "85"} onClick={() => updateFontSize("85")} />
+      <FontSizeBtn label="A" isSelected={currentSize === "100"} onClick={() => updateFontSize("100")} />
+      <FontSizeBtn label="A+" isSelected={currentSize === "115"} onClick={() => updateFontSize("115")} />
     </div>
   );
-};
-
-export default FontSizeChanger;
+}

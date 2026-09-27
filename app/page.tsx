@@ -1,6 +1,6 @@
-import ServiceCategoryItem from "@/components/service/ServiceItem";
 import { certificates } from "@/constants";
 import { SERVICES_DATA } from "@/data";
+import ServiceCategoryItem from "@/components/service/ServiceItem";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,18 +10,18 @@ const partnerLogos = Array.from({ length: PARTNER_COUNT }, (_, i) => i + 1);
 export default function HomePage() {
   return (
     <>
-      <section className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
+      <div className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
         {/* Desktop background */}
         <div className="hidden sm:block absolute inset-0 -z-10">
-          <Image src="/home/hero/1.jpg" alt="hero image" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/home/hero/1.jpg" alt="BIGRIYO Pvt Ltd." fill className="object-cover" sizes="100vw" priority />
         </div>
 
         <div className="max-w-[1200px] mx-auto w-full flex flex-col sm:flex-row justify-between items-start sm:items-center sm:px-6">
           {/* Mobile image */}
           <div className="relative block sm:hidden w-full h-[300px]">
             <Image
-              src="/home/hero/1.jpg"
-              alt="SRIYOG Consulting"
+              src="/home/hero/2.jpg"
+              alt="BIGRIYO Pvt Ltd"
               fill
               className="object-cover"
               sizes="(max-width: 639px) 100vw, 50vw"
@@ -29,31 +29,29 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col justify-start text-black text-left z-10 w-full sm:w-1/2 mt-4 px-6 sm:mt-0">
+          <div className="flex flex-col justify-start text-foreground md:text-black z-10 w-full sm:w-1/2 mt-4 px-6 sm:mt-0">
             <div className="text-[23px] md:text-2xl font-semibold mb-3 opacity-90">Welcome to</div>
-
-            <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo!</div>
-
+            <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo Pvt Ltd!</div>
             <h1 className="text-[18px] max-w-[600px] leading-relaxed opacity-95">
               Professional repair center in Kathmandu, Nepal.
             </h1>
 
-            <div className="mt-8 flex gap-4">
+            <div className="mt-8 flex gap-4 font-semibold">
               <Link
                 href="/about"
-                className="inline-block border-2 border-[#0D5D59] py-2 px-6 rounded-md text-[#0D5D59] font-semibold hover:bg-[#0D5D59] hover:text-white transition duration-300 cursor-pointer">
+                className="inline-block border-2 text-foreground md:text-secondary border-foreground md:border-secondary py-2 px-6 rounded-md hover:text-white hover:bg-secondary transition-all duration-300 cursor-pointer">
                 About
               </Link>
 
               <Link
                 href="/book"
-                className="inline-block border-2 border-[#0D5D59] py-2 px-6 rounded-md text-[#0D5D59] font-semibold hover:bg-[#0D5D59] hover:text-white transition duration-300 cursor-pointer">
+                className="inline-block border-2 text-foreground md:text-secondary border-foreground md:border-secondary py-2 px-6 rounded-md hover:text-white hover:bg-secondary transition-all duration-300 cursor-pointer">
                 Book a Service
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* PARTNERS — homepage only */}
       <section className="py-8 sm:py-10 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
@@ -75,37 +73,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto text-center py-32 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-16">Top Services</h2>
+      <section className="max-w-7xl mx-auto text-center py-12 md:pt-24 md:pb-32 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
           {SERVICES_DATA[1].services.slice(0, 3).map((service) => (
             <ServiceCategoryItem key={service.slug} service={service} category={SERVICES_DATA[1].slug} />
           ))}
         </div>
+        <div className="mt-12">
+          <Link
+            href="/services"
+            className="rounded-lg bg-primary border-2 border-border px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+            View More
+          </Link>
+        </div>
       </section>
 
-      <section className="text-center py-32 px-4 bg-secondary-foreground">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-16">Happy Stories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
-            {certificates.slice(0, 3).map((cert, index) => (
-              <div
-                key={index}
-                className="card rounded-lg bg-background shadow-md overflow-hidden w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
-                <Image
-                  height={600}
-                  width={800}
-                  src={cert.img}
-                  alt={cert.title}
-                  className="h-56 object-cover cursor-pointer"
-                />
-                <div className="px-4 py-5">
-                  <h2 className="text-lg font-medium ">{cert.title}</h2>
-                  <p className="card2 text-sm mt-2">Short description about the certificate.</p>
-                </div>
+      <section className="text-center py-12 md:pt-24 md:pb-32 px-4 bg-muted">
+        <h2 className="max-w-7xl mx-auto text-3xl md:text-4xl font-bold mb-12">Happy Stories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-items-center">
+          {certificates.slice(0, 4).map((cert, index) => (
+            <div
+              key={index}
+              className="card rounded-lg bg-background shadow-md overflow-hidden w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
+              <Image
+                height={600}
+                width={800}
+                src={cert.img}
+                alt={cert.title}
+                className="h-56 object-cover cursor-pointer"
+              />
+              <div className="px-4 py-5">
+                <h2 className="text-lg font-medium ">{cert.title}</h2>
+                <p className="card2 text-sm mt-2">Short description about the certificate.</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12">
+          <Link
+            href="/testimonials"
+            className="rounded-lg bg-primary border-2 border-border px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+            View More
+          </Link>
         </div>
       </section>
     </>

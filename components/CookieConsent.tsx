@@ -45,7 +45,7 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-5 left-5 z-50 w-72 bg-secondary rounded-xl p-5 text-white shadow-xl fade-in">
+    <div className="fixed bottom-5 left-5 z-50 w-72 bg-secondary rounded-xl p-5 text-secondary-foreground shadow-xl fade-in">
       <p className="text-sm leading-relaxed text-center">
         We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.
       </p>

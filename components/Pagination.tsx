@@ -1,17 +1,13 @@
-'use client'
+"use client";
 
-type prop ={
-  currentPage: number,
+type prop = {
+  currentPage: number;
   onPageChange: (page: number) => void;
-  totalPages : number,
-  color: string,
-}
-const Pagination:React.FC<prop> = ({ 
-  currentPage, 
-  totalPages = 5, 
-  onPageChange ,
-  color
-}) => {
+  totalPages: number;
+  color: string;
+};
+
+const Pagination: React.FC<prop> = ({ currentPage, totalPages = 5, onPageChange, color }) => {
   // Generate page numbers with ellipsis for large page counts
   const getPageNumbers = () => {
     const pages = [];
@@ -26,7 +22,7 @@ const Pagination:React.FC<prop> = ({
     pages.push(1);
 
     if (currentPage > 3) {
-      pages.push('...');
+      pages.push("...");
     }
 
     // Show pages around current page
@@ -35,7 +31,7 @@ const Pagination:React.FC<prop> = ({
     }
 
     if (currentPage < totalPages - 2) {
-      pages.push('...');
+      pages.push("...");
     }
 
     // Always show last page
@@ -50,16 +46,15 @@ const Pagination:React.FC<prop> = ({
 
   return (
     <div className="flex items-center gap-2">
-      <button 
+      <button
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className="w-8 h-8 text-4xl pb-3 md:w-10 md:h-10 rounded-md border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center text-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-       ‹
+        className="w-8 h-8 text-4xl pb-3 md:w-10 md:h-10 rounded-md border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center text-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+        ‹
       </button>
-      
-      {pageNumbers.map((page, index) => (
-        page === '...'  ? (
+
+      {pageNumbers.map((page, index) =>
+        page === "..." ? (
           <span key={`ellipsis-${index}`} className="px-2 text-gray-500 hidden sm:inline">
             ...
           </span>
@@ -70,19 +65,17 @@ const Pagination:React.FC<prop> = ({
             className={`w-8 h-8 md:w-10 md:h-10 rounded-md flex items-center justify-center text-xs md:text-sm font-semibold transition-colors ${
               currentPage === page
                 ? `${color} text-white border-0`
-                : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'
-            } ${currentPage === page ? '' : (page as number > 3 && page as number < totalPages - 2 ? 'hidden sm:flex' : '')}`}
-          >
+                : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-50"
+            } ${currentPage === page ? "" : (page as number) > 3 && (page as number) < totalPages - 2 ? "hidden sm:flex" : ""}`}>
             {page}
           </button>
         )
-      ))}
-      
-      <button 
+      )}
+
+      <button
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className="w-8 h-8 text-4xl pb-3 md:w-10 md:h-10 rounded-md border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center text-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
+        className="w-8 h-8 text-4xl pb-3 md:w-10 md:h-10 rounded-md border border-gray-300 bg-white hover:bg-gray-50 flex items-center justify-center text-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
         ›
       </button>
     </div>

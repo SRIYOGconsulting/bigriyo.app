@@ -20,9 +20,9 @@ const NewsLetter = () => {
   }, []);
 
   return (
-    <section className="bg-secondary text-white py-10 px-6">
+    <section className="bg-secondary text-secondary-foreground py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <h2 className="text-white font-semibold italic text-3xl sm:text-4xl text-left md:pl-8">Join our Newsletter</h2>
+        <h2 className="font-semibold italic text-3xl sm:text-4xl text-left md:pl-8">Join our Newsletter</h2>
         <div ref={formRef} className="ml-auto w-full max-w-[440px] min-h-[58px]" />
       </div>
     </section>
