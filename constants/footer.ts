@@ -32,11 +32,71 @@ export const footerColumns = [
   {
     heading: "Explore",
     links: [
-      { label: "Videos", href: "/video" },
+      { label: "Videos", href: "/videos" },
       { label: "Trello Board", href: "https://trello.com", isExternal: true },
       { label: "Location", href: "/about/location" },
       { label: "Refund Policy", href: "/policy/refund" },
       { label: "Cookie Policy", href: "/policy/cookie" }
     ]
+  }
+];
+
+export const contactBoxLinks = [
+  {
+    href: "mailto:bigriyo@sriyog.com",
+    src: "/icons/email.svg",
+    alt: "email",
+    label: "bigriyo@sriyog.com"
+  },
+  {
+    href: "tel:+977014548068",
+    src: "/icons/phone.svg",
+    alt: "phone",
+    label: "+977-01-4548068"
+  },
+  {
+    href: "https://wa.me/9779852024365",
+    src: "/icons/whatsapp.svg",
+    alt: "whatsapp",
+    label: "+977 98520-24-365",
+    isExternal: true
+  }
+];
+
+export const footSocialLinks = [
+  {
+    href: "#",
+    src: "/icons/x.svg",
+    alt: "X"
+  },
+  {
+    href: "#",
+    src: "/icons/linkedin.svg",
+    alt: "LinkedIn"
+  },
+  {
+    href: "#",
+    src: "/icons/youtube.svg",
+    alt: "YouTube"
+  },
+  {
+    href: "#",
+    src: "/icons/trello.svg",
+    alt: "Trello"
+  },
+  {
+    href: "#",
+    src: "/icons/signal.svg",
+    alt: "Signal"
+  },
+  {
+    href: "#",
+    src: "/icons/discord.svg",
+    alt: "Discord"
+  },
+  {
+    href: "#",
+    src: "/icons/viber.svg",
+    alt: "Viber"
   }
 ];
