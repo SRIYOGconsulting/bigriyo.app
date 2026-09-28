@@ -89,7 +89,7 @@ export default function Footer() {
       <NewsLetter />
       <footer className="relative footer pt-16 pb-10 z-10">
         {/* TOP SECTION */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row lg:justify-between gap-10">
           <div className="w-full lg:w-[45%]">
             <div className="mb-6 text-2xl">
               <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
@@ -97,9 +97,9 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-[15px] leading-relaxed mb-4">
-              Established on June 14, 2018, Bigriyo, based in Kamalpokhari, Kathmandu, Nepal, is a leading provider of
-              professional hygiene and deep cleaning solutions dedicated to delivering healthy, spotless environments
-              across the residential, commercial, and hospitality sectors.
+              Established on June 14, 2018, BIGRIYO, based in Kathmandu, Nepal, is a leading provider of professional
+              hygiene and deep cleaning solutions dedicated to delivering healthy, spotless environments across the
+              residential, commercial, and hospitality sectors.
             </p>
             <p className="text-[15px] leading-relaxed">
               Our mission is to empower homes and businesses throughout the Valley with reliable, eco-friendly, and
@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* SOCIAL + CONTACT SECTION */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
+        <section className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
           {/* SOCIAL ICONS */}
           <div className="flex gap-6 justify-center items-center">
             {footSocialLinks.map((link, idx) => (
@@ -136,7 +136,7 @@ export default function Footer() {
         <div className="w-full border-t mt-14 mb-6"></div>
 
         {/* FOOTER BOTTOM */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
+        <section className="max-w-7xl mx-auto px-4 md:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
           <p className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
             <span>All Rights Reserved. &copy; 2018-{new Date().getFullYear()}</span>
             <span>BIGRIYO Pvt. Ltd.</span>

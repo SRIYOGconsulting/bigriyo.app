@@ -14,7 +14,7 @@ export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <ServiceSearchBar initialQuery="" />
-      <div className="mb-10 mt-12 font-semibold text-center text-muted-foreground">
+      <div className="mb-10 mt-12 font-semibold text-center">
         <p className="text-xl">Select a category to explore</p>
         <p className="text-3xl">Specialized Repair and Maintenance Solutions</p>
       </div>

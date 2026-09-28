@@ -48,7 +48,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <div className="relative left-[50%] right-[50%] -mx-[50vw] w-screen min-h-[360px] flex items-end overflow-hidden bg-muted mb-12">
         <Image src={service.image} alt={service.name} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-        <div className="relative z-10 max-w-7xl container mx-auto px-4 pb-12">
+        <div className="relative z-10 max-w-7xl container mx-auto px-4 md:px-8 pb-12">
           <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <Link href="/services" className="hover:text-primary-foreground transition-colors">
               Services
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pt-10">
+      <div className="container mx-auto pt-10">
         <div className="max-w-4xl">
           <section>
             <h2 className="text-2xl font-bold tracking-tight">Service Description</h2>

@@ -11,7 +11,7 @@ export default function PromoBar() {
 
   return (
     <div className="w-full bg-secondary text-secondary-foreground text-sm font-semibold">
-      <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto py-2 px-4 sm:px-6">
+      <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto py-2 px-4 md:px-8">
         <div className="flex flex-wrap items-center justify-center gap-2">
           Dashain Offer!{" "}
           <span className="hidden md:block">Bigreko Saamaan le Dashain Nabigros! Grab the Offer Now!</span>

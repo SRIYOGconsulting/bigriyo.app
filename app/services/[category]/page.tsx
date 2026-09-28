@@ -35,12 +35,12 @@ export default async function ServiceCategoryPage({ params }: ServiceCategoryPag
   }
 
   return (
-    <div className="container mx-auto px-4 pb-12">
+    <div className="container pb-12">
       <div className="relative left-[50%] right-[50%] -mx-[50vw] mb-12 w-screen min-h-[360px] flex items-end overflow-hidden bg-muted">
         <Image src={category.image} alt={category.name} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-        <div className="relative z-10 container max-w-7xl mx-auto px-4 pb-10 md:py-14 text-white">
-          <nav className="mb-4 flex items-center gap-2 text-sm text-gray-300">
+        <div className="relative z-10 container max-w-7xl mx-auto px-4 md:px-8 pb-10 md:py-14 text-primary-foreground">
+          <nav className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
             <Link href="/services" className="hover:text-white transition-colors">
               Services
             </Link>
@@ -48,7 +48,9 @@ export default async function ServiceCategoryPage({ params }: ServiceCategoryPag
             <span className="font-medium text-white">{category.name}</span>
           </nav>
           <h1 className="text-3xl font-bold tracking-tight md:text-5xl drop-shadow-sm">{category.name}</h1>
-          <p className="mt-3 max-w-2xl text-base md:text-lg text-gray-200 drop-shadow-sm">{category.description}</p>
+          <p className="mt-3 max-w-2xl text-base md:text-lg text-muted-foreground drop-shadow-sm">
+            {category.description}
+          </p>
         </div>
       </div>
       <h2 className="mb-6 text-2xl font-bold">Available Services</h2>

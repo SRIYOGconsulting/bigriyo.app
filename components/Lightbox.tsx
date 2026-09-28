@@ -1,8 +1,8 @@
 "use client";
 
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 
 type LightboxItem = {
   img: string;

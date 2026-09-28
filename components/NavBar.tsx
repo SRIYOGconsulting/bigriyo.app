@@ -40,7 +40,7 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md transition-colors">
       <PromoBar />
-      <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4 sm:px-6">
         <Link
           href="/"
           className="flex lg:flex-col items-center gap-2 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
@@ -69,13 +69,13 @@ export default function NavBar() {
 
           <Link
             href="/career"
-            className="border-2 border-secondary bg-secondary text-secondary-foreground font-medium px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+            className="border-2 border-secondary bg-secondary text-secondary-foreground font-medium px-4 py-2 rounded-lg hover:bg-transparent dark:hover:text-foreground hover:text-secondary transition-all">
             Career
           </Link>
           <Link
-            href="/services/book"
-            className="border-2 border-foreground rounded-lg px-4 py-2 font-medium text-foreground hover:bg-muted transition-colors">
-            Book a Service
+            href="/notice"
+            className="border-2 text-secondary border-secondary py-2 px-6 rounded-md hover:text-white dark:text-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
+            Notice
           </Link>
         </div>
 
