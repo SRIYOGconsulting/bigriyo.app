@@ -52,9 +52,9 @@ export default function MobileDrawer({ isOpen, setIsOpen, isDark, toggleTheme }:
         }`}>
         <div className="flex flex-col h-full p-6 min-h-0">
           {/* Header - Fixed Top */}
-          <div className="flex justify-between items-center pb-4 mb-4 border-b border-border shrink-0">
+          <div className="flex justify-between items-center pb-4 mb-8 border-b border-border shrink-0">
             <Link href="/" onClick={closeDrawer} className="flex gap-2 items-center">
-              <ToolCaseIcon className="w-6 h-6" />
+              <ToolCaseIcon className="w-8 h-8" />
               <div className="text-xl font-bold text-foreground">BIGRIYO</div>
             </Link>
             <button onClick={closeDrawer} className="p-1 rounded-full text-muted-foreground" aria-label="Close menu">
@@ -63,38 +63,42 @@ export default function MobileDrawer({ isOpen, setIsOpen, isDark, toggleTheme }:
           </div>
 
           {/* Scrollable Nav Items */}
-          <nav className="flex-1 min-h-0 overflow-y-auto pr-1 space-y-1">
-            {navLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={closeDrawer}
-                className="group flex items-center justify-between p-3 rounded-lg transition-colors hover:bg-muted text-foreground">
-                <span className="font-medium">{item.title}</span>
-              </Link>
-            ))}
+          <nav className="flex-1 min-h-0 overflow-y-auto">
+            {navLinks.map((item) => {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={closeDrawer}
+                  className="group flex items-center justify-between p-3 border-b border-border transition-colors hover:bg-muted text-foreground">
+                  <div className="flex items-center gap-x-4">
+                    <item.icon className="h-5 w-5" />
+                    <span className="font-medium">{item.title}</span>
+                  </div>
+                </Link>
+              );
+            })}
 
             {/* Theme Toggle Nav Item */}
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center justify-between w-full p-3 rounded-lg transition-colors hover:bg-muted text-foreground cursor-pointer">
+              className="flex items-center justify-between w-full p-3 my-8 rounded-lg transition-colors hover:bg-muted text-foreground cursor-pointer">
               <span className="font-medium">{isDark ? "Light Mode" : "Dark Mode"}</span>
               {isDark ? <SunIcon className="w-5 h-5 text-amber-400" /> : <MoonIcon className="w-5 h-5 text-primary" />}
             </button>
 
-            <div className="pt-4 space-y-2">
+            <div className="space-y-2">
               <Link
                 href="/career"
                 onClick={closeDrawer}
-                className="flex items-center justify-center w-full border border-border rounded-lg px-4 py-2.5 font-medium text-foreground hover:bg-muted transition-colors">
+                className="flex items-center justify-center w-full bg-secondary text-secondary-foreground font-medium px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
                 Career
               </Link>
-
               <Link
                 href="/notice"
                 onClick={closeDrawer}
-                className="flex items-center justify-center w-full bg-primary text-primary-foreground font-medium px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+                className="flex items-center justify-center border-2 text-secondary border-secondary py-2.5 w-full px-4 rounded-lg hover:text-white dark:text-foreground hover:bg-secondary transition-all">
                 Notice
               </Link>
             </div>
