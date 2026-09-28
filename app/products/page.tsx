@@ -1,21 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { certificates } from "@/constants";
 import Lightbox from "@/components/Lightbox";
+import Ribbon from "@/components/Ribbon";
 import Image from "next/image";
 
-export default function Certificate() {
+export default function Products() {
   const [lightbox, setLightbox] = useState(false);
   const [index, setIndex] = useState<number | null>(0);
 
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
-
-    if (lightbox) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = originalStyle;
-    }
+    document.body.style.overflow = lightbox ? "hidden" : originalStyle;
 
     // Cleanup on unmount or when lightbox changes
     return () => {
@@ -23,22 +20,11 @@ export default function Certificate() {
     };
   }, [lightbox]);
   // Updated certificate data with new image paths
-  const certificates = [
-    { title: "Certificate 1", img: "/images/certificates/1.jpg" },
-    { title: "Certificate 2", img: "/images/certificates/2.jpg" },
-    { title: "Certificate 3", img: "/images/certificates/3.jpg" },
-    { title: "Certificate 4", img: "/images/certificates/4.jpg" },
-    { title: "Certificate 5", img: "/images/certificates/5.jpg" },
-    { title: "Certificate 6", img: "/images/certificates/6.jpg" },
-    { title: "Certificate 7", img: "/images/certificates/7.jpg" },
-    { title: "Certificate 8", img: "/images/certificates/8.jpg" },
-    { title: "Certificate 9", img: "/images/certificates/9.jpg" }
-  ];
 
   return (
-    <div className="relative ">
+    <>
       {/* Header */}
-      {/* <Ribbon name="Certificates" showfont={false}/> */}
+      <Ribbon name="Our Products" showFontSize={false} />
       <div className="px-5 py-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
           {certificates.map((cert, index) => (
@@ -75,6 +61,6 @@ export default function Certificate() {
           />
         </>
       )}
-    </div>
+    </>
   );
 }

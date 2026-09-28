@@ -1,5 +1,6 @@
 "use client";
 
+import ClapButton from "@/components/ClappingFunction";
 import Ribbon from "@/components/Ribbon";
 import Image from "next/image";
 
@@ -62,6 +63,7 @@ export default function About() {
             </div>
           </div>
         </div>
+        <ClapButton />
       </div>
     </>
   );

@@ -6,18 +6,13 @@ import Lightbox from "@/components/Lightbox";
 import Ribbon from "@/components/Ribbon";
 import Image from "next/image";
 
-export default function Certificate() {
+export default function Blogs() {
   const [lightbox, setLightbox] = useState<boolean>(false);
   const [index, setIndex] = useState<number | null>(0);
 
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
-
-    if (lightbox) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = originalStyle;
-    }
+    document.body.style.overflow = lightbox ? "hidden" : originalStyle;
 
     // Cleanup on unmount or when lightbox changes
     return () => {
@@ -29,7 +24,7 @@ export default function Certificate() {
   return (
     <div className="relative ">
       {/* Header */}
-      <Ribbon name="Certificates" showFontSize={false} />
+      <Ribbon name="Blogs" showFontSize={false} />
       <div className="px-5 py-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
           {certificates.map((cert, index) => (
