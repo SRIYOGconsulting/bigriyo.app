@@ -34,3 +34,12 @@ export const events = [
     description: "Adopted cloud-native, AI-driven, and scalable microservice architecture."
   }
 ];
+
+export const policies = [
+  { href: "policy/ai", label: "AI Usage" },
+  { href: "policy/cookie", label: "Cookie Usage" },
+  { href: "policy/disclaimer", label: "Disclaimer" },
+  { href: "policy/privacy", label: "Privacy Policy" },
+  { href: "policy/refund", label: "Refund Policy" },
+  { href: "policy/terms", label: "Terms of Service" }
+];
