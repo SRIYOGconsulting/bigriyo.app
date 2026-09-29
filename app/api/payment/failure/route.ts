@@ -1,3 +1,5 @@
-export default function GET() {
-  // demo payment gateway maybe?
+import { redirect } from "next/navigation";
+
+export async function GET() {
+  redirect("/");
 }

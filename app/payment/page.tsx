@@ -12,7 +12,7 @@ const Payment = () => {
   return (
     <div>
       {/* Page Header */}
-      <Ribbon name="Payment" showfont={false} />
+      <Ribbon name="Payment" showFontSize={false} />
 
       {/* Main Payment Section */}
       <section className=" flex flex-col justify-center items-center px-4 sm:px-0 py-8 sm:py-10">
