@@ -13,23 +13,31 @@ export default function HomePage() {
       <div className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
         {/* Desktop background */}
         <div className="hidden sm:block absolute inset-0 -z-10">
-          <Image src="/home/hero/1.jpg" alt="BIGRIYO Pvt Ltd." fill className="object-cover" sizes="100vw" priority />
+          <Image
+            src="/home/hero/desktop.jpg"
+            alt="BIGRIYO Pvt Ltd."
+            fill
+            className="object-cover object-bottom"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="max-w-7xl mx-auto w-full flex flex-col sm:flex-row justify-between items-start sm:items-center">
           {/* Mobile image */}
-          <div className="relative block sm:hidden w-full h-[300px]">
+          <div className="relative block sm:hidden w-full h-[350px]">
             <Image
-              src="/home/hero/2.jpg"
+              src="/home/hero/mobile.jpg"
               alt="BIGRIYO Pvt Ltd"
               fill
-              className="object-cover"
+              className="object-cover object-bottom"
               sizes="(max-width: 639px) 100vw, 50vw"
               priority
             />
           </div>
 
-          <div className="flex flex-col justify-start text-foreground md:text-black z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 md:px-8">
+          <div className="flex flex-col justify-start text-foreground md:text-secondary-foreground z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 md:px-8">
             <div className="text-[23px] md:text-2xl font-semibold mb-3 opacity-90">Welcome to</div>
             <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo Pvt Ltd!</div>
             <h1 className="text-[18px] max-w-[600px] leading-relaxed opacity-95">
@@ -39,13 +47,13 @@ export default function HomePage() {
             <div className="mt-8 flex gap-4 font-semibold">
               <Link
                 href="/about"
-                className="inline-block border-2 text-foreground md:text-secondary border-foreground md:border-secondary py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
+                className="inline-block border-2 text-foreground md:text-secondary-foreground border-current py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
                 About
               </Link>
 
               <Link
                 href="/services/book"
-                className="inline-block border-2 text-foreground md:text-secondary border-foreground md:border-secondary py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
+                className="inline-block border-2 text-foreground md:text-secondary-foreground border-current py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
                 Book a Service
               </Link>
             </div>
@@ -54,7 +62,7 @@ export default function HomePage() {
       </div>
 
       {/* PARTNERS — homepage only */}
-      <section className="py-8 sm:py-10 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
+      <section className="mt-8 md:mt-0 py-8 sm:py-10 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
         <div className="flex w-max animate-scroll gap-10 sm:gap-14 items-center">
           {[...partnerLogos, ...partnerLogos].map((n, i) => (
             <div
