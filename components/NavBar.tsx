@@ -1,10 +1,11 @@
 "use client";
 
-import { SunIcon, MoonIcon, MenuIcon, XIcon, ToolCaseIcon } from "lucide-react";
+import { SunIcon, MoonIcon, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/constants";
 import MobileDrawer from "@/components/MobileDrawer";
 import PromoBar from "@/components/PromoBar";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NavBar() {
@@ -43,8 +44,8 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4 sm:px-6">
         <Link
           href="/"
-          className="flex lg:flex-col items-center gap-2 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
-          <ToolCaseIcon className="w-8 h-8" />
+          className="flex lg:flex-col items-center gap-x-4 gap-y-2 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
+          <Image src="/favicon/favicon.svg" alt="logo" width={48} height={48} />
           BIGRIYO
         </Link>
         <div className="hidden lg:flex items-center space-x-6">

@@ -1,7 +1,7 @@
 "use client";
 
+import { XIcon, SunIcon, MoonIcon } from "lucide-react";
 import { navLinks, socialLinks } from "@/constants";
-import { XIcon, SunIcon, MoonIcon, ToolCaseIcon } from "lucide-react";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,8 +53,8 @@ export default function MobileDrawer({ isOpen, setIsOpen, isDark, toggleTheme }:
         <div className="flex flex-col h-full p-6 min-h-0">
           {/* Header - Fixed Top */}
           <div className="flex justify-between items-center pb-4 mb-8 border-b border-border shrink-0">
-            <Link href="/" onClick={closeDrawer} className="flex gap-2 items-center">
-              <ToolCaseIcon className="w-8 h-8" />
+            <Link href="/" onClick={closeDrawer} className="flex gap-4 items-center">
+              <Image src="/favicon/favicon.svg" alt="logo" width={36} height={36} />
               <div className="text-xl font-bold text-foreground">BIGRIYO</div>
             </Link>
             <button onClick={closeDrawer} className="p-1 rounded-full text-muted-foreground" aria-label="Close menu">
