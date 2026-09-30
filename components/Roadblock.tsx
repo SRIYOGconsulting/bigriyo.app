@@ -67,7 +67,7 @@ const RoadBlock = () => {
   if (!showRoadBlock) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#D0D0D0] z-[9999] flex items-center justify-center">
+    <div className="fixed inset-0 bg-primary-foreground z-50 flex items-center justify-center">
       <div className="relative">
         {formattedDate && (
           <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full z-10 pointer-events-none">

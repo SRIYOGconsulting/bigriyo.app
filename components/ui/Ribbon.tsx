@@ -1,6 +1,6 @@
 "use client";
 
-import FontSizeChanger from "@/components/FontSizeChanger";
+import FontSizeChanger from "@/components/ui/FontSizeChanger";
 
 type RibbonProps = {
   name: string;

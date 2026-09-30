@@ -19,7 +19,7 @@ export default function ClapButton() {
   };
 
   return (
-    <div className="text-left mt-5">
+    <div className="text-left">
       <div className="flex items-center gap-2">
         <button
           onClick={handleClap}

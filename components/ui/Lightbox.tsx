@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
-import { useEffect, useCallback } from "react";
+import { useCallback } from "react";
 import Image from "next/image";
 
 type LightboxItem = {
@@ -31,21 +31,6 @@ export default function Lightbox({ data, setLightbox, lightbox, setIndex, index 
     if (index === null) return;
     setIndex((index + 1) % data.length);
   }, [data.length, index, setIndex]);
-
-  useEffect(() => {
-    if (lightbox) {
-      document.body.classList.remove("showScroll");
-      document.body.classList.add("hideScroll");
-    } else {
-      document.body.classList.remove("hideScroll");
-      document.body.classList.add("showScroll");
-    }
-
-    return () => {
-      document.body.classList.remove("hideScroll");
-      document.body.classList.add("showScroll");
-    };
-  }, [lightbox]);
 
   // If lightbox is closed or index is null, render nothing
   if (!lightbox || index === null) return null;

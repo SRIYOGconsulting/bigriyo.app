@@ -1,7 +1,7 @@
 "use client";
 
 import { contactBoxLinks, footerColumns, footSocialLinks } from "@/constants";
-import NewsLetter from "@/components/NewsLetter";
+import NewsLetter from "@/components/ui/NewsLetter";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -143,11 +143,11 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 justify-center md:justify-end font-semibold mt-2 lg:mt-0">
-            <Link href="/policy/privacy">Privacy Policy</Link>
+            <Link href="/policies/privacy">Privacy Policy</Link>
             <span>|</span>
-            <Link href="/policy/disclaimer">Disclaimer</Link>
+            <Link href="/policies/disclaimer">Disclaimer</Link>
             <span>|</span>
-            <Link href="policy/terms">Terms of Service</Link>
+            <Link href="policies/terms">Terms of Service</Link>
           </div>
         </section>
       </footer>

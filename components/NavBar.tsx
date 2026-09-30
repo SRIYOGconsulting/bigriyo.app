@@ -3,8 +3,8 @@
 import { SunIcon, MoonIcon, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/constants";
-import MobileDrawer from "@/components/MobileDrawer";
-import PromoBar from "@/components/PromoBar";
+import MobileDrawer from "@/components/ui/MobileDrawer";
+import PromoBar from "@/components/ui/PromoBar";
 import Image from "next/image";
 import Link from "next/link";
 

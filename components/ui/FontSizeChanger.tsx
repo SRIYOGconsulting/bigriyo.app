@@ -15,11 +15,10 @@ function FontSizeBtn({ label, isSelected, onClick }: FontSizeBtnProps) {
     <button
       type="button"
       onClick={onClick}
-      aria-label="Smaller font size"
       className={`px-2 py-1 text-xs rounded transition-colors ${
         isSelected
           ? "bg-primary font-bold text-primary-foreground"
-          : "text-muted-foreground hover:bg-secondary/50 hover:text-secondary-foreground"
+          : "text-muted-foreground hover:text-primary-foreground"
       }`}>
       {label}
     </button>
@@ -45,7 +44,7 @@ export default function FontSizeChanger() {
   };
 
   return (
-    <div className="flex items-center space-x-1 bg-secondary/60 p-1 rounded-md border border-border/50">
+    <div className="flex items-center space-x-1 bg-muted/80 p-1 rounded-md border border-border">
       <FontSizeBtn label="A-" isSelected={currentSize === "85"} onClick={() => updateFontSize("85")} />
       <FontSizeBtn label="A" isSelected={currentSize === "100"} onClick={() => updateFontSize("100")} />
       <FontSizeBtn label="A+" isSelected={currentSize === "115"} onClick={() => updateFontSize("115")} />
