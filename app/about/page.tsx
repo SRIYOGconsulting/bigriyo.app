@@ -1,7 +1,7 @@
 "use client";
 
-import ClapButton from "@/components/ClappingFunction";
-import Ribbon from "@/components/Ribbon";
+import ClapButton from "@/components/ui/ClapButton";
+import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
       <Ribbon name="About Us" showFontSize={true} />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-6">
           {/* Image on mobile */}
           <div className="md:hidden overflow-hidden px-5 sm:px-0">
             <Image

@@ -1,6 +1,6 @@
 "use client";
 
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
 const Message = () => {

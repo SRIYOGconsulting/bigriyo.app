@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { faqs } from "@/data";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 export default function Faq() {
   const faq1 = faqs.slice(0, faqs.length / 2);

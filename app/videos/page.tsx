@@ -1,4 +1,4 @@
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 export default function Videos() {
   return (

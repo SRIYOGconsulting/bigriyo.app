@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { policies } from "@/constants";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 import Link from "next/link";
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 export default function History() {
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 const teamMembers = [
   { id: 1, name: "Alisha", role: "MERN Stack", image: "/team/2.png" },

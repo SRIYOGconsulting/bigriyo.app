@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { certificates } from "@/constants";
-import Lightbox from "@/components/Lightbox";
-import Ribbon from "@/components/Ribbon";
+import Lightbox from "@/components/ui/Lightbox";
+import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
 export default function Products() {

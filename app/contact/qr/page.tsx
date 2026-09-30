@@ -1,7 +1,7 @@
 "use client";
 
 import { qrCardData } from "@/constants";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 function Qr() {
   return (

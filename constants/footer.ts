@@ -5,7 +5,7 @@ export const footerColumns = [
       { label: "Mission & Vision", href: "/about/vision" },
       { label: "History", href: "/about/history" },
       { label: "Why Us", href: "/about/why" },
-      { label: "Certificates", href: "/certificates" },
+      { label: "Testimonials", href: "/testimonials" },
       { label: "Timeline", href: "/about/timeline" }
     ]
   },
@@ -35,8 +35,8 @@ export const footerColumns = [
       { label: "Videos", href: "/videos" },
       { label: "Trello Board", href: "https://trello.com", isExternal: true },
       { label: "Location", href: "/about/location" },
-      { label: "Refund Policy", href: "/policy/refund" },
-      { label: "Cookie Policy", href: "/policy/cookie" }
+      { label: "Refund Policy", href: "/policies/refund" },
+      { label: "Cookie Policy", href: "/policies/cookie" }
     ]
   }
 ];

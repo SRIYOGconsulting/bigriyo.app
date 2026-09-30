@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 interface Feedbackform {
   firstname: string;

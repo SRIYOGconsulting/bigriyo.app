@@ -3,7 +3,7 @@
 import { services, teamMembers } from "@/data";
 import { countries } from "@/constants";
 import { useState } from "react";
-import Ribbon from "@/components/Ribbon";
+import Ribbon from "@/components/ui/Ribbon";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
