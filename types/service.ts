@@ -1,4 +1,4 @@
-export interface ServiceItem {
+export interface Service {
   slug: string;
   name: string;
   shortDesc: string;
@@ -11,6 +11,6 @@ export interface ServiceCategory {
   slug: string;
   name: string;
   description: string;
-  services: ServiceItem[];
+  services: Service[];
   image: string;
 }
