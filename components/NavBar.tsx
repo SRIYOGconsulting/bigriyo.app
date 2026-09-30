@@ -44,7 +44,7 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4 sm:px-6">
         <Link
           href="/"
-          className="flex lg:flex-col items-center gap-x-4 gap-y-2 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
+          className="flex items-center gap-4 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
           <Image src="/favicon/favicon.svg" alt="logo" width={48} height={48} />
           BIGRIYO
         </Link>
