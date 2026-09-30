@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CheckIcon } from "lucide-react";
 import { SERVICES_DATA } from "@/data";
@@ -5,16 +6,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface ServicePageProps {
-  params: Promise<{ category: string; slug: string }>;
+  params: Promise<{ slug: string }>;
+}
+
+function getServiceBySlug(slug: string) {
+  for (const category of SERVICES_DATA) {
+    const service = category.services.find((s) => s.slug === slug);
+    if (service) return service;
+  }
+  return null;
 }
 
 export async function generateStaticParams() {
-  const paths: { category: string; slug: string }[] = [];
+  const paths: { slug: string }[] = [];
 
   SERVICES_DATA.forEach((categoryItem) => {
     categoryItem.services.forEach((serviceItem) => {
       paths.push({
-        category: categoryItem.slug,
         slug: serviceItem.slug
       });
     });
@@ -23,10 +31,9 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: ServicePageProps) {
-  const { category: categorySlug, slug: serviceSlug } = await params;
-  const category = SERVICES_DATA.find((c) => c.slug === categorySlug);
-  const service = category?.services.find((s) => s.slug === serviceSlug);
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const { slug: serviceSlug } = await params;
+  const service = getServiceBySlug(serviceSlug);
 
   if (!service) return { title: "Service Not Found" };
 
@@ -37,43 +44,33 @@ export async function generateMetadata({ params }: ServicePageProps) {
 }
 
 export default async function ServiceDetailPage({ params }: ServicePageProps) {
-  const { category: categorySlug, slug: serviceSlug } = await params;
-  const category = SERVICES_DATA.find((c) => c.slug === categorySlug);
-  const service = category?.services.find((s) => s.slug === serviceSlug);
+  const { slug: serviceSlug } = await params;
+  const service = getServiceBySlug(serviceSlug);
 
-  if (!category || !service) notFound();
+  if (!service) notFound();
 
   return (
     <div className="pb-16">
-      <div className="relative left-[50%] right-[50%] -mx-[50vw] w-screen min-h-[360px] flex items-end overflow-hidden bg-muted mb-12">
+      <div className="relative left-[50%] right-[50%] -mx-[50vw] mb-12 flex min-h-[360px] w-screen items-end overflow-hidden bg-muted">
         <Image src={service.image} alt={service.name} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-        <div className="relative z-10 max-w-7xl container mx-auto px-4 md:px-8 pb-12">
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 pb-12 md:px-8">
           <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/services" className="hover:text-primary-foreground transition-colors">
+            <Link href="/repair" className="transition-colors hover:text-primary-foreground">
               Services
-            </Link>
-            <span>/</span>
-            <Link href={`/services/${category.slug}`} className="hover:text-primary-foreground transition-colors">
-              {category.name}
             </Link>
             <span>/</span>
             <span className="font-medium text-primary-foreground">{service.name}</span>
           </nav>
 
           <div className="max-w-3xl text-primary-foreground">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl drop-shadow-sm">{service.name}</h1>
-            <p className="mt-3 text-base sm:text-lg drop-shadow-sm">{service.shortDesc}</p>
+            <h1 className="text-3xl font-bold tracking-tight drop-shadow-sm sm:text-4xl md:text-5xl">{service.name}</h1>
+            <p className="mt-3 text-base drop-shadow-sm sm:text-lg">{service.shortDesc}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
                 href="/services/book"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book Appointment
-              </Link>
-              <Link
-                href={`/services/${category.slug}`}
-                className="rounded-lg border border-border/30 bg-black/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors hover:bg-primary-foreground/20">
-                Explore More in {category.name}
               </Link>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { SearchIcon, WrenchIcon } from "lucide-react";
 import { SERVICES_DATA } from "@/data";
-import ServiceCategoryItem from "@/components/service/ServiceItem";
 import ServiceSearchBar from "@/components/service/SerachBar";
+import ServiceItem from "@/components/service/ServiceItem";
 
 interface SearchPageProps {
   searchParams: Promise<{ query?: string }>;
@@ -30,7 +30,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   });
 
   return (
-    <div className="py-10 px-4 sm:px-6 lg:px-8">
+    <div className="py-10">
       <ServiceSearchBar initialQuery={query} />
       <div className="max-w-7xl mx-auto space-y-8 mt-12">
         {!query ? (
@@ -53,7 +53,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {results.map((service) => (
-              <ServiceCategoryItem key={service.slug} category={service.categorySlug} service={service} />
+              <ServiceItem key={service.slug} service={service} />
             ))}
           </div>
         )}

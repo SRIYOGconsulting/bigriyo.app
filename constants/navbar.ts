@@ -3,7 +3,7 @@ import { Home, Info, Briefcase, MessageSquare, Users, Phone } from "lucide-react
 export const navLinks = [
   { href: "/", title: "Home", icon: Home },
   { href: "/about", title: "About", icon: Info },
-  { href: "/services", title: "Services", icon: Briefcase },
+  { href: "/repair", title: "Services", icon: Briefcase },
   { href: "/contact/feedback", title: "Feedback", icon: MessageSquare },
   { href: "/about/team", title: "Team", icon: Users },
   { href: "/contact", title: "Contact", icon: Phone }

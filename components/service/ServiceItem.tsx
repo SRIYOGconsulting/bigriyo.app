@@ -2,16 +2,15 @@ import type { ServiceItem } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ServiceCategoryItemProps {
-  category: string;
+interface ServiceItemProps {
   service: ServiceItem;
 }
 
-export default function ServiceCategoryItem({ category, service }: ServiceCategoryItemProps) {
+export default function ServiceItem({ service }: ServiceItemProps) {
   return (
     <Link
       key={service.slug}
-      href={`/services/${category}/${service.slug}`}
+      href={`/repair/${service.slug}`}
       className="group flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-md">
       <div>
         <div className="relative h-44 w-full bg-muted">
