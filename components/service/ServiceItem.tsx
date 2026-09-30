@@ -1,9 +1,9 @@
-import type { ServiceItem } from "@/types";
+import type { Service } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
 interface ServiceItemProps {
-  service: ServiceItem;
+  service: Service;
 }
 
 export default function ServiceItem({ service }: ServiceItemProps) {

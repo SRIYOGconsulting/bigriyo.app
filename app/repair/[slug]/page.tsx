@@ -5,7 +5,7 @@ import { SERVICES_DATA } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ServicePageProps {
+interface ServiceDetailProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -31,7 +31,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ServiceDetailProps): Promise<Metadata> {
   const { slug: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
 
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   };
 }
 
-export default async function ServiceDetailPage({ params }: ServicePageProps) {
+export default async function ServiceDetails({ params }: ServiceDetailProps) {
   const { slug: serviceSlug } = await params;
   const service = getServiceBySlug(serviceSlug);
 
@@ -68,7 +68,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <p className="mt-3 text-base drop-shadow-sm sm:text-lg">{service.shortDesc}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
-                href="/services/book"
+                href="/repair/book"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book Appointment
               </Link>

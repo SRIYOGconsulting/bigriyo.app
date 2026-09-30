@@ -1,9 +1,10 @@
+import type { Metadata } from "next";
 import { SERVICES_DATA } from "@/data";
 import ServiceSearchBar from "@/components/service/SerachBar";
-import ServiceItem from "@/components/service/ServiceItem";
+import ServiceList from "@/components/service/ServiceList";
 import Image from "next/image";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Our Services | Service Catalog",
   description: "Browse our complete list of home, appliance, IT, and maintenance repair services."
 };
@@ -12,12 +13,12 @@ export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <ServiceSearchBar initialQuery="" />
-      <div className="mb-10 mt-12 font-semibold text-center">
-        <p className="text-xl">Browse Our Curated Service Catalog</p>
+      <div className="hidden md:block mb-10 mt-12 font-semibold text-center">
+        <p className="text-xl text-muted-foreground">Browse Our Curated Service Catalog</p>
         <p className="text-3xl">Specialized Repair and Maintenance Solutions</p>
       </div>
 
-      <div className="space-y-16">
+      <div className="space-y-16 mt-8 md:mt-0">
         {SERVICES_DATA.map((category) => (
           <section key={category.slug} className="flex flex-col gap-6">
             <div className="group relative flex min-h-[280px] items-end overflow-hidden rounded-xl border border-border transition-all hover:shadow-lg md:min-h-[320px]">
@@ -43,17 +44,7 @@ export default function ServicesPage() {
                 </span>
               </div>
             </div>
-
-            <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Available Services
-              </h3>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {category.services.map((service) => (
-                  <ServiceItem key={service.slug} service={service} />
-                ))}
-              </div>
-            </div>
+            <ServiceList services={category.services} />
           </section>
         ))}
       </div>
