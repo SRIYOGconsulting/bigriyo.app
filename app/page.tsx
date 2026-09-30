@@ -1,6 +1,6 @@
 import { certificates } from "@/constants";
 import { SERVICES_DATA } from "@/data";
-import ServiceCategoryItem from "@/components/service/ServiceItem";
+import ServiceItem from "@/components/service/ServiceItem";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="hidden sm:block absolute inset-0 -z-10">
           <Image
             src="/home/hero/desktop.jpg"
-            alt="BIGRIYO Pvt Ltd."
+            alt="BIGRIYO"
             fill
             className="object-cover object-bottom"
             sizes="100vw"
@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className="relative block sm:hidden w-full h-[350px]">
             <Image
               src="/home/hero/mobile.jpg"
-              alt="BIGRIYO Pvt Ltd"
+              alt="BIGRIYO"
               fill
               className="object-cover object-bottom"
               sizes="(max-width: 639px) 100vw, 50vw"
@@ -39,7 +39,7 @@ export default function HomePage() {
 
           <div className="flex flex-col justify-start text-foreground md:text-secondary-foreground z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 md:px-8">
             <div className="text-[23px] md:text-2xl font-semibold mb-3 opacity-90">Welcome to</div>
-            <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo Pvt Ltd!</div>
+            <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo!</div>
             <h1 className="text-[18px] max-w-[600px] leading-relaxed opacity-95">
               Professional repair center in Kathmandu, Nepal.
             </h1>
@@ -52,7 +52,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                href="/services/book"
+                href="/repair/book"
                 className="inline-block border-2 text-foreground md:text-secondary-foreground border-current py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
                 Book a Service
               </Link>
@@ -85,13 +85,13 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
           {SERVICES_DATA[1].services.slice(0, 3).map((service) => (
-            <ServiceCategoryItem key={service.slug} service={service} category={SERVICES_DATA[1].slug} />
+            <ServiceItem key={service.slug} service={service} />
           ))}
         </div>
         <div className="mt-12">
           <Link
-            href="/services"
-            className="rounded-lg bg-primary border-2 border-border px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+            href="/repair"
+            className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
             View More
           </Link>
         </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
         <div className="mt-12">
           <Link
             href="/certificates"
-            className="rounded-lg bg-primary border-2 border-border px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+            className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
             View More
           </Link>
         </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
         <div className="mt-12">
           <Link
             href="/about/blogs"
-            className="rounded-lg bg-primary border-2 border-border px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
+            className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
             View More
           </Link>
         </div>
