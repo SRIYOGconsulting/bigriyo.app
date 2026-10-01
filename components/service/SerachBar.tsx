@@ -13,7 +13,8 @@ export default function ServiceSearchBar({ initialQuery }: ServiceSearchBarProps
   const router = useRouter();
 
   const handleSearch = () => {
-    if (searchQuery.trim() !== "") router.push(`/services/search?query=${encodeURIComponent(searchQuery)}`);
+    if (searchQuery.trim() !== "") router.push(`/repair?query=${encodeURIComponent(searchQuery)}`);
+    else router.push("/repair");
   };
 
   return (

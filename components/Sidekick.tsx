@@ -1,57 +1,6 @@
-"use client";
-
-import { QuickContactMenu } from "@/components/sidekick/QuickActions";
-import { SocialItem } from "@/components/sidekick/SocialItem";
-import { siteData } from "@/constants";
-import { useState } from "react";
-
 const Sidekick: React.FC = () => {
-  const [show, setShow] = useState<boolean>(true);
-  const [menu, setMenu] = useState<boolean>(false);
-
-  const openMenu = (): void => {
-    setShow(false);
-    setMenu(true);
-  };
-
-  const closeMenu = (): void => {
-    setMenu(false);
-    setTimeout(() => setShow(true), 200);
-  };
-
   return (
     <div className="fixed right-0 top-[48%] sm:top-[30%] min-h-screen z-20">
-      {/* Collapsed Sidebar */}
-      {show && (
-        <div className="relative cursor-pointer hover:scale-[1.01] transition-all duration-200">
-          <div
-            onClick={openMenu}
-            className="hidden md:flex flex-col justify-center items-center gap-2 rounded-tl-xl rounded-bl-xl px-3 py-3">
-            {siteData.socialLinks.map((link, idx) => (
-              <SocialItem key={link.name} item={link} isLast={idx === siteData.socialLinks.length - 1} />
-            ))}
-          </div>
-
-          <div
-            onClick={openMenu}
-            className="hidden md:flex flex-col justify-center items-center gap-2 rounded-tl-xl rounded-bl-xl sidekick px-5 py-3">
-            <div className="flex flex-col items-center justify-center gap-1">
-              <img
-                src={siteData.support.icon}
-                alt={siteData.support.name}
-                height={40}
-                width={40}
-                className="hover:scale-[1.15] transition-all duration-200"
-              />
-              <p className="text-[9px] font-bold text-[#888888]">{siteData.support.name}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Expanded Quick Contact Menu */}
-      <QuickContactMenu data={siteData.quickContact} menu={menu} onClose={closeMenu} />
-
       {/* Floating Action Buttons */}
       <div className="absolute top-[54%] right-4">
         <div className="relative flex items-center justify-center group mb-6">

@@ -12,7 +12,6 @@ const RoadBlock = () => {
   const [showRoadBlock, setShowRoadBlock] = useState(false);
   const [imgSrc, setImgSrc] = useState(DEFAULT_IMAGE);
   const [displayTimeLeft, setDisplayTimeLeft] = useState(5);
-  const [formattedDate, setFormattedDate] = useState("");
   const [isAdDay, setIsAdDay] = useState(false);
   const usedFallback = useRef(false);
 
@@ -37,15 +36,9 @@ const RoadBlock = () => {
     const month = today.toLocaleString("en-US", { month: "long" }).toLowerCase();
     const hasAd = AVAILABLE[month]?.includes(day) ?? false;
     const image = AVAILABLE[month]?.includes(day) ? `/roadblock/${month}/${day}.jpg` : DEFAULT_IMAGE;
-    const displayStr = today.toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric"
-    });
 
     setIsAdDay(hasAd);
     setImgSrc(image);
-    setFormattedDate(displayStr);
   }, []);
 
   useEffect(() => {
@@ -54,7 +47,7 @@ const RoadBlock = () => {
 
   useEffect(() => {
     if (!showRoadBlock) return;
-    const timer = setTimeout(onClose, 20000);
+    const timer = setTimeout(onClose, 10000);
     return () => clearTimeout(timer);
   }, [onClose, showRoadBlock]);
 
@@ -69,12 +62,6 @@ const RoadBlock = () => {
   return (
     <div className="fixed inset-0 bg-primary-foreground z-50 flex items-center justify-center">
       <div className="relative">
-        {formattedDate && (
-          <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full z-10 pointer-events-none">
-            {formattedDate}
-          </div>
-        )}
-
         <button
           type="button"
           onClick={displayTimeLeft <= 0 ? onClose : undefined}

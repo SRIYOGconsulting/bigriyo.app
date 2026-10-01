@@ -7,7 +7,7 @@ type RibbonProps = {
   showFontSize: boolean;
 };
 
-const Ribbon: React.FC<RibbonProps> = ({ name, showFontSize = false }) => {
+const Ribbon: React.FC<RibbonProps> = ({ name, showFontSize }) => {
   return (
     <div className="bg-secondary text-secondary-foreground">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-12 px-4 md:px-8 w-full">

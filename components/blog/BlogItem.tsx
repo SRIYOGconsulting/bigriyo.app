@@ -14,14 +14,9 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => (
     className="group bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-200 flex flex-col overflow-hidden">
     <div className="p-6 flex-1 flex flex-col justify-between">
       <div>
-        <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="text-xs bg-secondary text-secondary-foreground px-2.5 py-1 rounded-md font-medium">
-            {blog.category}
-          </span>
-          <div className="flex items-center text-xs text-muted-foreground gap-1">
-            <CalendarIcon className="w-3.5 h-3.5" />
-            <time dateTime={blog.published_date}>{blog.published_date}</time>
-          </div>
+        <div className="flex items-center text-xs text-muted-foreground gap-1 mb-2">
+          <CalendarIcon className="w-3.5 h-3.5" />
+          <time dateTime={blog.published_date}>{blog.published_date}</time>
         </div>
         <h2 className="text-xl font-bold leading-snug mb-4 line-clamp-2">{blog.title}</h2>
         <div className="relative w-full aspect-video overflow-hidden rounded-xl bg-muted">
