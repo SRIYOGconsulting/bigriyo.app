@@ -1,9 +1,6 @@
 export const siteData = {
   socialLinks: [
     { name: "Whatsapp", icon: "/icons/whatsapp.svg", url: "https://sriyog.com" },
-    { name: "Messenger", icon: "/icons/messenger.svg", url: "https://sriyog.com" },
-    { name: "Signal", icon: "/icons/signal.svg", url: "https://sriyog.com" },
-    { name: "Discord", icon: "/icons/discord.svg", url: "https://sriyog.com" },
     { name: "Phone", icon: "/icons/phone.svg", url: "https://sriyog.com" }
   ],
   support: { name: "Support", icon: "/icons/Frame.svg" },

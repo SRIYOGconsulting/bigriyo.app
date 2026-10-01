@@ -2,11 +2,11 @@ export const footerColumns = [
   {
     heading: "Browse More",
     links: [
-      { label: "Mission & Vision", href: "/about/vision" },
-      { label: "History", href: "/about/history" },
-      { label: "Why Us", href: "/about/why" },
+      { label: "Mission & Vision", href: "/vmgo" },
+      { label: "History", href: "/history" },
+      { label: "Why Us", href: "/why" },
       { label: "Testimonials", href: "/testimonials" },
-      { label: "Timeline", href: "/about/timeline" }
+      { label: "Timeline", href: "/timeline" }
     ]
   },
   {
@@ -14,16 +14,16 @@ export const footerColumns = [
     links: [
       { label: "Gallery", href: "/gallery" },
       { label: "Career", href: "/career" },
-      { label: "QR Code", href: "/contact/qr" },
+      { label: "QR Code", href: "/qr" },
       { label: "Glossary", href: "/glossary" },
-      { label: "Message", href: "/about/message" }
+      { label: "Message", href: "/message" }
     ]
   },
   {
     heading: "Links",
     links: [
       { label: "Calendar", href: "/calendar" },
-      { label: "FAQ", href: "/contact/faq" },
+      { label: "FAQ", href: "/faq" },
       { label: "Payment", href: "/payment" },
       { label: "Internship", href: "/internship" },
       { label: "Download", href: "/download" }
@@ -34,9 +34,9 @@ export const footerColumns = [
     links: [
       { label: "Videos", href: "/videos" },
       { label: "Trello Board", href: "https://trello.com", isExternal: true },
-      { label: "Location", href: "/about/location" },
-      { label: "Refund Policy", href: "/policies/refund" },
-      { label: "Cookie Policy", href: "/policies/cookie" }
+      { label: "Location", href: "/location" },
+      { label: "Refund Policy", href: "/refund" },
+      { label: "Cookie Policy", href: "/cookie" }
     ]
   }
 ];
@@ -49,10 +49,10 @@ export const contactBoxLinks = [
     label: "bigriyo@sriyog.com"
   },
   {
-    href: "tel:+977014548068",
+    href: "tel:+9779852024365",
     src: "/icons/phone.svg",
     alt: "phone",
-    label: "+977-01-4548068"
+    label: "+977-98520-24365"
   },
   {
     href: "https://wa.me/9779852024365",

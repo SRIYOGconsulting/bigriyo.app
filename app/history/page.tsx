@@ -9,10 +9,10 @@ export default function History() {
       {/* Header */}
       <Ribbon name="History" showFontSize={false} />
 
-      <div className="max-w-6xl mx-auto px-4 md:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-16">
         {/* Introduction Section */}
-        <section>
-          <h2 className="text-2xl font-bold  mb-4">Our Beginning</h2>
+        <section className="my-4">
+          <h2 className="text-2xl font-bold">Our Beginning</h2>
           <p className=" leading-relaxed">
             SRIYOG Consulting Pvt. Ltd. began its journey with a mission to bring advanced digital transformation to
             industries that needed it the most. What started as a small initiative has now grown into a trusted

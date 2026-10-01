@@ -4,8 +4,8 @@ export const navLinks = [
   { href: "/", title: "Home", icon: Home },
   { href: "/about", title: "About", icon: Info },
   { href: "/repair", title: "Services", icon: Briefcase },
-  { href: "/contact/feedback", title: "Feedback", icon: MessageSquare },
-  { href: "/about/team", title: "Team", icon: Users },
+  { href: "/feedback", title: "Feedback", icon: MessageSquare },
+  { href: "/team", title: "Team", icon: Users },
   { href: "/contact", title: "Contact", icon: Phone }
 ];
 
