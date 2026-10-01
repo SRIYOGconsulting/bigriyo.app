@@ -1,143 +1,145 @@
 export const faqs = [
   {
     id: 1,
-    question: "Where is your repair center located in Kathmandu?",
+    question: "What is BIGRIYO?",
     answer:
-      "Our main service center is conveniently located in New Road, Kathmandu, with easy access and dedicated customer parking."
+      "BIGRIYO is a digital service marketplace that connects customers with skilled professionals for home, personal, repair, maintenance, and other on-demand services."
   },
   {
     id: 2,
-    question: "What types of devices do you repair?",
+    question: "What services are available on BIGRIYO?",
     answer:
-      "We specialize in repairing smartphones, laptops, MacBooks, tablets, and gaming consoles across all major brands like Apple, Samsung, Dell, HP, Lenovo, and Asus."
+      "BIGRIYO can connect customers with professionals for services such as plumbing, electrical work, appliance repair, cleaning, carpentry, gardening, painting, pest control, beauty services, vehicle services, and other specialized services."
   },
   {
     id: 3,
-    question: "Do you offer free diagnostic services?",
+    question: "How do I book a service on BIGRIYO?",
     answer:
-      "Yes, we provide a free initial checkup and diagnostic estimate before starting any repair work on your device."
+      "Select the service you need, provide your location and preferred schedule, review the available options, and submit your booking request."
   },
   {
     id: 4,
-    question: "How long does a standard repair take?",
-    answer:
-      "Most common repairs—such as screen replacements, battery swaps, and charging port fixes—are completed within 1 to 3 hours. Complex motherboard repairs may take 24–48 hours."
+    question: "Can I book a service from my mobile phone?",
+    answer: "Yes. BIGRIYO is designed to make service discovery and booking convenient through digital devices."
   },
   {
     id: 5,
-    question: "Do you use genuine and original spare parts?",
+    question: "How do I find a professional near me?",
     answer:
-      "Yes, we use 100% original OEM parts or Grade-A certified replacement components to ensure maximum quality and longevity for your device."
+      "Enter your service location and select the required service. BIGRIYO can display available professionals based on service category and location."
   },
   {
     id: 6,
-    question: "Do your repairs come with a warranty?",
-    answer: "All our repairs come with a standard 3 to 6-month service warranty covering both parts and labor."
+    question: "Can I choose a specific professional?",
+    answer:
+      "Where the service and availability allow it, customers can select a preferred professional based on their profile, experience, availability, ratings, and other available information."
   },
   {
     id: 7,
-    question: "Do you offer pickup and delivery services within Kathmandu Valley?",
+    question: "How do I know whether a professional is verified?",
     answer:
-      "Yes, we provide doorstep pickup and drop-off services across Kathmandu, Lalitpur, and Bhaktapur for a nominal convenience fee."
+      "Professional profiles may include verification information provided by BIGRIYO. Customers should review the available profile details before confirming a booking."
   },
   {
     id: 8,
-    question: "What should I do if my phone or laptop suffers water damage?",
+    question: "How much does a BIGRIYO service cost?",
     answer:
-      "Turn off the device immediately, do not charge it, and bring it to our repair center as quickly as possible for professional ultrasonic cleaning and liquid damage restoration."
+      "Prices depend on the service, work required, location, materials, complexity, and professional charges. The applicable price or estimate will be provided according to the service."
   },
   {
     id: 9,
-    question: "Can you fix broken laptop screens and hinges?",
+    question: "Can I get a quotation before the work starts?",
     answer:
-      "Yes, we replace damaged screens and repair or reconstruct broken laptop display hinges using specialized fabrication tools."
+      "Yes, for services requiring inspection or detailed pricing, a professional may assess the requirement and provide an estimate or quotation before starting the work."
   },
   {
     id: 10,
-    question: "Do you perform chip-level motherboard repairs?",
+    question: "Are material costs included in the service price?",
     answer:
-      "Yes, our certified technicians are trained in advanced IC micro-soldering and chip-level repair for dead motherboards, power issues, and display driver failures."
+      "This depends on the service and quotation. If materials or replacement parts are required, their costs should be clarified with the professional before proceeding."
   },
   {
     id: 11,
-    question: "How can I check the status of my repair?",
+    question: "How can I pay for my service?",
     answer:
-      "You can track your repair real-time on our website using your repair ticket number or message us directly on WhatsApp."
+      "Available payment methods may include digital payments and other payment options supported by BIGRIYO or the service provider."
   },
   {
     id: 12,
-    question: "Is my personal data safe during the repair process?",
+    question: "Can I pay the professional directly?",
     answer:
-      "We strictly adhere to data privacy protocols. Your personal files, photos, and accounts remain confidential and untouched during servicing."
+      "Payment arrangements depend on the specific service and BIGRIYO’s applicable payment process. Customers should follow the payment instructions shown during booking."
   },
   {
     id: 13,
-    question: "Do you offer data recovery services from damaged devices?",
+    question: "Can I cancel my booking?",
     answer:
-      "Yes, we provide high-success data recovery from dead hard drives, corrupt SSDs, water-damaged phones, and formatted storage media."
+      "Cancellation may be possible depending on the booking status and applicable cancellation policy. Any applicable cancellation charges will depend on the circumstances."
   },
   {
     id: 14,
-    question: "What payment methods do you accept?",
-    answer: "We accept Cash, Fonepay, eSewa, Khalti, Bank Transfers, and major credit/debit cards."
+    question: "Can I reschedule my appointment?",
+    answer:
+      "Yes, where available. Customers can request a different date or time based on the professional’s availability and the applicable rescheduling policy."
   },
   {
     id: 15,
-    question: "Can I upgrade my laptop’s RAM and SSD at your center?",
+    question: "What happens if the professional does not arrive?",
     answer:
-      "Yes, we provide quick memory and SSD storage upgrades to speed up your laptop or desktop, usually completed within 30 minutes."
+      "If a professional does not arrive for a confirmed appointment, contact BIGRIYO support and provide your booking details so the issue can be reviewed."
   },
   {
     id: 16,
-    question: "What are your operating hours?",
-    answer: "We are open 6 days a week, Sunday through Friday, from 9:30 AM to 6:30 PM."
+    question: "What happens if I am not satisfied with the service?",
+    answer:
+      "Contact BIGRIYO support with your booking information and explain the issue. BIGRIYO can review the service details and help determine the appropriate next step."
   },
   {
     id: 17,
-    question: "Do you service commercial clients or corporate fleets?",
+    question: "Can I rate and review a professional?",
     answer:
-      "Yes, we offer custom Annual Maintenance Contracts (AMC) and bulk hardware repair services for businesses, schools, and offices in Nepal."
+      "Yes. After completing a service, customers may be able to provide a rating and review based on their actual service experience."
   },
   {
     id: 18,
-    question: "Do I need to make an appointment before visiting?",
+    question: "Are BIGRIYO professionals experienced?",
     answer:
-      "Walk-ins are always welcome! However, booking an online appointment helps us prioritize your job and reduce waiting time."
+      "BIGRIYO aims to connect customers with skilled professionals. Professional profiles may contain information about their skills, experience, services, ratings, and verification status."
   },
   {
     id: 19,
-    question: "What if my device cannot be fixed?",
+    question: "Can I request an emergency service?",
     answer:
-      "If a device is unrepairable or the repair cost exceeds the value of the device, you owe us nothing under our 'No Fix, No Fee' policy."
+      "Emergency or urgent services may be available for selected categories and locations. Availability depends on the service type and professionals available at the time."
   },
   {
     id: 20,
-    question: "Do you sell refurbished laptops or original accessories?",
+    question: "Does BIGRIYO provide services outside major cities?",
     answer:
-      "Yes, we offer certified pre-owned laptops with warranty as well as genuine chargers, cables, and protective accessories."
+      "Service availability depends on the location and the number of professionals operating in that area. Enter your location to check the services available nearby."
   },
   {
     id: 21,
-    question: "How can I request a price quote before bringing my device in?",
+    question: "Can businesses use BIGRIYO?",
     answer:
-      "You can call us directly, send us a photo of the damage on WhatsApp, or fill out the quick quotation form on our website."
+      "Yes. Businesses, offices, hotels, restaurants, institutions, and other organizations can use applicable BIGRIYO services for their maintenance and operational requirements."
   },
   {
     id: 22,
-    question: "Do you repair gaming PCs and custom rigs?",
+    question: "How can I become a BIGRIYO professional?",
     answer:
-      "Yes, we build, diagnose, clean, and repair high-performance gaming desktops, graphics cards, and custom liquid-cooling systems."
+      "Service professionals can register through the professional onboarding process and provide the required personal, professional, service, and verification information."
   },
   {
     id: 23,
-    question: "What should I bring along when handing over my device?",
+    question: "How can I contact BIGRIYO customer support?",
     answer:
-      "Please bring the device along with its power adapter/charger. You do not need to bring original boxes or non-essential accessories."
+      "Customers can use the support or contact options available through BIGRIYO to submit questions, booking issues, complaints, or service-related concerns."
   },
   {
     id: 24,
-    question: "Do you provide expressive or priority repair services?",
+    question: "Is BIGRIYO responsible for the work performed by professionals?",
     answer:
-      "Yes, we offer an Express Repair service for urgent requests where repairs are prioritized and completed within 60 minutes."
+      "BIGRIYO facilitates connections between customers and service professionals. The specific responsibilities, warranties, guarantees, refunds, and service policies depend on the service, professional, booking terms, and applicable BIGRIYO policies."
   }
 ];
