@@ -97,14 +97,15 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-[15px] leading-relaxed mb-4">
-              Established on June 14, 2018, BIGRIYO, based in Kathmandu, Nepal, is a leading provider of professional
-              hygiene and deep cleaning solutions dedicated to delivering healthy, spotless environments across the
-              residential, commercial, and hospitality sectors.
+              BIGRIYO is a repairing service aggregator digital platform based in Kamalpokhari, Kathmandu, Nepal,
+              connecting customers with professional, reliable, genuine, insured, and vetted repair service providers
+              for their homes, offices, businesses, or wherever repair solutions are needed.
             </p>
             <p className="text-[15px] leading-relaxed">
-              Our mission is to empower homes and businesses throughout the Valley with reliable, eco-friendly, and
-              standardized cleaning services that elevate indoor hygiene, protect property value, and foster safe,
-              healthy spaces.
+              Our mission is to connect customers with the right service professionals based on their expertise, service
+              area, availability, and specific repair requirements. By leveraging technology and AI, BIGRIYO aims to
+              make finding and hiring the right repair professional simple, smart, reliable, and efficient while
+              creating better opportunities for skilled professionals to serve customers.
             </p>
           </div>
 
@@ -138,16 +139,16 @@ export default function Footer() {
         {/* FOOTER BOTTOM */}
         <section className="max-w-7xl mx-auto px-4 md:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
           <p className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
-            <span>All Rights Reserved. &copy; 2018-{new Date().getFullYear()}</span>
-            <span>BIGRIYO Pvt. Ltd.</span>
+            <span>All Rights Reserved. © 2018-{new Date().getFullYear()}</span>
+            <span>BIGRIYO ( A SRIYOG Consulting Initiative )</span>
           </p>
 
           <div className="flex gap-4 justify-center md:justify-end font-semibold mt-2 lg:mt-0">
-            <Link href="/policies/privacy">Privacy Policy</Link>
+            <Link href="/privacy">Privacy Policy</Link>
             <span>|</span>
             <Link href="/policies/disclaimer">Disclaimer</Link>
             <span>|</span>
-            <Link href="policies/terms">Terms of Service</Link>
+            <Link href="policies/tos">Terms of Service</Link>
           </div>
         </section>
       </footer>

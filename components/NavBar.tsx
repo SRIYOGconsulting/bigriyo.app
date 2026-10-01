@@ -69,14 +69,14 @@ export default function NavBar() {
           </button>
 
           <Link
-            href="/career"
+            href="/book"
             className="border-2 border-secondary bg-secondary text-secondary-foreground font-medium px-4 py-2 rounded-lg hover:bg-transparent dark:hover:text-foreground hover:text-secondary transition-all">
-            Career
+            Book a Service
           </Link>
           <Link
-            href="/notice"
+            href="/login"
             className="border-2 text-secondary border-secondary py-2 px-6 rounded-md hover:text-white dark:text-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
-            Notice
+            Vendor Login
           </Link>
         </div>
 

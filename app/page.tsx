@@ -40,9 +40,9 @@ export default function HomePage() {
 
           <div className="flex flex-col justify-start text-foreground md:text-secondary-foreground z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 md:px-8">
             <div className="text-[23px] md:text-2xl font-semibold mb-3 opacity-90">Welcome to</div>
-            <div className="font-bold text-3xl md:text-5xl mb-6">Bigriyo!</div>
+            <div className="font-bold text-3xl md:text-5xl mb-6">BIGRIYO!</div>
             <h1 className="text-[18px] max-w-[600px] leading-relaxed opacity-95">
-              Professional repair center in Kathmandu, Nepal.
+              Professional repairing services in Kathmandu, Nepal.
             </h1>
 
             <div className="mt-8 flex gap-4 font-semibold">
@@ -53,7 +53,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                href="/repair/book"
+                href="/book"
                 className="inline-block border-2 text-foreground md:text-secondary-foreground border-current py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
                 Book a Service
               </Link>
@@ -84,7 +84,7 @@ export default function HomePage() {
 
       <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Top Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {SERVICES_DATA[1].services.slice(0, 3).map((service) => (
             <ServiceItem key={service.slug} service={service} />
           ))}
@@ -93,14 +93,14 @@ export default function HomePage() {
           <Link
             href="/repair"
             className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
-            View More
+            View All Repair Services
           </Link>
         </div>
       </section>
 
       <section className="py-12 md:pt-24 md:pb-32 px-4 md:px-8 bg-muted">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Happy Stories</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {certificates.slice(0, 3).map((cert, index) => (
             <div
               key={index}
@@ -119,18 +119,11 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/testimonials"
-            className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
-            View More
-          </Link>
-        </div>
       </section>
 
       <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Latest Blogs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.slice(0, 3).map((blog) => (
             <BlogItem key={blog.id} blog={blog} />
           ))}
@@ -139,7 +132,7 @@ export default function HomePage() {
           <Link
             href="/blogs"
             className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
-            View More
+            View All Blogs
           </Link>
         </div>
       </section>

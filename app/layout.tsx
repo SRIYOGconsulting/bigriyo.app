@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Bigriyo",
-  description: "Kei Bigriyo? Hamro Yaad Aayo. Na Aaye Pachtayo!"
+  title: "BIGRIYO! - Professional Repair Service at your Home",
+  description: "Professional Repairing services, here, in Kathmandu, Nepal."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

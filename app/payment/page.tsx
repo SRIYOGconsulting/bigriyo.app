@@ -39,11 +39,11 @@ const Payment = () => {
 
           {/* ===== Right: QR Code Section ===== */}
           <div className="card flex flex-col justify-center items-center border  rounded-3xl w-full max-w-sm mx-auto shadow-sm">
-            {/* <img
+            <img
               src="/images/payment/image.webp"
               alt="Sriyog Consulting Logo"
               className="w-48 sm:w-60 mb-4 object-contain"
-            /> */}
+            />
             <Image
               width={600}
               height={800}
@@ -57,25 +57,6 @@ const Payment = () => {
               <p>Account No: 00701017502051</p>
               <p>Branch: Kathmandu</p>
               <p>Bank: Nabil Bank Ltd.</p>
-
-              <div className="flex flex-col items-center gap-1 pt-3">
-                <div className="flex items-center gap-2">
-                  <img src="/icons/phone.svg" alt="Phone" className="w-4 h-4" />
-                  <a href="tel:9779851160868">+977 9851160868</a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <img src="/icons/email.svg" alt="Mail" className="w-4 h-4" />
-                  <a href="mailto:info@sriyog.com.np">info@sriyog.com.np</a>
-                </div>
-              </div>
-
-              <a
-                href="https://www.sriyogconsulting.com"
-                target="_blank"
-                rel="noreferrer"
-                className="underline block pt-2 font-medium">
-                www.sriyogconsulting.com
-              </a>
             </div>
           </div>
         </div>
