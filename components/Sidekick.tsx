@@ -1,11 +1,14 @@
 import BacktoTop from "@/components/ui/BacktoTop";
+import Link from "next/link";
 
 const Sidekick: React.FC = () => {
   return (
     <div className="fixed right-4 bottom-32 z-20 flex flex-col items-center gap-6">
       <BacktoTop />
       {/* Phone Icon */}
-      <div className="relative group cursor-pointer bg-secondary p-3 rounded-full animate-phone-ring">
+      <Link
+        href="tel:+9779852024365"
+        className="relative group cursor-pointer bg-secondary p-3 rounded-full animate-phone-ring">
         <div className="absolute inset-0 rounded-full bg-secondary opacity-0 group-hover:opacity-75 animate-ping transition pointer-events-none" />
         <svg
           width="28"
@@ -19,10 +22,10 @@ const Sidekick: React.FC = () => {
             fill="#ebebeb"
           />
         </svg>
-      </div>
+      </Link>
 
       {/* WhatsApp Icon */}
-      <div className="cursor-pointer bg-secondary p-3 rounded-full animate-bounce">
+      <Link href="https://wa.me/9779852024365" className="cursor-pointer bg-secondary p-3 rounded-full animate-bounce">
         <svg width="28" height="28" viewBox="0 0 277 270" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             fillRule="evenodd"
@@ -33,7 +36,7 @@ const Sidekick: React.FC = () => {
             strokeWidth="0.008"
           />
         </svg>
-      </div>
+      </Link>
     </div>
   );
 };
