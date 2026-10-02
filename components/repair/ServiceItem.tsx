@@ -25,10 +25,10 @@ export default function ServiceItem({ service }: ServiceItemProps) {
           <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{service.shortDesc}</p>
         </div>
       </div>
-      <div className="p-4 pt-0">
+      <div className="p-4 pt-0 mb-2">
         <Link
           href={`/repair/${service.slug}`}
-          className="inline-flex w-full items-center justify-center rounded-lg bg-secondary border border-border px-6 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          className="rounded-lg bg-secondary border border-border px-6 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           Browse More
         </Link>
       </div>

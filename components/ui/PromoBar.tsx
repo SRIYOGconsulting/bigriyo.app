@@ -20,7 +20,7 @@ export default function PromoBar() {
               -10%
             </span>
           </div>
-          <span className="hidden md:block">BIGRIYO is currently offering 10% disconnts for Dashain & Dipawali!</span>
+          <span className="hidden md:block">BIGRIYO is currently offering 10% disconnt for Dashain & Dipawali!</span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <button

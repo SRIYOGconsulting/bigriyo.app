@@ -7,7 +7,8 @@ const BacktoTop = () => {
   const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setShowBackToTopBtn(window.scrollY > 100);
+    const handleScroll = () => setShowBackToTopBtn(window.scrollY > 0);
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => removeEventListener("scroll", handleScroll);
@@ -21,8 +22,8 @@ const BacktoTop = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to Top"
-      className="fixed bottom-[10%] right-4 z-50 rounded-full bg-secondary text-secondary-foreground md:bottom-[20%] border border-border p-2 cursor-pointer">
-      <ArrowUpIcon className="h-8 w-8 transition-transform duration-200 hover:scale-110" />
+      className="group cursor-pointer bg-secondary p-3 rounded-full">
+      <ArrowUpIcon className="h-7 w-7 text-secondary-foreground transition-transform group-hover:scale-110" />
     </button>
   );
 };

@@ -44,8 +44,8 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-4 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
-          <Image src="/favicon/favicon.svg" alt="logo" width={48} height={48} />
+          className="flex items-center gap-3 md:gap-4 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
+          <Image src="/favicon/favicon.svg" alt="logo" width={48} height={48} className="h-8 w-8 md:h-12 md:w-12" />
           BIGRIYO
         </Link>
         <div className="hidden lg:flex items-center space-x-6">
@@ -75,7 +75,7 @@ export default function NavBar() {
           </Link>
           <Link
             href="/login"
-            className="border-2 text-secondary border-secondary py-2 px-6 rounded-md hover:text-white dark:text-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
+            className="border-2 text-secondary border-secondary px-4 py-2 rounded-md hover:text-secondary-foreground dark:text-foreground hover:bg-secondary transition-all duration-300 cursor-pointer">
             Vendor Login
           </Link>
         </div>
