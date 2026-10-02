@@ -8,6 +8,18 @@ import Link from "next/link";
 const DEFAULT_IMAGE = "/roadblock/default/default.jpg";
 const SEEN_KEY = "roadblock_seen_v3";
 
+const getCookie = (name: string): string | null => {
+  if (typeof document === "undefined") return null;
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(";").shift() ?? null;
+  return null;
+};
+
+const setCookie = (name: string, value: string, maxAgeSeconds: number) => {
+  document.cookie = `${name}=${value}; path=/; max-age=${maxAgeSeconds}; SameSite=Lax`;
+};
+
 const RoadBlock = () => {
   const [showRoadBlock, setShowRoadBlock] = useState(false);
   const [imgSrc, setImgSrc] = useState(DEFAULT_IMAGE);
@@ -16,7 +28,8 @@ const RoadBlock = () => {
   const usedFallback = useRef(false);
 
   const onClose = useCallback(() => {
-    sessionStorage.setItem(SEEN_KEY, "true");
+    // Set cookie to expire in 24 hours (86,400 seconds)
+    setCookie(SEEN_KEY, "true", 86400);
     setShowRoadBlock(false);
   }, []);
 
@@ -31,23 +44,26 @@ const RoadBlock = () => {
   };
 
   useEffect(() => {
+    // 1. Check cookie status first
+    const hasSeen = getCookie(SEEN_KEY);
+    if (!hasSeen) {
+      setShowRoadBlock(true);
+    }
+
+    // 2. Set up ad status and image source
     const today = new Date();
     const day = today.getDate();
     const month = today.toLocaleString("en-US", { month: "long" }).toLowerCase();
     const hasAd = AVAILABLE[month]?.includes(day) ?? false;
-    const image = AVAILABLE[month]?.includes(day) ? `/roadblock/${month}/${day}.jpg` : DEFAULT_IMAGE;
+    const image = hasAd ? `/roadblock/${month}/${day}.jpg` : DEFAULT_IMAGE;
 
     setIsAdDay(hasAd);
     setImgSrc(image);
   }, []);
 
   useEffect(() => {
-    if (!sessionStorage.getItem(SEEN_KEY)) setShowRoadBlock(true);
-  }, []);
-
-  useEffect(() => {
     if (!showRoadBlock) return;
-    const timer = setTimeout(onClose, 10000);
+    const timer = setTimeout(onClose, 15000);
     return () => clearTimeout(timer);
   }, [onClose, showRoadBlock]);
 
