@@ -1,6 +1,6 @@
 import { GroupedGlossaryData } from "@/types";
 
-export const GLOSSARY_DATA: GroupedGlossaryData = {
+export const glossaryList: GroupedGlossaryData = {
   A: [
     { title: "AC Repair", description: "Inspection, servicing, and repair of air-conditioning systems." },
     { title: "Appliance Repair", description: "Repair and maintenance of household electrical appliances." },

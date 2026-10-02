@@ -1,21 +1,21 @@
-export const teamMembers = [
+export const team = [
   {
-    name: "Prakash",
-    designation: "Project Manager",
+    name: "Pracas",
+    designation: "CTO",
     img: "/contact/1.png",
-    email: "prakash@sriyog.com"
+    email: "pracas@sriyog.com"
+  },
+  {
+    name: "Prekshya",
+    designation: "Field Supervisor ",
+    img: "/contact/2.png",
+    email: "prekshya@sriyog.com"
   },
   {
     name: "Bijay",
-    designation: "Internship Coordinator",
-    img: "/contact/2.png",
+    designation: " Business Manager ",
+    img: "/contact/1.png",
     email: "bijay@sriyog.com"
-  },
-  {
-    name: "PRACAS",
-    designation: "CTO",
-    img: "/contact/3.png",
-    email: "pracas@sriyog.com"
   }
 ];
 
@@ -24,4 +24,15 @@ export const services = [
   { icon: "/icons/3.svg", title: "Workshop", desc: "Hands-in IT workshop & seminar." },
   { icon: "/icons/4.svg", title: "Meeting", desc: "Book a Meeting to discuss and clarify your needs." },
   { icon: "/icons/shield.svg", title: "Internship", desc: "Get experiences in real time projects." }
+];
+
+export const teamMembers = [
+  { id: 1, name: "Alisha", role: "MERN Stack", image: "/team/2.png" },
+  { id: 2, name: "Bitika", role: "React.Js", image: "/team/3.png" },
+  { id: 3, name: "Hammoud", role: "MERN Stack", image: "/team/4.png" },
+  { id: 4, name: "Khaleed", role: "Full Stack", image: "/team/5.png" },
+  { id: 5, name: "Samyog", role: "Full stack", image: "/team/6.png" },
+  { id: 6, name: "Sanish", role: "Full stack", image: "/team/7.png" },
+  { id: 7, name: "Smriti", role: "React.js", image: "/team/8.png" },
+  { id: 8, name: "Sneha", role: "MERN Stack", image: "/team/9.png" }
 ];
