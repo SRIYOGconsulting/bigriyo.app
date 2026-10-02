@@ -1,17 +1,5 @@
-"use client";
-
+import { teamMembers } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
-
-const teamMembers = [
-  { id: 1, name: "Alisha", role: "MERN Stack", image: "/team/2.png" },
-  { id: 2, name: "Bitika", role: "React.Js", image: "/team/3.png" },
-  { id: 3, name: "Hammoud", role: "MERN Stack", image: "/team/4.png" },
-  { id: 4, name: "Khaleed", role: "Full Stack", image: "/team/5.png" },
-  { id: 5, name: "Samyog", role: "Full stack", image: "/team/6.png" },
-  { id: 6, name: "Sanish", role: "Full stack", image: "/team/7.png" },
-  { id: 7, name: "Smriti", role: "React.js", image: "/team/8.png" },
-  { id: 8, name: "Sneha", role: "MERN Stack", image: "/team/9.png" }
-];
 
 const OurTeam = () => {
   return (

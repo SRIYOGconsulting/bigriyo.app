@@ -1,9 +1,7 @@
-"use client";
-
-import { qrCardData } from "@/constants";
+import { qrCardData } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 
-function Qr() {
+const Qr = () => {
   return (
     <div>
       {/* Page Header */}
@@ -36,6 +34,6 @@ function Qr() {
       </section>
     </div>
   );
-}
+};
 
 export default Qr;

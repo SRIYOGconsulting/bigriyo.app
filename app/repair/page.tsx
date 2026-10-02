@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { SERVICES_DATA } from "@/data";
-import ServiceSearchBar from "@/components/service/SerachBar";
-import ServiceItem from "@/components/service/ServiceItem";
+import { serviceList } from "@/data";
+import ServiceSearchBar from "@/components/repair/SerachBar";
+import ServiceItem from "@/components/repair/ServiceItem";
 import Image from "next/image";
 import { WrenchIcon } from "lucide-react";
 
@@ -19,7 +19,7 @@ export default async function Services({ searchParams }: ServicesPageProps) {
   const rawQuery = resolvedParams.query || "";
   const query = rawQuery.trim().toLowerCase();
 
-  const results = SERVICES_DATA.flatMap((category) => {
+  const results = serviceList.flatMap((category) => {
     const matchedServices = category.services.filter((service) => {
       return (
         service.name.toLowerCase().includes(query) ||
@@ -47,7 +47,7 @@ export default async function Services({ searchParams }: ServicesPageProps) {
               <p className="text-3xl">Specialized Repair and Maintenance Solutions</p>
             </div>
             <div className="space-y-16 mt-8 md:mt-0">
-              {SERVICES_DATA.map((category) => (
+              {serviceList.map((category) => (
                 <section key={category.slug} className="flex flex-col gap-6">
                   <div className="group relative flex min-h-[280px] items-end overflow-hidden rounded-xl border border-border transition-all hover:shadow-lg md:min-h-[320px]">
                     <Image

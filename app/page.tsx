@@ -1,6 +1,7 @@
-import { certificates } from "@/constants";
-import { blogs, SERVICES_DATA } from "@/data";
-import ServiceItem from "@/components/service/ServiceItem";
+import { testimonials } from "@/data/testimonial";
+import { blogs, serviceList } from "@/data";
+import TestimonialItem from "@/components/testimonial/TestimonialItem";
+import ServiceItem from "@/components/repair/ServiceItem";
 import BlogItem from "@/components/blog/BlogItem";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,14 +15,7 @@ export default function HomePage() {
       <div className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
         {/* Desktop background */}
         <div className="hidden sm:block absolute inset-0 -z-10">
-          <Image
-            src="/home/hero/desktop.jpg"
-            alt="BIGRIYO"
-            fill
-            className="object-cover object-bottom"
-            sizes="100vw"
-            priority
-          />
+          <Image src="/home/hero/desktop.jpg" alt="BIGRIYO" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -85,7 +79,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {SERVICES_DATA[1].services.slice(0, 3).map((service) => (
+          {serviceList[1].services.slice(0, 3).map((service) => (
             <ServiceItem key={service.slug} service={service} />
           ))}
         </div>
@@ -98,25 +92,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 md:pt-24 md:pb-32 px-4 md:px-8 bg-muted">
+      <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Happy Stories</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {certificates.slice(0, 3).map((cert, index) => (
-            <div
-              key={index}
-              className="card rounded-lg bg-card shadow-md overflow-hidden w-full max-w-xs hover:shadow-lg transition-shadow duration-300">
-              <Image
-                height={600}
-                width={800}
-                src={cert.img}
-                alt={cert.title}
-                className="h-56 object-cover cursor-pointer"
-              />
-              <div className="px-4 py-5">
-                <h2 className="text-lg font-medium ">{cert.title}</h2>
-                <p className="text-sm mt-2">Short description about the certificate.</p>
-              </div>
-            </div>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {testimonials.slice(0, 3).map((testimonial) => (
+            <TestimonialItem key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
       </section>

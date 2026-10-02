@@ -1,5 +1,3 @@
-"use client";
-
 import Ribbon from "@/components/ui/Ribbon";
 
 export default function Location() {

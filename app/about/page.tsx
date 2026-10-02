@@ -1,5 +1,3 @@
-"use client";
-
 import ClapButton from "@/components/ui/ClapButton";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";

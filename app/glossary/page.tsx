@@ -1,6 +1,6 @@
 "use client";
 
-import { GLOSSARY_DATA } from "@/data";
+import { glossaryList } from "@/data";
 import { useState } from "react";
 import Ribbon from "@/components/ui/Ribbon";
 
@@ -9,7 +9,7 @@ const ALPHABET_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 export default function Glossary() {
   const [selectedLetter, setSelectedLetter] = useState<string>("A");
 
-  const filteredTerms = GLOSSARY_DATA[selectedLetter] || [];
+  const filteredTerms = glossaryList[selectedLetter] || [];
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function Glossary() {
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {ALPHABET_LIST.map((letter) => {
             const isActive = selectedLetter === letter;
-            const hasTerms = Boolean(GLOSSARY_DATA[letter]?.length);
+            const hasTerms = Boolean(glossaryList[letter]?.length);
 
             return (
               <button

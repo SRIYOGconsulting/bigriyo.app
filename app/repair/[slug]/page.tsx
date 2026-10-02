@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CheckIcon } from "lucide-react";
-import { SERVICES_DATA } from "@/data";
+import { serviceList } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ interface ServiceDetailProps {
 }
 
 function getServiceBySlug(slug: string) {
-  for (const category of SERVICES_DATA) {
+  for (const category of serviceList) {
     const service = category.services.find((s) => s.slug === slug);
     if (service) return service;
   }
@@ -20,7 +20,7 @@ function getServiceBySlug(slug: string) {
 export async function generateStaticParams() {
   const paths: { slug: string }[] = [];
 
-  SERVICES_DATA.forEach((categoryItem) => {
+  serviceList.forEach((categoryItem) => {
     categoryItem.services.forEach((serviceItem) => {
       paths.push({
         slug: serviceItem.slug

@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import StatusToast from "@/components/status/Toast";
 import RoadBlock from "@/components/Roadblock";
-import BacktoTop from "@/components/BacktoTop";
 import ExitPopup from "@/components/ExitPopup";
 import Sidekick from "@/components/Sidekick";
 import Footer from "@/components/Footer";
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <StatusProvider>
           <NavBar />
           <main className="flex-1">{children}</main>
-          <BacktoTop />
           <Footer />
           <CookieConsent />
           <RoadBlock />

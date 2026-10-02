@@ -1,6 +1,6 @@
 "use client";
 
-import { services, teamMembers } from "@/data";
+import { services, team } from "@/data";
 import { countries } from "@/constants";
 import { useState } from "react";
 import Ribbon from "@/components/ui/Ribbon";
@@ -222,7 +222,7 @@ export default function Contact() {
 
         {/* Team Members */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {teamMembers.map((member, index) => (
+          {team.map((member, index) => (
             <div key={index} className=" rounded-lg p-8 text-center ">
               <img src={member.img} alt={member.name} className="w-56 h-56 mx-auto mb-6 rounded-full object-cover" />
               <h3 className="text-[22px] text mb-2">{member.name}</h3>

@@ -1,6 +1,4 @@
-"use client";
-
-import { events } from "@/constants";
+import { events } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 
 export default function Timeline() {
