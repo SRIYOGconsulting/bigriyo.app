@@ -25,7 +25,7 @@ function FontSizeBtn({ label, isSelected, onClick }: FontSizeBtnProps) {
   );
 }
 
-export default function FontSizeChanger() {
+const FontSizeChanger = () => {
   const [currentSize, setCurrentSize] = useState<FontSize>("100");
 
   // Load saved font size on mount
@@ -50,4 +50,6 @@ export default function FontSizeChanger() {
       <FontSizeBtn label="A+" isSelected={currentSize === "115"} onClick={() => updateFontSize("115")} />
     </div>
   );
-}
+};
+
+export default FontSizeChanger;

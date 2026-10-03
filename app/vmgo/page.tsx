@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export default function Vmgo() {
+const Vmgo = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-4 lg:px-0">
       {/* Intro section */}
       <section className="max-w-7xl mx-auto py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-content-center place-items-center">
@@ -26,7 +26,7 @@ export default function Vmgo() {
       </section>
 
       {/* Vision Section */}
-      <section id="vision" className="flex justify-between gap-24 mb-12 py-8 max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto flex justify-between gap-24 mb-12 py-8">
         <div className="hidden md:flex items-center justify-center mb-6">
           <Image height={600} width={800} src="/vmgo/vision.png" alt="Vision" className="w-auto h-40 text-muted" />
         </div>
@@ -45,7 +45,7 @@ export default function Vmgo() {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="flex justify-between gap-24 mb-12 max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto flex justify-between gap-24 mb-12">
         <div className="p-8 bg-secondary text-secondary-foreground space-y-4 max-w-5xl rounded-xl">
           <h2 className="text-3xl font-bold">Mission</h2>
           <p className="text-md leading-relaxed">
@@ -61,7 +61,7 @@ export default function Vmgo() {
       </section>
 
       {/* Goals Section */}
-      <section id="goals" className="flex justify-between gap-24 py-8 max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto flex justify-between gap-24 py-8">
         <div className="hidden md:flex items-center justify-center mb-6">
           <Image height={600} width={800} src="/vmgo/goal.png" alt="Goals" className="w-60 h-40" />
         </div>
@@ -83,7 +83,7 @@ export default function Vmgo() {
       </section>
 
       {/* Objectives Section */}
-      <section id="objectives" className="flex justify-between gap-24 mb-12 py-8 max-w-7xl mx-auto">
+      <section className="max-w-7xl mx-auto flex justify-between gap-24 mb-12 py-8">
         <div className="p-8 space-y-4 text-secondary-foreground bg-secondary max-w-5xl rounded-xl">
           <h2 className="text-3xl font-bold">Objectives</h2>
           {[
@@ -111,4 +111,6 @@ export default function Vmgo() {
       </section>
     </div>
   );
-}
+};
+
+export default Vmgo;

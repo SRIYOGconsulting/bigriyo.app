@@ -9,8 +9,8 @@ export default function RefundPolicy() {
       <Ribbon name="Refund Policy" showFontSize={true} />
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 space-y-6">
-        <section className="footer p-6 rounded-xl shadow-md space-y-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 mb-12 space-y-6">
+        <section className="rounded-xl shadow-md space-y-6 mt-8">
           <p className="about leading-relaxed">
             At <span className="font-medium">SRIYOG Consulting Pvt. Ltd.</span>, we are committed to delivering
             high-quality products and services. This Refund Policy describes the situations in which refunds may be
@@ -18,7 +18,7 @@ export default function RefundPolicy() {
           </p>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Eligibility for Refunds</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Eligibility for Refunds</h2>
             <p className="about leading-relaxed mb-2">Refunds may be provided under the following conditions:</p>
             <ul className="list-disc list-inside about space-y-1">
               <li>Products or services received are defective or not as described.</li>
@@ -28,7 +28,7 @@ export default function RefundPolicy() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Non-Refundable Cases</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Non-Refundable Cases</h2>
             <p className="about leading-relaxed mb-2">Refunds will not be issued in the following cases:</p>
             <ul className="list-disc list-inside about space-y-1">
               <li>Change of mind after purchase.</li>
@@ -38,7 +38,7 @@ export default function RefundPolicy() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Refund Process</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Refund Process</h2>
             <p className="about leading-relaxed mb-2">
               To request a refund, please contact our support team at{" "}
               <span className="font-medium">support@sriyog.com</span> within 7 days of purchase. Include your order
@@ -51,7 +51,7 @@ export default function RefundPolicy() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Contact Us</h2>
             <p className="about leading-relaxed mb-1">Email: support@sriyog.com</p>
             <p className="about leading-relaxed mb-1">Phone: +977-XXXXXXXXXX</p>
             <p className="about leading-relaxed">Address: [SRIYOG Consulting Address], Kathmandu, Nepal</p>

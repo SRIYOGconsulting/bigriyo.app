@@ -1,13 +1,13 @@
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
-export default function WhyUs() {
+const WhyUs = () => {
   return (
     <div>
       {/* Header */}
       <Ribbon name="Why Us" showFontSize={false} />
 
-      <div className="max-w-7xl mx-auto py-8 mb-6 flex flex-col gap-20 items-center justify-center px-4 md:px-8">
+      <div className="max-w-7xl mx-auto py-8 mb-6 flex flex-col gap-20 items-center justify-center px-4 lg:px-0">
         {/* SECTION 1 */}
         <div className="grid md:grid-cols-2 gap-10 place-items-center">
           <div className="space-y-6 max-w-xl">
@@ -94,4 +94,6 @@ export default function WhyUs() {
       </div>
     </div>
   );
-}
+};
+
+export default WhyUs;

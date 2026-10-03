@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description: "Read BIGRIYO's Artificial Intelligence Usage Policy."
 };
 
-export default function AIUsagePolicy() {
+const AIUsagePolicy = () => {
   return (
     <>
       <Ribbon name="AI Usage Policy" showFontSize={true} />
-      <div style={{ maxWidth: "900px", margin: "40px auto", padding: "20px", lineHeight: "1.8" }}>
+      <div className="max-w-7xl mx-auto my-8">
         <h1>Artificial Intelligence (AI) Usage Policy</h1>
         <p>
           <strong>Version:</strong> 1.2
@@ -96,4 +96,6 @@ export default function AIUsagePolicy() {
       </div>
     </>
   );
-}
+};
+
+export default AIUsagePolicy;

@@ -7,7 +7,7 @@ const Disclaimer = () => {
       <Ribbon name="Disclaimer" showFontSize={true} />
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 mb-12 space-y-6">
         <section className="footer p-6 rounded-xl shadow-md space-y-6">
           <p className="about leading-relaxed">
             <span className="font-medium">Effective Date:</span> 1st June, 2025
@@ -26,7 +26,7 @@ const Disclaimer = () => {
 
           {/* Section: Uses and Collection of Information */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Uses and Collection of Information</h2>
+            <h2 className="text-2xl font-semibold text-secondary  mb-2">Uses and Collection of Information</h2>
             <p className="about leading-relaxed">
               We collect different types of information for various purposes to improve our services for you.
             </p>
@@ -34,9 +34,9 @@ const Disclaimer = () => {
 
           {/* Section: Types of Collected Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Types of Collected Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Types of Collected Data</h2>
 
-            <h3 className="text-lg font-medium text-teal-600 mt-3">Personal Information</h3>
+            <h3 className="text-lg font-medium text-secondary/80 mt-3">Personal Information</h3>
             <p className="about leading-relaxed">
               To create your identity, you may provide personally identifiable information that we use to analyze and
               improve our services, including for marketing purposes. This includes:
@@ -50,7 +50,7 @@ const Disclaimer = () => {
               <li>Skills and Expertise</li>
             </ul>
 
-            <h3 className="text-lg font-medium text-teal-600 mt-4">Usage Information</h3>
+            <h3 className="text-lg font-medium text-secondary/80 mt-4">Usage Information</h3>
             <p className="about leading-relaxed">
               We may collect Usage Data, including IP address, browser details, pages visited, time spent, engagements,
               and unique device identifiers (UDIDs).
@@ -59,14 +59,14 @@ const Disclaimer = () => {
 
           {/* Section: Tracking and Cookies Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Tracking and Cookies Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary  mb-2">Tracking and Cookies Data</h2>
             <p className="about leading-relaxed">
               We use cookies and similar tracking technologies to track activity and store certain information. Cookies
               may include anonymous unique identifiers. You can refuse cookies via your browser, but some services may
               not function properly.
             </p>
 
-            <h3 className="text-lg font-medium text-teal-600 mt-4">Examples of Cookies</h3>
+            <h3 className="text-lg font-medium text-secondary/80 mt-4">Examples of Cookies</h3>
             <ul className="list-disc list-inside about space-y-1">
               <li>Session Cookies – used to operate our services</li>
               <li>Preference Cookies – used to remember preferences and settings</li>
@@ -76,7 +76,7 @@ const Disclaimer = () => {
 
           {/* Section: Uses of Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Uses of Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Uses of Data</h2>
             <ul className="list-disc list-inside about space-y-1">
               <li>Providing and maintaining the service</li>
               <li>Notifying you about changes to the service</li>
@@ -90,7 +90,7 @@ const Disclaimer = () => {
 
           {/* Section: Transfer of Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Transfer of Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Transfer of Data</h2>
             <p className="about leading-relaxed">
               Your information may be transferred and maintained on servers. By submitting data, you consent to its
               transfer to servers in Nepal. We take necessary steps to ensure data security.
@@ -99,7 +99,7 @@ const Disclaimer = () => {
 
           {/* Section: Disclosure of Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Disclosure of Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Disclosure of Data</h2>
             <p className="about leading-relaxed">SRIYOG Consulting may disclose your data in good faith to:</p>
             <ul className="list-disc list-inside about space-y-1">
               <li>Comply with legal obligations</li>
@@ -112,7 +112,7 @@ const Disclaimer = () => {
 
           {/* Section: Security of Data */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Security of Data</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Security of Data</h2>
             <p className="about leading-relaxed">
               While we work to protect your data, no method of online transmission or electronic storage is 100% secure.
             </p>
@@ -120,7 +120,7 @@ const Disclaimer = () => {
 
           {/* Section: Service Providers */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Service Providers</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Service Providers</h2>
             <p className="about leading-relaxed">
               Third-party companies and individuals may provide services on our behalf. They may access personal data
               but are obligated not to misuse it.
@@ -129,7 +129,7 @@ const Disclaimer = () => {
 
           {/* Section: Other Sites */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Other Sites</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Other Sites</h2>
             <p className="about leading-relaxed">
               Our Service may contain links to third-party websites. We are not responsible for their content, privacy
               policies, or practices.
@@ -138,7 +138,7 @@ const Disclaimer = () => {
 
           {/* Section: Children’s Privacy */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Children’s Privacy</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Children’s Privacy</h2>
             <p className="about leading-relaxed">
               We do not knowingly collect personal data from anyone under 18. If discovered, we will remove such data.
             </p>
@@ -146,7 +146,7 @@ const Disclaimer = () => {
 
           {/* Section: Changes to This Privacy Policy */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Changes to This Privacy Policy</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Changes to This Privacy Policy</h2>
             <p className="about leading-relaxed">
               We may update this Privacy Policy and will notify you via email or prominent notice before changes take
               effect. The updated effective date will also be posted.
@@ -155,7 +155,7 @@ const Disclaimer = () => {
 
           {/* Section: Contact Us */}
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Contact Us</h2>
             <p className="about leading-relaxed">Email: privacy@sriyog.com</p>
           </div>
         </section>

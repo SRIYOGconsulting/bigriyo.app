@@ -8,7 +8,7 @@ interface ServiceSearchBarProps {
   initialQuery: string;
 }
 
-export default function ServiceSearchBar({ initialQuery }: ServiceSearchBarProps) {
+const ServiceSearchBar = ({ initialQuery }: ServiceSearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState(initialQuery);
   const router = useRouter();
 
@@ -33,7 +33,10 @@ export default function ServiceSearchBar({ initialQuery }: ServiceSearchBarProps
       {searchQuery && (
         <button
           type="button"
-          onClick={() => setSearchQuery("")}
+          onClick={() => {
+            setSearchQuery("");
+            handleSearch();
+          }}
           className="text-muted-foreground hover:text-foreground p-0.5 cursor-pointer"
           aria-label="Clear text">
           <XIcon className="w-4 h-4" />
@@ -41,4 +44,6 @@ export default function ServiceSearchBar({ initialQuery }: ServiceSearchBarProps
       )}
     </div>
   );
-}
+};
+
+export default ServiceSearchBar;

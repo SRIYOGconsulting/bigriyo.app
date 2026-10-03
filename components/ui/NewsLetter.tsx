@@ -21,7 +21,7 @@ const NewsLetter = () => {
 
   return (
     <section className="bg-secondary text-secondary-foreground py-10">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4 lg:px-0">
         <h2 className="font-semibold italic text-3xl sm:text-4xl text-left">Join our Newsletter</h2>
         <div ref={formRef} className="w-full max-w-[440px] min-h-[58px]" />
       </div>

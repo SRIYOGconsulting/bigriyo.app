@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description: "Browse our complete list of home, appliance, IT, and maintenance repair services."
 };
 
-interface ServicesPageProps {
+interface ServicesProps {
   searchParams: Promise<{ query?: string }>;
 }
 
-export default async function Services({ searchParams }: ServicesPageProps) {
+const Services = async ({ searchParams }: ServicesProps) => {
   const resolvedParams = await searchParams;
   const rawQuery = resolvedParams.query || "";
   const query = rawQuery.trim().toLowerCase();
@@ -41,7 +41,7 @@ export default async function Services({ searchParams }: ServicesPageProps) {
       <ServiceSearchBar initialQuery={query} />
       <div className="max-w-7xl mx-auto space-y-8 mt-12">
         {!query ? (
-          <div className="container mx-auto px-4 py-12">
+          <div className="container mx-auto px-4 lg:px-0 py-12">
             <div className="hidden md:block mb-10 mt-12 font-semibold text-center">
               <p className="text-xl text-muted-foreground">Browse Our Curated Service Catalog</p>
               <p className="text-3xl">Specialized Repair and Maintenance Solutions</p>
@@ -67,7 +67,7 @@ export default async function Services({ searchParams }: ServicesPageProps) {
                       <p className="mt-2 mb-6 max-w-2xl text-sm text-gray-200 line-clamp-2 md:line-clamp-none md:text-base">
                         {category.description}
                       </p>
-                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-md">
+                      <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-medium text-primary-foreground backdrop-blur-md">
                         {category.services.length} service{category.services.length === 1 ? "" : "s"} available
                       </span>
                     </div>
@@ -87,10 +87,10 @@ export default async function Services({ searchParams }: ServicesPageProps) {
             </div>
           </div>
         ) : results.length === 0 ? (
-          <div className="text-center py-16 rounded-2xl border border-dashed border-slate-300">
-            <WrenchIcon className="w-12 h-12 text-slate-300 mx-auto mb-3" />
-            <h3 className="text-lg font-medium text-slate-800">No services found</h3>
-            <p className="text-slate-500 text-sm mt-1">
+          <div className="text-center py-16 rounded-2xl border border-dashed border-border">
+            <WrenchIcon className="w-12 h-12 text-muted mx-auto mb-3" />
+            <h3 className="text-lg font-medium text-muted-foreground">No services found</h3>
+            <p className="text-muted-foreground text-sm mt-1">
               We couldn't find anything matching "{rawQuery}" Try checking for spelling errors or searching a broader
               term.
             </p>
@@ -105,4 +105,6 @@ export default async function Services({ searchParams }: ServicesPageProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Services;

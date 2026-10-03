@@ -2,7 +2,7 @@ import ClapButton from "@/components/ui/ClapButton";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
-export default function About() {
+const About = () => {
   return (
     <>
       <Ribbon name="About Us" showFontSize={true} />
@@ -67,4 +67,6 @@ export default function About() {
       </div>
     </>
   );
-}
+};
+
+export default About;

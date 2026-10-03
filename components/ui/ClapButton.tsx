@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const MAX_CLAPS = 50;
 
-export default function ClapButton() {
+const ClapButton = () => {
   const [clapCount, setClapCount] = useState(0);
   const [totalClaps, setTotalClaps] = useState(250); // Initial total from backend (example)
   const [isClicked, setIsClicked] = useState(false);
@@ -33,4 +33,6 @@ export default function ClapButton() {
       </div>
     </div>
   );
-}
+};
+
+export default ClapButton;

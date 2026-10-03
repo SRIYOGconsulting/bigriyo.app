@@ -1,7 +1,7 @@
 import Ribbon from "@/components/ui/Ribbon";
 import Link from "next/link";
 
-export default function Career() {
+const Career = () => {
   return (
     <>
       <Ribbon name="Career" showFontSize={false} />
@@ -13,4 +13,6 @@ export default function Career() {
       </div>
     </>
   );
-}
+};
+
+export default Career;

@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Notices() {
+const Notices = () => {
   return (
     <>
       <Ribbon name="Notices" showFontSize={false} />
@@ -9,4 +9,6 @@ export default function Notices() {
       </div>
     </>
   );
-}
+};
+
+export default Notices;

@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Download() {
+const Download = () => {
   return (
     <>
       <Ribbon name="Download" showFontSize={false} />
@@ -9,4 +9,6 @@ export default function Download() {
       </div>
     </>
   );
-}
+};
+
+export default Download;

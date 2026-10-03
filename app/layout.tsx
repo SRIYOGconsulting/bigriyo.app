@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: "Professional Repairing services, here, in Kathmandu, Nepal."
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="relative font-sans bg-background text-foreground transition-colors duration-250 ease-in-out">
@@ -38,4 +38,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

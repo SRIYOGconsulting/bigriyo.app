@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function ExitPopup() {
+const ExitPopup = () => {
   useEffect(() => {
     const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       e.preventDefault();
@@ -14,4 +14,6 @@ export default function ExitPopup() {
   }, []);
 
   return null;
-}
+};
+
+export default ExitPopup;

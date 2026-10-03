@@ -2,13 +2,13 @@ import { events } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
-export default function History() {
+const History = () => {
   return (
     <div>
       {/* Header */}
       <Ribbon name="History" showFontSize={false} />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 space-y-16">
         {/* Introduction Section */}
         <section className="my-4">
           <h2 className="text-3xl font-bold mt-8 mb-4">Our Beginning</h2>
@@ -107,4 +107,6 @@ export default function History() {
       </div>
     </div>
   );
-}
+};
+
+export default History;

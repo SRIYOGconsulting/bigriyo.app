@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Gallery() {
+const Gallery = () => {
   return (
     <>
       <Ribbon name="Gallery" showFontSize={false} />
@@ -9,4 +9,6 @@ export default function Gallery() {
       </div>
     </>
   );
-}
+};
+
+export default Gallery;

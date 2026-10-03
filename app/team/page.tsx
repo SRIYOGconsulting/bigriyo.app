@@ -1,15 +1,15 @@
 import { teamMembers } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 
-const OurTeam = () => {
+const Team = () => {
   return (
     <div className="about-w-full ">
       {/* Full-width Ribbon Header */}
       <Ribbon name="Our Team" showFontSize={true} />
 
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-10">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-6 md:py-10">
         {/* PRESIDENT SECTION */}
-        <div className="rounded-lg  card  p-6 md:p-10">
+        <div className="rounded-lg">
           <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
             <div className="flex flex-col items-center">
               <img
@@ -77,4 +77,4 @@ const OurTeam = () => {
   );
 };
 
-export default OurTeam;
+export default Team;

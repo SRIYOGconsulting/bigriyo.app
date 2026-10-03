@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Browse our complete list of blogs."
 };
 
-export default function Blogs() {
+const Blogs = () => {
   return (
     <>
       {/* Header Section */}
@@ -26,4 +26,6 @@ export default function Blogs() {
       </div>
     </>
   );
-}
+};
+
+export default Blogs;

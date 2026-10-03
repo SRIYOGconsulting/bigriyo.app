@@ -8,7 +8,7 @@ const Message = () => {
       <Ribbon name="Message" showFontSize={true} />
 
       {/* Main Content */}
-      <main className="py-8 px-4 md:px-12">
+      <main className="py-8 px-4 lg:px-0">
         <div className="max-w-5xl mx-auto">
           {/* Message Paragraphs */}
           <section className="space-y-6 text-justify leading-relaxed mb-10">

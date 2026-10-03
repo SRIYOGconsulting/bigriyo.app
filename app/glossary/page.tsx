@@ -6,7 +6,7 @@ import Ribbon from "@/components/ui/Ribbon";
 
 const ALPHABET_LIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export default function Glossary() {
+const Glossary = () => {
   const [selectedLetter, setSelectedLetter] = useState<string>("A");
 
   const filteredTerms = glossaryList[selectedLetter] || [];
@@ -14,7 +14,7 @@ export default function Glossary() {
   return (
     <>
       <Ribbon name="Glossary" showFontSize={true} />
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-8">
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {ALPHABET_LIST.map((letter) => {
             const isActive = selectedLetter === letter;
@@ -58,4 +58,6 @@ export default function Glossary() {
       </div>
     </>
   );
-}
+};
+
+export default Glossary;

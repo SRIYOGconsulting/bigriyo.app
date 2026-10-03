@@ -8,7 +8,7 @@ import PromoBar from "@/components/ui/PromoBar";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function NavBar() {
+const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
@@ -41,7 +41,7 @@ export default function NavBar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md transition-colors">
       <PromoBar />
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between py-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 flex items-center justify-between py-4">
         <Link
           href="/"
           className="flex items-center gap-3 md:gap-4 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
@@ -92,4 +92,6 @@ export default function NavBar() {
       <MobileDrawer isOpen={isOpen} setIsOpen={setIsOpen} isDark={isDark} toggleTheme={toggleTheme} />
     </header>
   );
-}
+};
+
+export default NavBar;

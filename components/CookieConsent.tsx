@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const COOKIE_STORAGE_KEY = "cookie-consent-v1"; // new key so old data is ignored
 
-export default function CookieConsent() {
+const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -63,4 +63,6 @@ export default function CookieConsent() {
       </div>
     </div>
   );
-}
+};
+
+export default CookieConsent;

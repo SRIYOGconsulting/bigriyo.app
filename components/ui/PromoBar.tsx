@@ -4,7 +4,7 @@ import { XIcon } from "lucide-react";
 import { useState } from "react";
 import useStatus from "@/context/Status";
 
-export default function PromoBar() {
+const PromoBar = () => {
   const [visible, setVisible] = useState(true);
   const { showStatus } = useStatus();
 
@@ -12,7 +12,7 @@ export default function PromoBar() {
 
   return (
     <div className="w-full bg-secondary text-secondary-foreground text-sm font-semibold">
-      <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto py-2 px-4 md:px-8">
+      <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto py-2 px-4 lg:px-0">
         <div className="flex flex-wrap items-center justify-center gap-2">
           <div className="md:hidden flex gap-1 items-center">
             <span>Dashain & Dipawali Offer!</span>
@@ -38,4 +38,6 @@ export default function PromoBar() {
       </div>
     </div>
   );
-}
+};
+
+export default PromoBar;

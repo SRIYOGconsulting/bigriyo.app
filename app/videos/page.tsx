@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Videos() {
+const Videos = () => {
   return (
     <>
       <Ribbon name="Videos" showFontSize={false} />
@@ -9,4 +9,5 @@ export default function Videos() {
       </div>
     </>
   );
-}
+};
+export default Videos;

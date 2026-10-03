@@ -14,7 +14,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <main className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center bg-background text-foreground">
+    <main className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
       <div className="rounded-full bg-muted p-4 mb-4">
         <AlertCircleIcon className="h-8 w-8 text-muted-foreground" />
       </div>

@@ -9,7 +9,7 @@ import Link from "next/link";
 const PARTNER_COUNT = 14;
 const partnerLogos = Array.from({ length: PARTNER_COUNT }, (_, i) => i + 1);
 
-export default function HomePage() {
+const Home = () => {
   return (
     <>
       <div className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
@@ -32,7 +32,7 @@ export default function HomePage() {
             />
           </div>
 
-          <div className="flex flex-col justify-start text-foreground md:text-secondary-foreground z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 md:px-8">
+          <div className="flex flex-col justify-start text-foreground md:text-secondary-foreground z-10 w-full sm:w-1/2 mt-4 sm:mt-0 px-4 lg:px-0">
             <div className="text-[23px] md:text-2xl font-semibold mb-3 opacity-90">Welcome to</div>
             <div className="font-bold text-3xl md:text-5xl mb-6">BIGRIYO!</div>
             <h1 className="text-[18px] max-w-[600px] leading-relaxed opacity-95">
@@ -56,9 +56,9 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* PARTNERS — homepage only */}
-      <section className="mt-8 md:mt-0 py-8 sm:py-10 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
-        <div className="flex w-max animate-scroll gap-10 sm:gap-14 items-center">
+      {/* PARTNERS */}
+      <section className="mt-8 md:mt-0 py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
+        <div className="flex w-max animate-scroll gap-12 items-center">
           {[...partnerLogos, ...partnerLogos].map((n, i) => (
             <div
               key={`${n}-${i}`}
@@ -76,7 +76,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 md:px-8">
+      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviceList[1].services.slice(0, 3).map((service) => (
@@ -94,14 +94,14 @@ export default function HomePage() {
 
       <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Happy Stories</h2>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.slice(0, 3).map((testimonial) => (
             <TestimonialItem key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 md:px-8">
+      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Latest Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.slice(0, 3).map((blog) => (
@@ -110,7 +110,7 @@ export default function HomePage() {
         </div>
         <div className="mt-12 flex justify-center">
           <Link
-            href="/blogs"
+            href="/blog"
             className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
             View All Blogs
           </Link>
@@ -118,4 +118,6 @@ export default function HomePage() {
       </section>
     </>
   );
-}
+};
+
+export default Home;

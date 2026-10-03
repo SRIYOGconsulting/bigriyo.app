@@ -35,7 +35,7 @@ export default function Contact() {
     <div className="">
       {/* Header Section */}
       <Ribbon name="Contact" showFontSize={false} />
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-16">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Left Side - Map and Services */}
@@ -48,7 +48,7 @@ export default function Contact() {
               </p>
 
               {/* Google Map */}
-              <div className="rounded-lg overflow-hidden border border-gray-200 h-64 mb-3">
+              <div className="rounded-lg overflow-hidden border border-border h-64 mb-3">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.193460784485!2d85.32073757615186!3d27.711312476180435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef740a066ed089%3A0xaf7934e44a7b1e17!2sSRIYOG!5e0!3m2!1sen!2snp!4v1741059444503!5m2!1sen!2snp"
                   width="100%"
@@ -58,7 +58,7 @@ export default function Contact() {
                 href="https://www.google.com/maps/place/SRIYOG/@27.711185,85.323272,16z/data=!4m6!3m5!1s0x39ef740a066ed089:0xaf7934e44a7b1e17!8m2!3d27.7111849!4d85.3232716!16s%2Fg%2F11hbshgzmz?entry=tts&g_ep=EgoyMDI1MTIwMS4wIPu8ASoASAFQAw%3D%3D&skid=3876b84a-a371-4532-b369-fb8d01b4e9fc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className=" hover:text-teal-800 font-medium text-sm">
+                className=" hover:text-secondary font-medium text-sm">
                 Directions →
               </a>
             </div>
@@ -68,14 +68,14 @@ export default function Contact() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="  rounded-lg p-6 border border-gray-300  transition-shadow flex items-start gap-4">
+                  className="rounded-lg p-6 border border-border  transition-shadow flex items-start gap-4">
                   {/* Icon (left) */}
                   <img src={service.icon} alt={service.title} className="w-10 h-10 shrink-0" />
 
                   {/* Text (right) */}
                   <div>
                     <h3 className="text-lg font-bold  mb-2">{service.title}</h3>
-                    <p className=" text-sm">{service.desc}</p>
+                    <p className="text-sm">{service.desc}</p>
                   </div>
                 </div>
               ))}
@@ -102,7 +102,7 @@ export default function Contact() {
                     placeholder="eg: Madan"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-2.5 border  rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
+                    className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
                   />
                 </div>
                 <div>

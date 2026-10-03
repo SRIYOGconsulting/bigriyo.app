@@ -65,7 +65,7 @@ interface ContactBoxProps {
   isExternal?: boolean;
 }
 
-export function ContactBox({ alt, src, href, label, isExternal }: ContactBoxProps) {
+function ContactBox({ alt, src, href, label, isExternal }: ContactBoxProps) {
   return isExternal ? (
     <Link
       href={href}
@@ -83,13 +83,13 @@ export function ContactBox({ alt, src, href, label, isExternal }: ContactBoxProp
   );
 }
 
-export default function Footer() {
+const Footer = () => {
   return (
     <>
       <NewsLetter />
       <footer className="relative footer pt-16 pb-10 z-10">
         {/* TOP SECTION */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row lg:justify-between gap-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-0 flex flex-col lg:flex-row lg:justify-between gap-10">
           <div className="w-full lg:w-[45%]">
             <div className="mb-6 text-2xl">
               <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
@@ -146,12 +146,14 @@ export default function Footer() {
           <div className="flex gap-4 justify-center md:justify-end font-semibold mt-2 lg:mt-0">
             <Link href="/privacy">Privacy Policy</Link>
             <span>|</span>
-            <Link href="/policies/disclaimer">Disclaimer</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
             <span>|</span>
-            <Link href="policies/tos">Terms of Service</Link>
+            <Link href="/tos">Terms of Service</Link>
           </div>
         </section>
       </footer>
     </>
   );
-}
+};
+
+export default Footer;

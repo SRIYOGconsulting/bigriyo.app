@@ -9,7 +9,7 @@ interface StatusStyle {
   icon: React.ReactNode;
 }
 
-export default function StatusToast() {
+const StatusToast = () => {
   const { status, clearStatus } = useStatus();
 
   if (!status) return null;
@@ -44,4 +44,6 @@ export default function StatusToast() {
       </div>
     </div>
   );
-}
+};
+
+export default StatusToast;

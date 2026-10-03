@@ -6,7 +6,7 @@ interface ServiceItemProps {
   service: Service;
 }
 
-export default function ServiceItem({ service }: ServiceItemProps) {
+const ServiceItem = ({ service }: ServiceItemProps) => {
   return (
     <div className="group flex flex-col justify-between overflow-hidden rounded-xl border border-border bg-card transition-all hover:shadow-md">
       <div className="p-4">
@@ -34,4 +34,6 @@ export default function ServiceItem({ service }: ServiceItemProps) {
       </div>
     </div>
   );
-}
+};
+
+export default ServiceItem;

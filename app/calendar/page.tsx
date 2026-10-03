@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Calendar() {
+const Calendar = () => {
   return (
     <>
       <Ribbon name="Calendar" showFontSize={false} />
@@ -9,4 +9,6 @@ export default function Calendar() {
       </div>
     </>
   );
-}
+};
+
+export default Calendar;

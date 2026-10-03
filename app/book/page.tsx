@@ -1,6 +1,6 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-export default function Book() {
+const Book = () => {
   return (
     <>
       <Ribbon name="Booking" showFontSize={false} />
@@ -9,4 +9,6 @@ export default function Book() {
       </div>
     </>
   );
-}
+};
+
+export default Book;

@@ -6,14 +6,14 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface MobileDrawerProps {
+type MobileDrawerProps = {
   isOpen: boolean;
   isDark: boolean;
   toggleTheme: () => void;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
-export default function MobileDrawer({ isOpen, setIsOpen, isDark, toggleTheme }: MobileDrawerProps) {
+const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, toggleTheme }) => {
   const closeDrawer = () => setIsOpen(false);
 
   useEffect(() => {
@@ -132,4 +132,6 @@ export default function MobileDrawer({ isOpen, setIsOpen, isDark, toggleTheme }:
       </aside>
     </>
   );
-}
+};
+
+export default MobileDrawer;

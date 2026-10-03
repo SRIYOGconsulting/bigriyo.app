@@ -8,7 +8,7 @@ const Qr = () => {
       <Ribbon name="QR Codes" showFontSize={false} />
 
       {/* Cards */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
+      <section className="max-w-7xl mx-auto px-4 lg:px-0 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center gap-8">
           {qrCardData.map((card) => (
             <a

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: BlogDetailProps): Promise<Met
   };
 }
 
-export default async function BlogDetailPage({ params }: BlogDetailProps) {
+const BlogDetails = async ({ params }: BlogDetailProps) => {
   const { slug } = await params;
   const blog = getBlogBySlug(slug);
 
@@ -114,4 +114,6 @@ export default async function BlogDetailPage({ params }: BlogDetailProps) {
       </div>
     </div>
   );
-}
+};
+
+export default BlogDetails;

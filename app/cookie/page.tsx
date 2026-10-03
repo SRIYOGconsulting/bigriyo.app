@@ -7,7 +7,7 @@ const cookiePolicy = () => {
       <Ribbon name="Cookie Policy" showFontSize={true} />
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-12 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 mb-12 space-y-6">
         <section className="footer p-6 rounded-xl shadow-md space-y-6">
           <p className="about leading-relaxed">
             At <span className="font-medium">SRIYOG Consulting Pvt. Ltd.</span>, At SRIYOG Consulting Pvt. Ltd., we
@@ -16,7 +16,7 @@ const cookiePolicy = () => {
             choices you have to manage or disable them.
           </p>
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Introduction</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Introduction</h2>
             <p className="about leading-relaxed mb-2">
               SRIYOG Consulting uses cookies and similar tracking technologies on https://www.SRIYOG.com to improve your
               experience and to operate our services effectively. This Cookie Policy explains what cookies are, how we
@@ -24,7 +24,7 @@ const cookiePolicy = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">What are Cookies & Tracking Technologies</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">What are Cookies & Tracking Technologies</h2>
             <ul className="list-disc list-inside about space-y-1">
               <li>
                 Cookies are small text files placed on your device by your web browser when you visit the Website. They
@@ -39,7 +39,7 @@ const cookiePolicy = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">How We Use Cookies</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">How We Use Cookies</h2>
             <p className="about leading-relaxed mb-2">
               We use cookies and tracking technologies for the following purposes:
             </p>
@@ -57,7 +57,7 @@ const cookiePolicy = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Consent and Cookie Settings</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Consent and Cookie Settings</h2>
             <ul className="list-disc list-inside about space-y-1">
               <li>
                 When you first visit our Website, you may see a “cookie banner” or notice asking for your consent
@@ -72,7 +72,7 @@ const cookiePolicy = () => {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Third-Party Services & Cookies</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Third-Party Services & Cookies</h2>
             <p className="about leading-relaxed">
               We may use third-party services — such as analytics tools, marketing/advertising services, or integrations
               — which may set cookies on your device. These cookies are not under our direct control and are governed by
@@ -80,14 +80,14 @@ const cookiePolicy = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Changes to this Cookie Policy</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Changes to this Cookie Policy</h2>
             <p className="about leading-relaxed">
               We may update this Cookie Policy from time to time. When we do, we will revise the “Last updated” date
               above.
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold text-teal-800 mb-2">Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-secondary mb-2">Contact Us</h2>
             <p className="about leading-relaxed mb-1">Email: support@sriyog.com</p>
             <p className="about leading-relaxed mb-1">Phone: +977-XXXXXXXXXX</p>
             <p className="about leading-relaxed">Address: [SRIYOG Consulting Address], Kathmandu, Nepal</p>

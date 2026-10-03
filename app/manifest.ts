@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 
-export default function manifest(): MetadataRoute.Manifest {
+const manifest = (): MetadataRoute.Manifest => {
   return {
     short_name: "BIGRIYO",
-    name: "BIGRIYO Private Limited | Professional Repair Center in Kathmandu, Nepal",
-    description: "BIGRIYO Private Limited is a professional repair center located in Kathmandu, Nepal.",
+    name: "BIGRIYO | Professional Repairing Services in Kathmandu, Nepal",
+    description: "BIGRIYO is a professional repairing services located in Kathmandu, Nepal.",
     icons: [
       {
         src: "icons/icon-72x72.png",
@@ -55,4 +55,6 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#ffffff",
     prefer_related_applications: false
   };
-}
+};
+
+export default manifest;

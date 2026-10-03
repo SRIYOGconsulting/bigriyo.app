@@ -17,7 +17,7 @@ type LightboxProps = {
   setIndex: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-export default function Lightbox({ data, setLightbox, lightbox, setIndex, index }: LightboxProps) {
+const Lightbox: React.FC<LightboxProps> = ({ data, setLightbox, lightbox, setIndex, index }) => {
   const closeLightbox = useCallback(() => {
     setLightbox(false);
   }, [setLightbox]);
@@ -94,4 +94,6 @@ export default function Lightbox({ data, setLightbox, lightbox, setIndex, index 
       </div>
     </>
   );
-}
+};
+
+export default Lightbox;

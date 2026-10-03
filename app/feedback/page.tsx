@@ -32,7 +32,7 @@ const initialFormData: Feedbackform = {
   message: ""
 };
 
-export default function Feedback() {
+const Feedback = () => {
   const [captchaToken, setCaptchaToken] = useState<String | null>(null);
   const [formData, setFormData] = useState<Feedbackform>({
     firstname: "",
@@ -70,7 +70,7 @@ export default function Feedback() {
       <Ribbon name="Feedback" showFontSize={false} />
 
       {/* FORM SECTION */}
-      <div className="px-4 sm:px-6 md:px-8 lg:px-0 pt-8 pb-12 max-w-7xl mx-auto">
+      <div className="px-4 lg:px-0 pt-8 pb-12 max-w-7xl mx-auto">
         <p className="text-center  mb-10 px-2">
           Please share your experience with our services. Your feedback helps us improve.
         </p>
@@ -276,4 +276,6 @@ export default function Feedback() {
       </div>
     </div>
   );
-}
+};
+
+export default Feedback;
