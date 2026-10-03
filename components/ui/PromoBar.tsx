@@ -20,13 +20,13 @@ const PromoBar = () => {
               -10%
             </span>
           </div>
-          <span className="hidden md:block">BIGRIYO is currently offering 10% disconnt for Dashain & Dipawali!</span>
+          <span className="hidden md:block">BIGRIYO is currently offering 10% discounts for Dashain & Dipawali.</span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => showStatus("info", "Coming Soon!")}
             className="rounded border border-white/40 bg-white/10 px-3 py-1 text-xs font-semibold italic text-secondary-foreground transition-colors hover:border-white hover:bg-white/20 active:scale-95 cursor-pointer">
-            Check It Out
+            Check it out
           </button>
           <button
             onClick={() => setVisible(false)}
