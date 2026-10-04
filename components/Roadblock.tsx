@@ -77,7 +77,7 @@ const RoadBlock = () => {
   if (!showRoadBlock) return null;
 
   return (
-    <div className="fixed inset-0 w-screen h-screen z-[9999] bg-black/80 flex items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 w-screen h-screen z-[9999] bg-background flex items-center justify-center overflow-hidden">
       <div className="relative">
         <button
           type="button"
