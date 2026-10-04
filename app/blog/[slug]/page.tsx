@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CalendarIcon, UserIcon, TagIcon } from "lucide-react";
+import { CalendarIcon, UserIcon, TagIcon, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { blogs } from "@/data";
 import ClapButton from "@/components/ui/ClapButton";
@@ -44,9 +44,9 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
       <div className="relative left-[50%] right-[50%] -mx-[50vw] mb-12 flex min-h-[360px] w-screen items-end overflow-hidden bg-muted">
         <Image src={blog.image} alt={blog.title} fill priority sizes="100vw" className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-        <div className="container relative z-10 mx-auto max-w-7xl px-4 pb-12 md:px-8">
+        <div className="container relative z-10 mx-auto max-w-7xl px-4 pb-12 lg:px-0">
           <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/blogs" className="transition-colors hover:text-primary-foreground">
+            <Link href="/blog" className="transition-colors hover:text-primary-foreground">
               Blogs
             </Link>
             <span>/</span>
@@ -73,13 +73,13 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
                 </time>
               </div>
             </div>
-
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href="/repair/book"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book a Repair
               </Link>
+
               <ClapButton />
             </div>
           </div>
@@ -87,29 +87,52 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
       </div>
 
       {/* Main Content Area */}
-      <div className="container pt-10">
-        <div className="max-w-4xl">
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight">Summary</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{blog.summary}</p>
-          </section>
+      <div className="container mt-4">
+        {/* Summary Box */}
+        <section className="rounded-xl border border-border/80 bg-muted/30 p-6 shadow-sm">
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">Overview</h2>
+          <p className="mt-2 text-lg leading-relaxed text-muted-foreground">{blog.summary}</p>
+        </section>
 
-          <hr className="my-8 border-border" />
-
-          {/* Tag Badges */}
-          <section>
-            <h2 className="text-2xl font-bold tracking-tight">Related Topics</h2>
-            <ul className="mt-6 flex flex-wrap gap-3">
-              {blog.tags.map((tag, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium shadow-sm">
-                  <TagIcon className="h-4 w-4 shrink-0 text-primary" />
-                  <span>{tag}</span>
-                </li>
+        {/* Detailed Content Sections */}
+        <article className="mt-10 space-y-8">
+          {blog.content?.map((section, idx) => (
+            <section key={idx} className="space-y-3">
+              <h2 className="text-2xl font-bold tracking-tight text-foreground">{section.heading}</h2>
+              {section.paragraphs.map((paragraph, pIdx) => (
+                <p key={pIdx} className="text-base leading-relaxed text-muted-foreground">
+                  {paragraph}
+                </p>
               ))}
-            </ul>
-          </section>
+            </section>
+          ))}
+        </article>
+
+        <hr className="my-10 border-border" />
+
+        {/* Tag Badges */}
+        <section>
+          <h3 className="text-xl font-bold tracking-tight text-foreground">Related Topics</h3>
+          <ul className="mt-4 flex flex-wrap gap-2.5">
+            {blog.tags.map((tag, idx) => (
+              <li
+                key={idx}
+                className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium shadow-sm text-foreground">
+                <TagIcon className="h-3.5 w-3.5 shrink-0 text-primary" />
+                <span>{tag}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Back Link */}
+        <div className="mt-12">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+            <ArrowLeft className="h-4 w-4" />
+            Back to all blogs
+          </Link>
         </div>
       </div>
     </div>

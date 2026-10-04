@@ -10,7 +10,7 @@ interface BlogItemProps {
 const BlogItem: React.FC<BlogItemProps> = ({ blog }) => (
   <Link
     key={blog.id}
-    href={`/blogs/${blog.slug}`}
+    href={`/blog/${blog.slug}`}
     className="group bg-card rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-200 flex flex-col overflow-hidden">
     <div className="p-6 flex-1 flex flex-col justify-between">
       <div>

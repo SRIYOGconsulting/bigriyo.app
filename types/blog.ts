@@ -8,4 +8,8 @@ export interface Blog {
   published_date: string;
   summary: string;
   tags: string[];
+  content: {
+    heading: string;
+    paragraphs: string[];
+  }[];
 }
