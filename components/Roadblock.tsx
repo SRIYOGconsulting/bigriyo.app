@@ -28,7 +28,6 @@ const RoadBlock = () => {
   const usedFallback = useRef(false);
 
   const onClose = useCallback(() => {
-    // Set cookie to expire in 24 hours (86,400 seconds)
     setCookie(SEEN_KEY, "true", 86400);
     setShowRoadBlock(false);
   }, []);
@@ -44,13 +43,11 @@ const RoadBlock = () => {
   };
 
   useEffect(() => {
-    // 1. Check cookie status first
     const hasSeen = getCookie(SEEN_KEY);
     if (!hasSeen) {
       setShowRoadBlock(true);
     }
 
-    // 2. Set up ad status and image source
     const today = new Date();
     const day = today.getDate();
     const month = today.toLocaleString("en-US", { month: "long" }).toLowerCase();
@@ -69,14 +66,18 @@ const RoadBlock = () => {
 
   useEffect(() => {
     if (!showRoadBlock) return;
+    document.body.style.overflow = showRoadBlock ? "hidden" : "";
     const timer = setInterval(() => setDisplayTimeLeft((prev) => (prev <= 1 ? 0 : prev - 1)), 1000);
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+      document.body.style.overflow = "";
+    };
   }, [showRoadBlock]);
 
   if (!showRoadBlock) return null;
 
   return (
-    <div className="fixed inset-0 bg-primary-foreground z-50 flex items-center justify-center">
+    <div className="fixed inset-0 w-screen h-screen z-[9999] bg-black/80 flex items-center justify-center overflow-hidden">
       <div className="relative">
         <button
           type="button"
