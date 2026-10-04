@@ -23,7 +23,7 @@ const History = () => {
             <Image
               height={600}
               width={800}
-              src="/history/2.jpg"
+              src="/history/1.jpg"
               alt="BIGRIYO Beginning"
               className="w-full h-full object-cover"
             />

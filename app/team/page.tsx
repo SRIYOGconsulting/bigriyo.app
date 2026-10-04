@@ -13,7 +13,7 @@ const Team = () => {
           <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
             <div className="flex flex-col items-center">
               <img
-                src="/team/1.png"
+                src="/team/head.png"
                 className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg"
                 alt="Pracas"
               />

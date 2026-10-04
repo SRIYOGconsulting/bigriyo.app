@@ -15,7 +15,7 @@ const Home = () => {
       <div className="w-full min-h-[600px] flex flex-col sm:flex-row justify-between items-start sm:items-center relative overflow-hidden">
         {/* Desktop background */}
         <div className="hidden sm:block absolute inset-0 -z-10">
-          <Image src="/home/hero/desktop.jpg" alt="BIGRIYO" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/home/hero/1.jpg" alt="BIGRIYO" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
@@ -23,7 +23,7 @@ const Home = () => {
           {/* Mobile image */}
           <div className="relative block sm:hidden w-full h-[350px]">
             <Image
-              src="/home/hero/mobile.jpg"
+              src="/home/hero/2.jpg"
               alt="BIGRIYO"
               fill
               className="object-cover object-bottom"
@@ -65,7 +65,7 @@ const Home = () => {
               className="relative h-10 sm:h-12 w-[120px] sm:w-[140px] shrink-0"
               aria-hidden={i >= PARTNER_COUNT}>
               <Image
-                src={`/partners/${n}.png`}
+                src={`/home/partners/${n}.png`}
                 alt={i < PARTNER_COUNT ? `Partner ${n}` : ""}
                 fill
                 sizes="140px"
@@ -98,6 +98,13 @@ const Home = () => {
           {testimonials.slice(0, 3).map((testimonial) => (
             <TestimonialItem key={testimonial.id} testimonial={testimonial} />
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <Link
+            href="/testimonials"
+            className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
+            View All Testimonials
+          </Link>
         </div>
       </section>
 
