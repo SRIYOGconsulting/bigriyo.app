@@ -45,7 +45,7 @@ const NavBar = () => {
         <Link
           href="/"
           className="flex items-center gap-3 md:gap-4 text-lg md:text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
-          <Image src="/favicon/favicon.svg" alt="logo" width={48} height={48} className="h-8 w-8 md:h-12 md:w-12" />
+          <Image src="/icons/logo/1.svg" alt="logo" width={48} height={48} className="h-8 w-8 md:h-12 md:w-12" />
           BIGRIYO
         </Link>
         <div className="hidden lg:flex items-center space-x-6">
