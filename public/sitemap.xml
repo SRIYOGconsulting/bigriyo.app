@@ -3,86 +3,71 @@
 
   <!-- Main Pages -->
   <url>
-    <loc>https://sriyog.com/</loc>
+    <loc>https://bigriyo.app/</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/about</loc>
+    <loc>https://bigriyo.app/about</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/contact</loc>
+    <loc>https://bigriyo.app/contact</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/notice</loc>
+    <loc>https://bigriyo.app/notice</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/feedback</loc>
+    <loc>https://bigriyo.app/feedback</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/team</loc>
+    <loc>https://bigriyo.app/team</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <url>
-    <loc>https://sriyog.com/meting</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
 
   <!-- VMGO Group -->
   <url>
-    <loc>https://sriyog.com/vmgo</loc>
+    <loc>https://bigriyo.app/vmgo</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/history</loc>
+    <loc>https://bigriyo.app/history</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/why</loc>
+    <loc>https://bigriyo.app/why</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/certificates</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://sriyog.com/timeline</loc>
+    <loc>https://bigriyo.app/timeline</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -91,35 +76,35 @@
 
   <!-- General Content -->
   <url>
-    <loc>https://sriyog.com/gallery</loc>
+    <loc>https://bigriyo.app/gallery</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/career</loc>
+    <loc>https://bigriyo.app/career</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/qr</loc>
+    <loc>https://bigriyo.app/qr</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/glossary</loc>
+    <loc>https://bigriyo.app/glossary</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/message</loc>
+    <loc>https://bigriyo.app/message</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -128,35 +113,35 @@
 
   <!-- Functional Pages -->
   <url>
-    <loc>https://sriyog.com/calendar</loc>
+    <loc>https://bigriyo.app/calendar</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/faq</loc>
+    <loc>https://bigriyo.app/faq</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/payment</loc>
+    <loc>https://bigriyo.app/payment</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/internship</loc>
+    <loc>https://bigriyo.app/internship</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/download</loc>
+    <loc>https://bigriyo.app/download</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -165,7 +150,7 @@
 
   <!-- Media -->
   <url>
-    <loc>https://sriyog.com/videos</loc>
+    <loc>https://bigriyo.app/videos</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -174,52 +159,42 @@
 
   <!-- Legal & Policy -->
   <url>
-    <loc>https://sriyog.com/location</loc>
+    <loc>https://bigriyo.app/location</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/refund</loc>
+    <loc>https://bigriyo.app/refund</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/cookie-policy</loc>
+    <loc>https://bigriyo.app/cookie</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/tos</loc>
+    <loc>https://bigriyo.app/tos</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/privacy</loc>
+    <loc>https://bigriyo.app/privacy</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sriyog.com/disclaimer</loc>
-    <lastmod>2025-11-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-
-
-
-   <url>
-    <loc>https://sriyog.com/news</loc>
+    <loc>https://bigriyo.app/disclaimer</loc>
     <lastmod>2025-11-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
