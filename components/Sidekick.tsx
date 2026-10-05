@@ -1,9 +1,14 @@
+"use client";
+
 import BacktoTop from "@/components/ui/BacktoTop";
+import useCookie from "@/context/Cookie";
 import Link from "next/link";
 
-const Sidekick: React.FC = () => {
+const Sidekick = () => {
+  const { visible } = useCookie();
+
   return (
-    <div className="fixed right-4 bottom-32 z-20 flex flex-col items-center gap-6">
+    <div className={`fixed right-2 z-20 flex flex-col items-center gap-6 ${visible ? "bottom-48" : "bottom-2"}`}>
       <BacktoTop />
       {/* Phone Icon */}
       <Link

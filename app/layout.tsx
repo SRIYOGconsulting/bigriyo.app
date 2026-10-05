@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { StatusProvider } from "@/context/Status";
+import { CookieProvider } from "@/context/Cookie";
 import { Inter } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import StatusToast from "@/components/status/Toast";
@@ -26,14 +27,16 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="relative font-sans bg-background text-foreground transition-colors duration-250 ease-in-out">
         <StatusProvider>
-          <NavBar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CookieConsent />
-          <RoadBlock />
-          <Sidekick />
-          <ExitPopup />
-          <StatusToast />
+          <CookieProvider>
+            <NavBar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CookieConsent />
+            <RoadBlock />
+            <Sidekick />
+            <ExitPopup />
+            <StatusToast />
+          </CookieProvider>
         </StatusProvider>
       </body>
     </html>
