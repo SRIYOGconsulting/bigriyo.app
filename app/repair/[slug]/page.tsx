@@ -68,7 +68,7 @@ const ServiceDetails = async ({ params }: ServiceDetailProps) => {
             <p className="mt-3 text-base drop-shadow-sm sm:text-lg">{service.shortDesc}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
-                href="/repair/book"
+                href="/book"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book Appointment
               </Link>

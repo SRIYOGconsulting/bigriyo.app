@@ -17,6 +17,11 @@ const ServiceSearchBar = ({ initialQuery }: ServiceSearchBarProps) => {
     else router.push("/repair");
   };
 
+  const handleClear = () => {
+    setSearchQuery("");
+    router.push("/repair");
+  };
+
   return (
     <div className="flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 shadow-sm transition-all duration-300 focus-within:border-primary">
       <SearchIcon className="w-4 h-4 text-muted-foreground shrink-0" />
@@ -33,10 +38,7 @@ const ServiceSearchBar = ({ initialQuery }: ServiceSearchBarProps) => {
       {searchQuery && (
         <button
           type="button"
-          onClick={() => {
-            setSearchQuery("");
-            handleSearch();
-          }}
+          onClick={handleClear}
           className="text-muted-foreground hover:text-foreground p-0.5 cursor-pointer"
           aria-label="Clear text">
           <XIcon className="w-4 h-4" />

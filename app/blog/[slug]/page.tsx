@@ -39,7 +39,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
   if (!blog) notFound();
 
   return (
-    <div className="pb-16">
+    <div className="max-w-7xl mx-auto pb-16">
       {/* Banner / Hero Section */}
       <div className="relative left-[50%] right-[50%] -mx-[50vw] mb-12 flex min-h-[360px] w-screen items-end overflow-hidden bg-muted">
         <Image src={blog.image} alt={blog.title} fill priority sizes="100vw" className="object-cover" />

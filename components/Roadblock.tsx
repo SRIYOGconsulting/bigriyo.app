@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { AVAILABLE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { XIcon } from "lucide-react";
 
 const DEFAULT_IMAGE = "/roadblock/default/default.jpg";
 const SEEN_KEY = "roadblock_seen_v3";
@@ -43,10 +44,7 @@ const RoadBlock = () => {
   };
 
   useEffect(() => {
-    const hasSeen = getCookie(SEEN_KEY);
-    if (!hasSeen) {
-      setShowRoadBlock(true);
-    }
+    if (!getCookie(SEEN_KEY)) setShowRoadBlock(true);
 
     const today = new Date();
     const day = today.getDate();
@@ -78,14 +76,14 @@ const RoadBlock = () => {
 
   return (
     <div className="fixed inset-0 w-screen h-screen z-[9999] bg-background flex items-center justify-center overflow-hidden">
-      <div className="relative">
+      <div className="relative max-w-[90vw]">
         <button
           type="button"
           onClick={displayTimeLeft <= 0 ? onClose : undefined}
-          className={`absolute -top-2.5 -right-2.5 bg-secondary rounded-full border-0 w-10 h-10 text-center text-secondary-foreground text-xl font-bold z-20 ${
+          className={`absolute top-2 right-2 flex items-center justify-center bg-secondary rounded-full border-0 w-6 h-6 text-center text-sm md:text-lg text-secondary-foreground font-bold z-20 ${
             displayTimeLeft <= 0 ? "cursor-pointer" : "cursor-not-allowed"
           }`}>
-          {displayTimeLeft <= 0 ? "X" : displayTimeLeft}
+          {displayTimeLeft <= 0 ? <XIcon className="w-4 h-4" /> : displayTimeLeft}
         </button>
 
         <Link href="#" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden rounded-2xl">
@@ -96,7 +94,7 @@ const RoadBlock = () => {
             height={550}
             priority
             onError={handleError}
-            className="object-cover h-[550px] w-[550px] max-w-[90vw] max-h-[80vh]"
+            className="object-cover aspect-square"
           />
         </Link>
 

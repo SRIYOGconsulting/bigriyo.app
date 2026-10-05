@@ -14,9 +14,9 @@ const PromoBar = () => {
     <div className="w-full bg-secondary text-secondary-foreground text-sm font-semibold">
       <div className="flex items-center justify-between gap-2 max-w-7xl mx-auto py-2 px-4 lg:px-0">
         <div className="flex flex-wrap items-center justify-center gap-2">
-          <div className="md:hidden flex gap-1 items-center">
+          <div className="md:hidden flex gap-1 items-center text-xs">
             <span>Dashain & Dipawali Offer!</span>
-            <span className="inline-block rounded bg-primary p-0.5 text-xs font-bold tracking-wide text-primary-foreground shadow-sm">
+            <span className="inline-block rounded bg-primary p-0.5 font-bold tracking-wide text-primary-foreground shadow-sm">
               -10%
             </span>
           </div>
