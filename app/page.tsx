@@ -1,5 +1,5 @@
 import { testimonials } from "@/data/testimonial";
-import { blogs, serviceList } from "@/data";
+import { blogs, features, serviceList } from "@/data";
 import TestimonialItem from "@/components/testimonial/TestimonialItem";
 import ServiceItem from "@/components/repair/ServiceItem";
 import BlogItem from "@/components/blog/BlogItem";
@@ -33,7 +33,7 @@ const Home = () => {
         </div>
 
         {/* Content Container */}
-        <div className="max-w-7xl mx-auto w-full min-h-[600px] flex flex-col justify-center items-start px-6 lg:px-8 py-12 z-10">
+        <div className="max-w-7xl mx-auto w-full min-h-[600px] flex flex-col justify-center items-start px-4 lg:px-0 py-12 z-10">
           <div className="flex flex-col justify-start text-white w-full sm:w-1/2">
             <div className="text-xl md:text-2xl font-semibold mb-2 opacity-90">Welcome to</div>
             <div className="font-bold text-4xl md:text-5xl mb-4">BIGRIYO!</div>
@@ -59,7 +59,7 @@ const Home = () => {
       </div>
 
       {/* PARTNERS */}
-      <section className="mt-8 md:mt-0 py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
+      <section className="py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
         <div className="flex w-max animate-scroll gap-12 items-center">
           {[...partnerLogos, ...partnerLogos].map((n, i) => (
             <div
@@ -78,8 +78,31 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Why Us?</h2>
+        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex flex-col items-center text-center p-5 sm:p-6 bg-card text-card-foreground border border-border rounded-xl hover:shadow-md transition-shadow duration-200">
+              <div className="bg-card-foreground/10 p-3 sm:p-4 rounded-2xl mb-4 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                <Image
+                  src={feature.icon}
+                  alt={feature.alt}
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Top Services</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviceList[1].services.slice(0, 3).map((service) => (
             <ServiceItem key={service.slug} service={service} />
@@ -95,7 +118,7 @@ const Home = () => {
       </section>
 
       <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Happy Stories</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Happy Stories</h2>
         <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.slice(0, 3).map((testimonial) => (
             <TestimonialItem key={testimonial.id} testimonial={testimonial} />
@@ -111,7 +134,7 @@ const Home = () => {
       </section>
 
       <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Latest Blogs</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Latest Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.slice(0, 3).map((blog) => (
             <BlogItem key={blog.id} blog={blog} />

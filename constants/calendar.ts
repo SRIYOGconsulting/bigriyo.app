@@ -1,5 +1,7 @@
 import { CalendarEventMap } from "@/types/calendar";
 
+export const shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 export const months: string[] = [
   "January",
   "February",

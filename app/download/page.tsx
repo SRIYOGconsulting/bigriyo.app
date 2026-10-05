@@ -24,7 +24,9 @@ const Download = () => {
                 className={`mb-4 block p-4 shadow-sm md:table-row md:p-0 ${
                   index % 2 === 0 ? "bg-muted rounded-xl" : "bg-secondary/80 rounded-md text-secondary-foreground"
                 }`}>
-                <td className="mt-2 block font-bold px-4 py-3 md:table-cell md:mt-0">{item.title}</td>
+                <td className="mt-2 block text-xl md:text-base font-bold px-4 py-3 md:table-cell md:mt-0">
+                  {item.title}
+                </td>
                 <td className="mt-2 block px-4 py-2 md:table-cell md:mt-0">
                   <span className="mr-4 font-semibold md:hidden">File Size:</span>
                   {item.size}

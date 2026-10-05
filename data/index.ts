@@ -5,6 +5,7 @@ export * from "@/data/service";
 export * from "@/data/contact";
 export * from "@/data/history";
 export * from "@/data/gallery";
+export * from "@/data/feature";
 export * from "@/data/video";
 export * from "@/data/blog";
 export * from "@/data/faq";

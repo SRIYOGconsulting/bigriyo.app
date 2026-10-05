@@ -4,6 +4,7 @@ import { services, team } from "@/data";
 import { countries } from "@/constants";
 import { useState } from "react";
 import Ribbon from "@/components/ui/Ribbon";
+import Link from "next/link";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -88,29 +89,29 @@ export default function Contact() {
               <div className="w-8 h-8">
                 <img src="/icons/email.svg" alt="email" className="w-full h-full" />
               </div>
-              <h2 className="text-2xl font-bold ">Send Your Queries</h2>
+              <h2 className="text-2xl font-bold">Send Your Queries</h2>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-7">
               {/* Name Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-semibold  mb-2">First Name</label>
+                  <label className="block text-sm font-semibold mb-2">First Name</label>
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="eg: Madan"
+                    placeholder="Eg: Madan"
                     value={formData.firstName}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold  mb-2">Last Name</label>
+                  <label className="block text-sm font-semibold mb-2">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
-                    placeholder="eg: Tamang"
+                    placeholder="Eg: Tamang"
                     value={formData.lastName}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5  border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
@@ -120,11 +121,11 @@ export default function Contact() {
 
               {/* Email */}
               <div>
-                <label className="block text-sm font-semibold  mb-2">Email</label>
+                <label className="block text-sm font-semibold mb-2">Email</label>
                 <input
                   type="email"
                   name="email"
-                  placeholder="eg: madan@sriyog.com"
+                  placeholder="Eg: madan@sriyog.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
@@ -221,15 +222,21 @@ export default function Contact() {
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
           {team.map((member, index) => (
-            <div key={index} className=" rounded-lg p-8 text-center ">
-              <img src={member.img} alt={member.name} className="w-56 h-56 mx-auto mb-6 rounded-full object-cover" />
-              <h3 className="text-[22px] text mb-2">{member.name}</h3>
-              <p className=" text-base mb-6">{member.designation}</p>
-              <button className="px-5 cursor-pointer py-1.5 border border-teal-700  rounded hover:bg-teal-700 hover:text-white transition-colors font-semibold text-base">
+            <div key={index} className="rounded-lg text-center">
+              <img
+                src={member.img}
+                alt={member.name}
+                className="w-48 md:w-56 h-48 md:h-56 mx-auto rounded-full object-cover"
+              />
+              <h3 className="text-2xl">{member.name}</h3>
+              <p className=" text-base mb-2">{member.designation}</p>
+              <Link
+                href={`mailto:${member.email}`}
+                className="px-5 cursor-pointer py-1.5 border border-teal-700 rounded hover:bg-secondary hover:text-secondary-foreground transition-colors font-semibold text-base">
                 eMail
-              </button>
+              </Link>
             </div>
           ))}
         </div>

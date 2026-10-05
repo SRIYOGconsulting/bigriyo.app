@@ -3,7 +3,7 @@ import Ribbon from "@/components/ui/Ribbon";
 
 const Team = () => {
   return (
-    <div className="about-w-full ">
+    <>
       {/* Full-width Ribbon Header */}
       <Ribbon name="Our Team" showFontSize={true} />
 
@@ -22,8 +22,8 @@ const Team = () => {
             </div>
 
             {/* Text */}
-            <div className="flex-1 leading-relaxed space-y-7">
-              <h1 className=" text-[1.8em]">About Pracas</h1>
+            <div className="flex-1 leading-relaxed space-y-4">
+              <h1 className="text-[1.8em]">About Pracas</h1>
               <p className="text-[1em]">
                 Pracas Upreti's journey from a startup founder to a technology-driven change-maker in Biratnagar, Nepal,
                 exemplifies the profound impact that individuals can have when they combine innovation with a commitment
@@ -57,7 +57,7 @@ const Team = () => {
         </div>
 
         {/* TEAM GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
           {teamMembers.map((member) => (
             <div
               key={member.id}
@@ -73,7 +73,7 @@ const Team = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Ribbon from "@/components/ui/Ribbon";
-import { calendarEvents, months } from "@/constants/calendar";
+import { calendarEvents, months, shortDays } from "@/constants/calendar";
 import { useState } from "react";
 
 const Calendar = () => {
@@ -43,13 +43,13 @@ const Calendar = () => {
     <>
       <Ribbon name="Calendar" showFontSize={false} />
       <div className="min-h-screen max-w-7xl mx-auto my-8 px-4 lg:px-0 transition-colors">
-        <div className="bg-card text-card-foreground p-6 rounded-xl border border-border shadow-sm">
+        <div className="bg-card text-card-foreground p-2 md:p-6 rounded-xl border border-border shadow-sm">
           {/* Controls Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
             <h2 className="text-2xl font-bold tracking-tight">
               {months[selectedMonth]} {selectedYear}
             </h2>
-            <div className="flex flex-wrap gap-2 items-center">
+            <div className="flex flex-wrap gap-2 items-center justify-between w-full px-4 md:px-0">
               <button
                 onClick={handlePrevMonth}
                 aria-label="Previous month"
@@ -82,7 +82,7 @@ const Calendar = () => {
 
           {/* Days of Week Header */}
           <div className="grid grid-cols-7 text-sm font-semibold text-muted-foreground border-b border-border mb-2">
-            {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+            {shortDays.map((day) => (
               <div key={day} className="text-center py-2">
                 {day}
               </div>
@@ -93,7 +93,7 @@ const Calendar = () => {
           <div className="grid grid-cols-7 gap-px bg-border border border-border rounded-lg overflow-hidden text-sm">
             {/* Leading empty cells */}
             {Array.from({ length: firstDayOfWeek }).map((_, index) => (
-              <div key={`pad-start-${index}`} className="min-h-[90px] p-2 bg-muted/30 cursor-default" />
+              <div key={`pad-start-${index}`} className="min-h-[25px] md:min-h-[90px] p-2 bg-muted/30 cursor-default" />
             ))}
 
             {/* Month Days */}
@@ -108,7 +108,7 @@ const Calendar = () => {
               return (
                 <div
                   key={dayNumber}
-                  className={`min-h-[90px] p-2 flex flex-col justify-between relative cursor-pointer transition-colors ${
+                  className={`min-h-[25px] md:min-h-[90px] p-2 flex flex-col justify-between relative cursor-pointer transition-colors ${
                     isToday
                       ? "bg-primary/15 border-2 border-primary font-bold text-primary"
                       : hasEvent
@@ -119,7 +119,7 @@ const Calendar = () => {
 
                   {/* Indicator dot */}
                   {hasEvent && (
-                    <div className="absolute bottom-2 right-2 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-card" />
+                    <div className="absolute bottom-2 right-2 w-1 h-1 ring-1 md:w-2 md:h-2 bg-primary rounded-full md:ring-2 ring-card" />
                   )}
                 </div>
               );
@@ -127,7 +127,7 @@ const Calendar = () => {
 
             {/* Trailing empty cells */}
             {Array.from({ length: trailingCells }).map((_, index) => (
-              <div key={`pad-end-${index}`} className="min-h-[90px] p-2 bg-muted/30 cursor-default" />
+              <div key={`pad-end-${index}`} className="min-h-[25px] md:min-h-[90px] p-2 bg-muted/30 cursor-default" />
             ))}
           </div>
 

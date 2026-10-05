@@ -2,6 +2,7 @@ export * from "@/types/testimonial";
 export * from "@/types/download";
 export * from "@/types/sidekick";
 export * from "@/types/glossary";
+export * from "@/types/feature";
 export * from "@/types/service";
 export * from "@/types/gallery";
 export * from "@/types/status";
