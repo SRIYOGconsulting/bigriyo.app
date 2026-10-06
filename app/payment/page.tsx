@@ -35,13 +35,13 @@ const Payment = () => {
         </div>
 
         {/* ===== Right: QR Code Section ===== */}
-        <div className="flex flex-col justify-center items-center border rounded-3xl shadow-sm">
+        <div className="flex flex-col justify-center items-center">
           <Image
             width={600}
             height={800}
-            src="/payment/2.jpg"
+            src="/payment/1.webp"
             alt="Payment QR"
-            className="w-full h-full rounded-3xl object-contain p-2"
+            className="w-full h-full max-h-[50vh] rounded-3xl object-contain p-2"
           />
 
           <div className="text-center font-semibold space-y-2 text-sm mb-2">
