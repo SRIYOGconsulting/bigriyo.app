@@ -4,7 +4,6 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { AVAILABLE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { XIcon } from "lucide-react";
 
 const DEFAULT_IMAGE = "/roadblock/default/default.jpg";
 const SEEN_KEY = "roadblock_seen_v3";
@@ -83,7 +82,7 @@ const RoadBlock = () => {
           className={`absolute top-2 right-2 flex items-center justify-center bg-secondary rounded-full border-0 w-6 h-6 text-center text-sm md:text-lg text-secondary-foreground font-bold z-20 ${
             displayTimeLeft <= 0 ? "cursor-pointer" : "cursor-not-allowed"
           }`}>
-          {displayTimeLeft <= 0 ? <XIcon className="w-4 h-4" /> : displayTimeLeft}
+          {displayTimeLeft <= 0 ? <Image width={24} height={24} src="/icons/cross.svg" alt="cross" /> : displayTimeLeft}
         </button>
 
         <Link href="#" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden rounded-2xl">

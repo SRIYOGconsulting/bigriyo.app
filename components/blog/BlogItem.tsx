@@ -1,5 +1,4 @@
 import type { Blog } from "@/types";
-import { CalendarIcon, UserIcon, ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,7 +14,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => (
     <div className="p-6 flex-1 flex flex-col justify-between">
       <div>
         <div className="flex items-center text-xs text-muted-foreground gap-1 mb-2">
-          <CalendarIcon className="w-3.5 h-3.5" />
+          <Image width={16} height={16} src="/icons/calendar.svg" alt="published-date" />
           <time dateTime={blog.published_date}>{blog.published_date}</time>
         </div>
         <h2 className="text-xl font-bold leading-snug mb-4 line-clamp-2">{blog.title}</h2>
@@ -41,12 +40,10 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => (
     </div>
     <div className="px-6 py-4 bg-muted/50 text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors border-t border-border flex items-center justify-between text-xs">
       <div className="flex items-center gap-1.5 font-medium">
-        <UserIcon className="w-4 h-4" />
+        <Image width={16} height={16} src="/icons/user.svg" alt="user" />
         {blog.author}
       </div>
-      <div className="inline-flex items-center gap-1 font-semibold">
-        Read <ArrowRightIcon className="w-3.5 h-3.5" />
-      </div>
+      <div className="inline-flex items-center gap-1 font-semibold">Read</div>
     </div>
   </Link>
 );

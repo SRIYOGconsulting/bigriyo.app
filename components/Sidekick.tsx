@@ -1,15 +1,26 @@
 "use client";
 
-import BacktoTop from "@/components/ui/BacktoTop";
+import { useEffect, useState } from "react";
 import useCookie from "@/context/Cookie";
+import Image from "next/image";
 import Link from "next/link";
 
 const Sidekick = () => {
+  const [showBackToTopBtn, setShowBackToTopBtn] = useState(false);
   const { visible } = useCookie();
 
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTopBtn(window.scrollY > 0);
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
-    <div className={`fixed right-2 z-20 flex flex-col items-center gap-6 ${visible ? "bottom-48" : "bottom-2"}`}>
-      <BacktoTop />
+    <div className={`fixed right-2 z-20 flex flex-col items-center ${visible ? "bottom-48" : "bottom-12"}`}>
       {/* Phone Icon */}
       <Link
         href="tel:+9779852024365"
@@ -30,7 +41,9 @@ const Sidekick = () => {
       </Link>
 
       {/* WhatsApp Icon */}
-      <Link href="https://wa.me/9779852024365" className="cursor-pointer bg-secondary p-3 rounded-full animate-bounce">
+      <Link
+        href="https://wa.me/9779852024365"
+        className="cursor-pointer bg-secondary p-3 rounded-full animate-bounce mt-6 mb-2">
         <svg width="28" height="28" viewBox="0 0 277 270" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             fillRule="evenodd"
@@ -42,6 +55,15 @@ const Sidekick = () => {
           />
         </svg>
       </Link>
+
+      {showBackToTopBtn && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Scroll to Top"
+          className="cursor-pointer bg-secondary/80 p-3 rounded-full">
+          <Image width={24} height={24} src="/icons/next-arrow.svg" alt="back-to-top" className="-rotate-90" />
+        </button>
+      )}
     </div>
   );
 };

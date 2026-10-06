@@ -78,14 +78,14 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
+      <section className="pt-12 pb-6 md:pt-24 md:pb-12 bg-muted/20">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Why Us?</h2>
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-5">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col items-center text-center p-5 sm:p-6 bg-card text-card-foreground border border-border rounded-xl hover:shadow-md transition-shadow duration-200">
-              <div className="bg-card-foreground/10 p-3 sm:p-4 rounded-2xl mb-4 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+              className="flex flex-col items-center text-center p-4 bg-card text-card-foreground border border-border rounded-xl hover:shadow-md transition-shadow duration-200">
+              <div className="bg-secondary/80 p-3 sm:p-4 rounded-2xl mb-4 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
                 <Image
                   src={feature.icon}
                   alt={feature.alt}
@@ -101,8 +101,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Top Services</h2>
+      <section className="max-w-7xl mx-auto py-6 md:py-12 px-4 lg:px-0">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviceList[1].services.slice(0, 3).map((service) => (
             <ServiceItem key={service.slug} service={service} />
@@ -117,8 +117,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-12 md:pt-24 md:pb-32 bg-muted/20">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Happy Stories</h2>
+      <section className="py-6 md:py-12 bg-muted/20">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Happy Stories</h2>
         <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.slice(0, 3).map((testimonial) => (
             <TestimonialItem key={testimonial.id} testimonial={testimonial} />
@@ -133,8 +133,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-12 md:pt-24 md:pb-32 px-4 lg:px-0">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-12">Latest Blogs</h2>
+      <section className="max-w-7xl mx-auto py-6 md:py-12 px-4 lg:px-0">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Latest Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.slice(0, 3).map((blog) => (
             <BlogItem key={blog.id} blog={blog} />

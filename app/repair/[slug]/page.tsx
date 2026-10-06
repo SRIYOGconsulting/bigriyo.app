@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CheckIcon } from "lucide-react";
 import { serviceList } from "@/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,7 +90,6 @@ const ServiceDetails = async ({ params }: ServiceDetailProps) => {
             <li
               key={idx}
               className="flex items-center gap-3 rounded-full border border-border bg-card p-4 text-sm font-medium shadow-sm">
-              <CheckIcon className="h-5 w-5 shrink-0 text-primary" />
               <span>{feature}</span>
             </li>
           ))}

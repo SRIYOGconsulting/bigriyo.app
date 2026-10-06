@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { CalendarIcon, UserIcon, TagIcon, ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { blogs } from "@/data";
 import ClapButton from "@/components/ui/ClapButton";
@@ -59,11 +58,11 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
             {/* Author and Date Meta */}
             <div className="mt-4 flex flex-wrap items-center gap-6 text-sm opacity-90">
               <div className="flex items-center gap-2">
-                <UserIcon className="h-4 w-4" />
+                <Image width={16} height={16} src="/icons/user.svg" alt="user" />
                 <span>{blog.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CalendarIcon className="h-4 w-4" />
+                <Image width={16} height={16} src="/icons/calendar.svg" alt="published-date" />
                 <time dateTime={blog.published_date}>
                   {new Date(blog.published_date).toLocaleDateString("en-US", {
                     year: "numeric",
@@ -118,7 +117,6 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
               <li
                 key={idx}
                 className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium shadow-sm text-foreground">
-                <TagIcon className="h-3.5 w-3.5 shrink-0 text-primary" />
                 <span>{tag}</span>
               </li>
             ))}
@@ -130,7 +128,6 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-            <ArrowLeft className="h-4 w-4" />
             Back to all blogs
           </Link>
         </div>

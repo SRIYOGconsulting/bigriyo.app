@@ -17,7 +17,7 @@ export const features: Feature[] = [
   },
   {
     id: 3,
-    icon: "/icons/user-id.svg",
+    icon: "/icons/technician.svg",
     alt: "Hire a Technician",
     title: "Hire a Technician",
     description: "Hire a technician for your home from Kathmandu."

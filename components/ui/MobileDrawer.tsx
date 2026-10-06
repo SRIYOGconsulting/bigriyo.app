@@ -1,6 +1,5 @@
 "use client";
 
-import { XIcon, SunIcon, MoonIcon } from "lucide-react";
 import { navLinks, socialLinks } from "@/constants";
 import { useEffect } from "react";
 import Image from "next/image";
@@ -57,8 +56,11 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, 
               <Image src="/icons/logo/1.svg" alt="logo" width={36} height={36} />
               <div className="text-xl font-bold text-foreground">BIGRIYO</div>
             </Link>
-            <button onClick={closeDrawer} className="p-1 rounded-full text-muted-foreground" aria-label="Close menu">
-              <XIcon className="w-6 h-6" />
+            <button
+              onClick={closeDrawer}
+              className="p-1 bg-secondary rounded-full text-muted-foreground"
+              aria-label="Close menu">
+              <Image width={16} height={16} src="/icons/cross.svg" alt="cross" />
             </button>
           </div>
 
@@ -71,10 +73,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, 
                   href={item.href}
                   onClick={closeDrawer}
                   className="group flex items-center justify-between p-3 border-b border-border transition-colors hover:bg-muted text-foreground">
-                  <div className="flex items-center gap-x-4">
-                    <item.icon className="h-5 w-5" />
-                    <span className="font-medium">{item.title}</span>
-                  </div>
+                  <span className="font-medium">{item.title}</span>
                 </Link>
               );
             })}
@@ -83,9 +82,15 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, 
             <button
               type="button"
               onClick={toggleTheme}
-              className="flex items-center justify-between w-full p-3 my-8 rounded-lg transition-colors hover:bg-muted text-foreground cursor-pointer">
+              className="flex items-center justify-between w-full p-3 my-8 rounded-lg  transition-colors hover:bg-muted text-foreground cursor-pointer">
               <span className="font-medium">{isDark ? "Light Mode" : "Dark Mode"}</span>
-              {isDark ? <SunIcon className="w-5 h-5 text-amber-400" /> : <MoonIcon className="w-5 h-5 text-primary" />}
+              <div className="bg-secondary p-2 rounded-full">
+                {isDark ? (
+                  <Image width={16} height={16} src="/icons/sun.svg" alt="sun" />
+                ) : (
+                  <Image width={16} height={16} src="/icons/moon.svg" alt="moon" />
+                )}
+              </div>
             </button>
 
             <div className="space-y-2">

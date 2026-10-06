@@ -1,9 +1,9 @@
 "use client";
 
-import { MinusIcon, PlusIcon } from "lucide-react";
 import { useState } from "react";
 import { faqs } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
+import Image from "next/image";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -22,7 +22,11 @@ const Faq = () => {
               className="w-full flex justify-between items-center p-4 transition">
               <h2 className="text-md font-semibold text-left">{faq.question}</h2>
               <span className="text-2xl font-bold flex-shrink-0 ml-4">
-                {openIndex === faq.id ? <MinusIcon className="w-4 h-4" /> : <PlusIcon className="w-4 h-4" />}
+                {openIndex === faq.id ? (
+                  <Image width={16} height={16} src="/icons/minus.svg" alt="close" />
+                ) : (
+                  <Image width={16} height={16} src="/icons/plus.svg" alt="expand" />
+                )}
               </span>
             </button>
 

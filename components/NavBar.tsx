@@ -1,6 +1,5 @@
 "use client";
 
-import { SunIcon, MoonIcon, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/constants";
 import MobileDrawer from "@/components/ui/MobileDrawer";
@@ -39,7 +38,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background transition-colors">
       <PromoBar />
       <div className="max-w-7xl mx-auto px-4 lg:px-0 flex items-center justify-between py-4">
         <Link
@@ -57,15 +56,16 @@ const NavBar = () => {
               {link.title}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden lg:flex gap-4 items-center">
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="hidden lg:flex p-2 rounded-full border border-border bg-card text-foreground hover:border-primary transition-all items-center justify-center w-9 h-9 cursor-pointer shrink-0">
-            {isDark ? <SunIcon className="w-4 h-4 text-amber-400" /> : <MoonIcon className="w-4 h-4 text-primary" />}
+            className="hidden lg:flex p-2 rounded-full bg-secondary border border-border bg-card text-foreground hover:border-primary transition-all items-center justify-center w-9 h-9 cursor-pointer shrink-0">
+            {isDark ? (
+              <Image width={24} height={24} src="/icons/sun.svg" alt="sun" />
+            ) : (
+              <Image width={24} height={24} src="/icons/moon.svg" alt="moon" />
+            )}
           </button>
 
           <Link
@@ -84,8 +84,12 @@ const NavBar = () => {
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="p-2 rounded-lg border border-border bg-card text-foreground hover:border-primary transition-colors flex lg:hidden items-center justify-center w-9 h-9 shrink-0 cursor-pointer">
-          {isOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
+          className="p-2 rounded-lg bg-secondary flex lg:hidden items-center justify-center w-9 h-9 shrink-0 cursor-pointer">
+          {isOpen ? (
+            <Image width={24} height={24} src="/icons/cross.svg" alt="cross" />
+          ) : (
+            <Image width={24} height={24} src="/icons/hamburger.svg" alt="menu" />
+          )}
         </button>
       </div>
 

@@ -3,7 +3,6 @@ import { serviceList } from "@/data";
 import ServiceSearchBar from "@/components/repair/SerachBar";
 import ServiceItem from "@/components/repair/ServiceItem";
 import Image from "next/image";
-import { WrenchIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Our Services | Service Catalog",
@@ -87,11 +86,11 @@ const Services = async ({ searchParams }: ServicesProps) => {
         </>
       ) : results.length === 0 ? (
         <div className="text-center py-16 rounded-2xl border border-dashed border-border">
-          <WrenchIcon className="w-12 h-12 text-muted mx-auto mb-3" />
-          <h3 className="text-lg font-medium text-muted-foreground">No services found</h3>
+          <Image width={32} height={32} src="/icons/search.svg" alt="search" className="mx-auto mb-2" />
+          <h3 className="text-lg font-medium text-muted-foreground mb-4">No services found.</h3>
+          <p className="text-muted-foreground text-sm mt-1">We couldn't find anything matching "{rawQuery}".</p>
           <p className="text-muted-foreground text-sm mt-1">
-            We couldn't find anything matching "{rawQuery}" Try checking for spelling errors or searching a broader
-            term.
+            Try checking for spelling errors or searching a broader term.
           </p>
         </div>
       ) : (

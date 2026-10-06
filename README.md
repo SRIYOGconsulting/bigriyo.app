@@ -9,7 +9,6 @@
 * **Framework:** [Next.js](https://nextjs.org/) (App Router)
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Icons:** [Lucide React](https://lucide.dev/)
 
 ---
 

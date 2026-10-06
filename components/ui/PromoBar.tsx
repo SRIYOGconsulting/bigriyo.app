@@ -1,8 +1,8 @@
 "use client";
 
-import { XIcon } from "lucide-react";
 import { useState } from "react";
 import useStatus from "@/context/Status";
+import Image from "next/image";
 
 const PromoBar = () => {
   const [visible, setVisible] = useState(true);
@@ -23,14 +23,14 @@ const PromoBar = () => {
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => showStatus("info", "Coming Soon!")}
-            className="rounded border border-white/40 bg-white/10 px-3 py-1 text-xs font-semibold italic text-secondary-foreground transition-colors hover:border-white hover:bg-white/20 active:scale-95 cursor-pointer">
+            className="rounded border border-white/30 px-3 py-1 text-xs font-semibold italic text-secondary-foreground transition-colors hover:border-white hover:bg-white/20 active:scale-95 cursor-pointer">
             Check it out
           </button>
           <button
             onClick={() => setVisible(false)}
             aria-label="Dismiss banner"
             className="inline-flex rounded border border-white/30 p-1.5 transition-colors hover:bg-white/10 hover:border-white cursor-pointer">
-            <XIcon className="w-3 h-3" />
+            <Image width={12} height={12} src="/icons/cross.svg" alt="cross" />
           </button>
         </div>
       </div>

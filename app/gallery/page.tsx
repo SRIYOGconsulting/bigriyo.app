@@ -4,7 +4,49 @@ import { useState, useCallback, useEffect } from "react";
 import { galleryItems } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
+import { GalleryItem } from "@/types";
+
+interface GallerySectionProps {
+  heading: string;
+  className?: string;
+  items: GalleryItem[];
+  onSelectItem: (item: GalleryItem) => void;
+}
+
+const GallerySection: React.FC<GallerySectionProps> = ({ heading, items, className = "", onSelectItem }) => {
+  return (
+    <>
+      <h2 className={`${className} mb-4 font-bold text-2xl text-center`}>{heading}</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {items.map((item, index) => (
+          <div
+            key={item.id ?? index}
+            role="button"
+            tabIndex={0}
+            onClick={() => onSelectItem(item)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onSelectItem(item);
+              }
+            }}
+            className="group relative w-full h-72 rounded-xl overflow-hidden shadow-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary">
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition duration-300"
+            />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span className="text-white font-medium text-sm drop-shadow-md">{item.alt}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
 
 const Gallery = () => {
   const [lightbox, setLightbox] = useState(false);
@@ -25,15 +67,16 @@ const Gallery = () => {
     setSelectedIndex((selectedIndex + 1) % galleryItems.length);
   }, [selectedIndex]);
 
-  const openLightbox = (index: number) => {
-    setSelectedIndex(index);
-    setLightbox(true);
-  };
+  const handleSelectItem = useCallback((item: GalleryItem) => {
+    const globalIdx = galleryItems.findIndex((gItem) => (gItem.id ? gItem.id === item.id : gItem.src === item.src));
+    if (globalIdx !== -1) {
+      setSelectedIndex(globalIdx);
+      setLightbox(true);
+    }
+  }, []);
 
-  // Keyboard navigation & scroll locking
   useEffect(() => {
     if (!lightbox) return;
-
     document.body.style.overflow = "hidden";
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -55,25 +98,19 @@ const Gallery = () => {
 
       {/* Grid Section */}
       <section className="py-12 px-4 lg:px-0 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {galleryItems.map((item, index) => (
-            <div
-              key={item.id ?? index}
-              onClick={() => openLightbox(index)}
-              className="group relative w-full h-72 rounded-xl overflow-hidden shadow-md cursor-pointer">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition duration-300"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-white font-medium text-sm drop-shadow-md">{item.alt}</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <GallerySection heading="Featured Services" items={galleryItems.slice(0, 6)} onSelectItem={handleSelectItem} />
+        <GallerySection
+          heading="All-time Favorite Services"
+          items={galleryItems.slice(6, 12)}
+          className="mt-12"
+          onSelectItem={handleSelectItem}
+        />
+        <GallerySection
+          heading="Latest Services"
+          items={galleryItems.slice(12, 18)}
+          className="mt-12"
+          onSelectItem={handleSelectItem}
+        />
       </section>
 
       {/* Lightbox Overlay */}
@@ -89,8 +126,8 @@ const Gallery = () => {
               goPrev();
             }}
             aria-label="Previous image"
-            className="fixed left-4 top-1/2 -translate-y-1/2 z-50 text-white/80 bg-black/40 md:bg-transparent p-2 rounded-full hover:bg-black/60 transition-colors cursor-pointer">
-            <ChevronLeftIcon className="w-8 h-8 md:w-12 md:h-12" />
+            className="fixed left-4 top-1/2 -translate-y-1/2 z-50 bg-secondary p-2 rounded-full cursor-pointer">
+            <Image width={24} height={24} src="/icons/prev-arrow.svg" alt="Previous" />
           </button>
 
           {/* Main Image View */}
@@ -118,8 +155,8 @@ const Gallery = () => {
               goNext();
             }}
             aria-label="Next image"
-            className="fixed right-4 top-1/2 -translate-y-1/2 z-50 text-white/80 bg-black/40 md:bg-transparent p-2 rounded-full hover:bg-black/60 transition-colors cursor-pointer">
-            <ChevronRightIcon className="w-8 h-8 md:w-12 md:h-12" />
+            className="fixed right-4 top-1/2 -translate-y-1/2 z-50 bg-secondary p-2 rounded-full cursor-pointer">
+            <Image width={24} height={24} src="/icons/next-arrow.svg" alt="Next" />
           </button>
 
           {/* Footer Controls */}
@@ -132,7 +169,7 @@ const Gallery = () => {
               onClick={closeLightbox}
               aria-label="Close lightbox"
               className="text-white/80 bg-red-600/80 md:bg-transparent p-2 transition-colors cursor-pointer rounded-full hover:bg-red-600">
-              <XIcon className="w-6 h-6 md:w-8 md:h-8" />
+              <Image width={24} height={24} src="/icons/cross.svg" alt="cross" />
             </button>
           </div>
         </div>

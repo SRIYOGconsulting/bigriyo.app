@@ -49,7 +49,7 @@ const Calendar = () => {
             <h2 className="text-2xl font-bold tracking-tight">
               {months[selectedMonth]} {selectedYear}
             </h2>
-            <div className="flex flex-wrap gap-2 items-center justify-between w-full px-4 md:px-0">
+            <div className="flex flex-wrap gap-2 items-center justify-between px-4 md:px-0">
               <button
                 onClick={handlePrevMonth}
                 aria-label="Previous month"

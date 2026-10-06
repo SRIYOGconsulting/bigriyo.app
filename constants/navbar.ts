@@ -1,12 +1,10 @@
-import { Home, Info, Briefcase, MessageSquare, Users, Phone } from "lucide-react";
-
 export const navLinks = [
-  { href: "/", title: "Home", icon: Home },
-  { href: "/about", title: "About", icon: Info },
-  { href: "/repair", title: "Services", icon: Briefcase },
-  { href: "/feedback", title: "Feedback", icon: MessageSquare },
-  { href: "/team", title: "Team", icon: Users },
-  { href: "/contact", title: "Contact", icon: Phone }
+  { href: "/", title: "Home" },
+  { href: "/about", title: "About" },
+  { href: "/repair", title: "Services" },
+  { href: "/feedback", title: "Feedback" },
+  { href: "/team", title: "Team" },
+  { href: "/contact", title: "Contact" }
 ];
 
 export const socialLinks = [
