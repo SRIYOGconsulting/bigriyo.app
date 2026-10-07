@@ -49,7 +49,7 @@ const Book = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
   };
@@ -57,11 +57,11 @@ const Book = () => {
   return (
     <>
       <Ribbon name="Booking" showFontSize={false} />
-      <div className="max-w-7xl mx-auto min-h-screen bg-background text-foreground py-12 px-4 lg:px-0">
-        <div className="max-w-4xl mx-auto bg-card text-card-foreground shadow-md rounded-2xl p-6 sm:p-10 border border-border">
+      <div className="max-w-7xl mx-auto min-h-screen py-4 md:py-12 px-4 lg:px-0">
+        <div className="bg-card text-card-foreground shadow-md rounded-2xl p-4 md:p-16 border border-border">
           {/* Header Section */}
           <div className="mb-6 pb-6 border-b border-border">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground">BIGRIYO Repairing Services</h1>
+            <h1 className="text-xl md:text-3xl font-bold tracking-tight text-foreground">BIGRIYO Repairing Services</h1>
             <p className="mt-2 text-sm text-muted-foreground">Service Booking Form</p>
           </div>
 
