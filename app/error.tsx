@@ -14,8 +14,8 @@ export default function Error({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <main className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
-      <div className="rounded-full bg-muted p-4 mb-4">
+    <main className="min-h-[70vh] flex flex-col items-center justify-center">
+      <div className="rounded-full bg-muted p-8 mb-4">
         <Image width={64} height={64} src="/icons/error.svg" alt="error" />
       </div>
       <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Something went wrong</h1>

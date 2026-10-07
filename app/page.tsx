@@ -2,6 +2,7 @@ import { testimonials } from "@/data/testimonial";
 import { blogs, features, serviceList } from "@/data";
 import TestimonialItem from "@/components/testimonial/TestimonialItem";
 import ServiceItem from "@/components/repair/ServiceItem";
+import HeroBackground from "@/components/home/Background";
 import BlogItem from "@/components/blog/BlogItem";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,26 +14,7 @@ const Home = () => {
   return (
     <>
       <div className="w-full min-h-[600px] flex flex-col justify-center items-start relative overflow-hidden">
-        {/* Desktop Background Image */}
-        <div className="hidden sm:block absolute inset-0 -z-10">
-          <Image src="/home/hero/1.jpg" alt="BIGRIYO" fill className="object-cover" sizes="100vw" priority />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-
-        {/* Mobile Background Image */}
-        <div className="block sm:hidden absolute inset-0 -z-10">
-          <Image
-            src="/home/hero/2.jpg"
-            alt="BIGRIYO"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-
-        {/* Content Container */}
+        <HeroBackground />
         <div className="max-w-7xl mx-auto w-full min-h-[600px] flex flex-col justify-center items-start px-4 lg:px-0 py-12 z-10">
           <div className="flex flex-col justify-start text-white w-full sm:w-1/2">
             <div className="text-xl md:text-2xl font-semibold mb-2 opacity-90">Welcome to</div>
@@ -40,14 +22,12 @@ const Home = () => {
             <h1 className="text-base md:text-lg max-w-[600px] leading-relaxed opacity-95">
               Professional repairing services in Kathmandu, Nepal.
             </h1>
-
             <div className="mt-8 flex flex-wrap gap-4 font-semibold">
               <Link
                 href="/about"
                 className="inline-block border-2 text-white border-white py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
                 About
               </Link>
-
               <Link
                 href="/book"
                 className="inline-block border-2 text-white border-white py-2 px-6 rounded-md hover:text-secondary-foreground hover:bg-secondary hover:border-secondary transition-all duration-300 cursor-pointer">
@@ -58,9 +38,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* PARTNERS */}
       <section className="py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
-        <div className="flex w-max gap-4 items-center">
+        <div className="flex w-max animate-scroll gap-4 items-center">
           {[...partnerLogos, ...partnerLogos].map((n, i) => (
             <div
               key={`${n}-${i}`}
@@ -78,7 +57,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="pt-12 pb-6 md:pt-24 md:pb-12 bg-muted/20">
+      <section className="py-12 md:py-24 bg-muted/30">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Why Us?</h2>
         <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-5">
           {features.map((feature) => (
@@ -101,7 +80,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-6 md:py-12 px-4 lg:px-0">
+      <section className="max-w-7xl mx-auto py-12 md:py-24 px-4 lg:px-0">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Top Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {serviceList[1].services.slice(0, 3).map((service) => (
@@ -117,7 +96,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-6 md:py-12 bg-muted/20">
+      <section className="py-12 md:py-24 bg-muted/30">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Happy Stories</h2>
         <div className="max-w-7xl mx-auto px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {testimonials.slice(0, 3).map((testimonial) => (
@@ -133,7 +112,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-6 md:py-12 px-4 lg:px-0">
+      <section className="max-w-7xl mx-auto py-12 md:py-24 px-4 lg:px-0">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 md:mb-12">Latest Blogs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {blogs.slice(0, 3).map((blog) => (
