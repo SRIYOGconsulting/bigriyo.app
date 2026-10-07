@@ -22,16 +22,14 @@ const Sidekick = () => {
   return (
     <div className={`fixed right-2 z-20 flex flex-col items-center ${visible ? "bottom-48" : "bottom-12"}`}>
       {/* Phone Icon */}
-      <Link
-        href="tel:+9779852024365"
-        className="relative group cursor-pointer bg-secondary p-3 rounded-full animate-phone-ring">
-        <div className="absolute inset-0 rounded-full bg-secondary opacity-0 group-hover:opacity-75 animate-ping transition pointer-events-none" />
+      <Link href="tel:+9779852024365" className="relative group cursor-pointer bg-secondary p-3 rounded-full">
+        <div className="absolute inset-0 rounded-full bg-secondary opacity-0 group-hover:opacity-75 transition pointer-events-none" />
         <Image
           width={32}
           height={32}
           src="/icons/phone.svg"
           alt="phone"
-          className="relative z-10 transition-transform duration-200"
+          className="relative z-10 transition-transform duration-200 animate-phone-ring"
         />
       </Link>
 
@@ -52,8 +50,8 @@ const Sidekick = () => {
         <button
           onClick={scrollToTop}
           aria-label="Scroll to Top"
-          className="cursor-pointer bg-secondary/80 p-3 rounded-full">
-          <Image width={24} height={24} src="/icons/next-arrow.svg" alt="back-to-top" className="-rotate-90" />
+          className="cursor-pointer bg-black/50 p-3 rounded-full">
+          <Image width={32} height={32} src="/icons/next-arrow.svg" alt="back-to-top" className="-rotate-90" />
         </button>
       )}
     </div>
