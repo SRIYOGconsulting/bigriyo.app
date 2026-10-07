@@ -10,7 +10,7 @@ export const features: Feature[] = [
   },
   {
     id: 2,
-    icon: "/icons/user.svg",
+    icon: "/icons/professional.svg",
     alt: "Expert Professionals",
     title: "Expert Professionals",
     description: "All around repairing services from Kathmandu."

@@ -20,9 +20,9 @@ export const team = [
 ];
 
 export const services = [
-  { icon: "/icons/2.svg", title: "Training", desc: "Join our classes to sharpen your skills." },
-  { icon: "/icons/3.svg", title: "Workshop", desc: "Hands-in IT workshop & seminar." },
-  { icon: "/icons/4.svg", title: "Meeting", desc: "Book a Meeting to discuss and clarify your needs." },
+  { icon: "/icons/user-id.svg", title: "Training", desc: "Join our classes to sharpen your skills." },
+  { icon: "/icons/rocket.svg", title: "Workshop", desc: "Hands-in IT workshop & seminar." },
+  { icon: "/icons/speaker.svg", title: "Meeting", desc: "Book a Meeting to discuss and clarify your needs." },
   { icon: "/icons/shield.svg", title: "Internship", desc: "Get experiences in real time projects." }
 ];
 

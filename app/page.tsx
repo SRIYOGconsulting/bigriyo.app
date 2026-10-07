@@ -60,7 +60,7 @@ const Home = () => {
 
       {/* PARTNERS */}
       <section className="py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
-        <div className="flex w-max animate-scroll gap-12 items-center">
+        <div className="flex w-max gap-4 items-center">
           {[...partnerLogos, ...partnerLogos].map((n, i) => (
             <div
               key={`${n}-${i}`}

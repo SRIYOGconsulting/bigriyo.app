@@ -4,6 +4,7 @@ import { services, team } from "@/data";
 import { countries } from "@/constants";
 import { useState } from "react";
 import Ribbon from "@/components/ui/Ribbon";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Contact() {
@@ -69,10 +70,11 @@ export default function Contact() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="rounded-lg p-6 border border-border  transition-shadow flex items-start gap-4">
+                  className="rounded-lg p-6 border border-border transition-shadow flex items-start gap-4">
                   {/* Icon (left) */}
-                  <img src={service.icon} alt={service.title} className="w-10 h-10 shrink-0" />
-
+                  <div className="bg-secondary rounded-lg p-4 shrink-0">
+                    <Image width={36} height={36} src={service.icon} alt={service.title} className="shrink-0" />
+                  </div>
                   {/* Text (right) */}
                   <div>
                     <h3 className="text-lg font-bold  mb-2">{service.title}</h3>

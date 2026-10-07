@@ -27,7 +27,7 @@ const ClapButton = () => {
           className={`text-[32px] p-[11px] rounded-full cursor-pointer transition-transform duration-200 ease bg-white shadow-md disabled:cursor-not-allowed disabled:opacity-50 ${
             isClicked ? "scale-[1.1]" : "scale-100"
           }`}>
-          <img src="/icons/HandsClapping.svg" className="scale-[1.15]" alt="clap button" />
+          <img src="/icons/clap.svg" className="scale-[1.15]" alt="clap button" />
         </button>
         <div className="text-[15px] mt-[5px] font-semibold">{totalClaps.toLocaleString()}</div>
       </div>

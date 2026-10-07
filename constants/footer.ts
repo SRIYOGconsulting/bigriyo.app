@@ -50,7 +50,7 @@ export const contactBoxLinks = [
   },
   {
     href: "tel:+9779852024365",
-    src: "/icons/phone.svg",
+    src: "/icons/phone-ring.svg",
     alt: "phone",
     label: "+977-98520-24365"
   },

@@ -7,19 +7,19 @@ const Vmgo = () => {
       <section className="max-w-7xl mx-auto py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-content-center place-items-center">
           <div className="flex flex-col justify-center items-center gap-3">
-            <Image height={24} width={24} src="/vmgo/vision.png" alt="Vision Icon" className="w-24 h-24" />
+            <Image height={96} width={96} src="/vmgo/vision.png" alt="Vision Icon" className="w-24 h-24" />
             <p className="font-semibold">Vision</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
-            <Image height={24} width={24} src="/vmgo/mission.png" alt="Mission Icon" className="w-24 h-24" />
+            <Image height={96} width={96} src="/vmgo/mission.png" alt="Mission Icon" className="w-24 h-24" />
             <p className="font-semibold">Mission</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
-            <Image height={24} width={24} src="/vmgo/goal.png" alt="Goal Icon" className="w-24 h-24" />
+            <Image height={96} width={96} src="/vmgo/goal.png" alt="Goal Icon" className="w-24 h-24" />
             <p className="font-semibold">Goals</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
-            <Image height={24} width={24} src="/vmgo/objective.png" alt="Objective Icon" className="w-24 h-24" />
+            <Image height={96} width={96} src="/vmgo/objective.png" alt="Objective Icon" className="w-24 h-24" />
             <p className="font-semibold">Objectives</p>
           </div>
         </div>
@@ -27,8 +27,8 @@ const Vmgo = () => {
 
       {/* Vision Section */}
       <section className="max-w-7xl mx-auto flex justify-between gap-24 mb-12 py-8">
-        <div className="hidden md:flex items-center justify-center mb-6">
-          <Image height={600} width={800} src="/vmgo/vision.png" alt="Vision" className="w-auto h-40 text-muted" />
+        <div className="hidden lg:flex items-center justify-center mb-6">
+          <Image height={800} width={800} src="/vmgo/vision.png" alt="Vision" className="w-auto h-40 text-muted" />
         </div>
         <div className="p-8 space-y-4 max-w-5xl rounded-xl">
           <h2 className="text-3xl font-bold text">Vision</h2>
@@ -55,15 +55,15 @@ const Vmgo = () => {
             single time.
           </p>
         </div>
-        <div className="hidden md:flex items-center justify-center mb-6">
-          <Image height={600} width={800} src="/vmgo/mission.png" alt="Mission" className="w-auto h-40" />
+        <div className="hidden lg:flex items-center justify-center mb-6">
+          <Image height={800} width={800} src="/vmgo/mission.png" alt="Mission" className="w-auto h-40" />
         </div>
       </section>
 
       {/* Goals Section */}
       <section className="max-w-7xl mx-auto flex justify-between gap-24 py-8">
-        <div className="hidden md:flex items-center justify-center mb-6">
-          <Image height={600} width={800} src="/vmgo/goal.png" alt="Goals" className="w-60 h-40" />
+        <div className="hidden lg:flex items-center justify-center mb-6">
+          <Image height={800} width={800} src="/vmgo/goal.png" alt="Goals" className="w-60 h-40" />
         </div>
         <div className="p-8 space-y-4 card rounded-xl">
           <h2 className="text-3xl font-bold text">Our Goals</h2>
@@ -99,10 +99,10 @@ const Vmgo = () => {
             </div>
           ))}
         </div>
-        <div className="hidden md:flex items-center justify-center mb-6">
+        <div className="hidden lg:flex items-center justify-center mb-6">
           <Image
-            height={600}
             width={800}
+            height={800}
             src="/vmgo/objective.png"
             alt="Objectives"
             className="w-auto h-44 text-teal-700"
