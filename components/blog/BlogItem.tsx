@@ -43,7 +43,7 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => (
         <Image width={16} height={16} src="/icons/user.svg" alt="user" />
         {blog.author}
       </div>
-      <div className="inline-flex items-center gap-1 font-semibold">Read</div>
+      <div className="inline-flex items-center gap-1 font-semibold">Read -&gt;</div>
     </div>
   </Link>
 );
