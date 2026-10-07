@@ -29,7 +29,7 @@ const Sidekick = () => {
           height={32}
           src="/icons/phone.svg"
           alt="phone"
-          className="relative z-10 transition-transform duration-200 animate-phone-ring"
+          className="w-6 h-6 md:w-8 md:h-8 animate-phone-ring"
         />
       </Link>
 
@@ -37,21 +37,15 @@ const Sidekick = () => {
       <Link
         href="https://wa.me/9779852024365"
         className="cursor-pointer bg-secondary p-3 rounded-full animate-bounce mt-6 mb-2">
-        <Image
-          width={32}
-          height={32}
-          src="/icons/whatsapp-side.svg"
-          alt="whatsapp"
-          className="relative z-10 transition-transform duration-200"
-        />
+        <Image width={32} height={32} src="/icons/whatsapp-side.svg" alt="whatsapp" className="w-6 h-6 md:w-8 md:h-8" />
       </Link>
 
       {showBackToTopBtn && (
         <button
           onClick={scrollToTop}
           aria-label="Scroll to Top"
-          className="cursor-pointer bg-black/50 p-3 rounded-full">
-          <Image width={32} height={32} src="/icons/next-arrow.svg" alt="back-to-top" className="-rotate-90" />
+          className="cursor-pointer bg-muted/80 shadow-xl border border-secondary/80 p-3 rounded-full">
+          <Image width={32} height={32} src="/icons/up.svg" alt="back-to-top" className="w-6 h-6 md:w-8 md:h-8 " />
         </button>
       )}
     </div>

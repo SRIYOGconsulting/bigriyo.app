@@ -102,7 +102,7 @@ export default function Contact() {
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="Eg: Madan"
+                    placeholder="Madan"
                     value={formData.firstName}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
@@ -113,7 +113,7 @@ export default function Contact() {
                   <input
                     type="text"
                     name="lastName"
-                    placeholder="Eg: Tamang"
+                    placeholder="Tamang"
                     value={formData.lastName}
                     onChange={handleChange}
                     className="w-full px-4 py-2.5  border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
@@ -127,7 +127,7 @@ export default function Contact() {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Eg: madan@sriyog.com"
+                  placeholder="madan@sriyog.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent focus:bg-white"
@@ -237,7 +237,7 @@ export default function Contact() {
               <Link
                 href={`mailto:${member.email}`}
                 className="px-5 cursor-pointer py-1.5 border border-teal-700 rounded hover:bg-secondary hover:text-secondary-foreground transition-colors font-semibold text-base">
-                eMail
+                Email
               </Link>
             </div>
           ))}

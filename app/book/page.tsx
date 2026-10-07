@@ -1,6 +1,7 @@
 "use client";
 
 import Ribbon from "@/components/ui/Ribbon";
+import Image from "next/image";
 import { useState } from "react";
 
 const Book = () => {
@@ -295,14 +296,7 @@ const Book = () => {
                 type="button"
                 onClick={handleClearForm}
                 className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
-                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                  />
-                </svg>
+                <Image width={32} height={32} src="/icons/sync.svg" alt="clear" className="w-4 h-4 mr-2" />
                 Clear form
               </button>
 

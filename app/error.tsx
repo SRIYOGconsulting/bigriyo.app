@@ -26,6 +26,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
         <button
           onClick={reset}
           className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+          <Image width={24} height={24} src="/icons/sync.svg" alt="error" className="w-4 h-4" />
           Refresh Try Again
         </button>
       </div>

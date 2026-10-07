@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
 
         {/* SOCIAL + CONTACT SECTION */}
-        <section className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
+        <section className="max-w-7xl mx-auto px-4 lg:px-0 flex flex-col lg:flex-row lg:justify-between gap-8 mt-10">
           {/* SOCIAL ICONS */}
           <div className="flex gap-6 justify-center items-center">
             {footSocialLinks.map((link, idx) => (
@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="w-full border-t mt-14 mb-6"></div>
 
         {/* FOOTER BOTTOM */}
-        <section className="max-w-7xl mx-auto px-4 md:px-8 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
+        <section className="max-w-7xl mx-auto px-4 lg:px-0 mt-6 lg:mt-12 flex flex-col lg:flex-row justify-center items-center lg:justify-between text-[13px] gap-3 text-center md:text-left font-semibold">
           <p className="flex flex-col md:flex-row gap-4 md:gap-1 items-center">
             <span>All Rights Reserved. © 2018-{new Date().getFullYear()}</span>
             <span>BIGRIYO ( A SRIYOG Consulting Initiative )</span>
