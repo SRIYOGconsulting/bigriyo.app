@@ -75,25 +75,33 @@ const RoadBlock = () => {
 
   return (
     <div className="fixed inset-0 w-screen h-screen z-[9999] bg-background flex items-center justify-center overflow-hidden">
-      <div className="relative max-w-[90vw]">
+      <div className="relative aspect-square w-[90vw] h-auto lg:w-auto lg:h-[80vh]">
         <button
           type="button"
           onClick={displayTimeLeft <= 0 ? onClose : undefined}
-          className={`absolute top-2 right-2 flex items-center justify-center bg-secondary rounded-full border-0 w-6 h-6 text-center text-sm md:text-lg text-secondary-foreground font-bold z-20 ${
+          className={`absolute top-2 right-2 flex items-center justify-center bg-secondary rounded-full w-6 h-6 lg:w-8 lg:h-8 text-sm text-secondary-foreground font-bold z-20 ${
             displayTimeLeft <= 0 ? "cursor-pointer" : "cursor-not-allowed"
           }`}>
-          {displayTimeLeft <= 0 ? <Image width={24} height={24} src="/icons/cross.svg" alt="cross" /> : displayTimeLeft}
+          {displayTimeLeft <= 0 ? (
+            <Image width={48} height={48} src="/icons/cross.svg" alt="cross" className="w-4 h-4 lg:w-6 lg:h-6" />
+          ) : (
+            displayTimeLeft
+          )}
         </button>
 
-        <Link href="#" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden rounded-2xl">
+        <Link
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block relative w-full h-full overflow-hidden rounded-2xl shrink-0">
           <Image
             src={imgSrc}
             alt="Advertisement"
-            width={550}
-            height={550}
+            width={1000}
+            height={1000}
             priority
             onError={handleError}
-            className="object-cover aspect-square"
+            className="object-cover w-full h-full"
           />
         </Link>
 

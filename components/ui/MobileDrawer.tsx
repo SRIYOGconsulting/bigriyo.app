@@ -95,16 +95,16 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, 
 
             <div className="space-y-2">
               <Link
-                href="/career"
+                href="/book"
                 onClick={closeDrawer}
                 className="flex items-center justify-center w-full bg-secondary text-secondary-foreground font-medium px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
-                Career
+                Book a Service
               </Link>
               <Link
-                href="/notice"
+                href="/login"
                 onClick={closeDrawer}
                 className="flex items-center justify-center border-2 text-secondary border-secondary py-2.5 w-full px-4 rounded-lg hover:text-white dark:text-foreground hover:bg-secondary transition-all">
-                Notice
+                Vendor Login
               </Link>
             </div>
           </nav>
