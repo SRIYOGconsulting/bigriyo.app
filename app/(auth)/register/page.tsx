@@ -1,19 +1,60 @@
 "use client";
 
+import { isEmailInvalid, isNameInvalid, isPasswordInvalid } from "@/utils/validate";
 import { useState } from "react";
 import Link from "next/link";
+import useStatus from "@/context/Status";
 
 const Register = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     password: "",
     confirmPassword: ""
   });
+  const { showStatus } = useStatus();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+
+    const errName = isNameInvalid(formData.fullName);
+    if (errName) {
+      showStatus("error", errName);
+      return;
+    }
+
+    const errEmail = isEmailInvalid(formData.email);
+    if (errEmail) {
+      showStatus("error", errEmail);
+      return;
+    }
+
+    const errPassword = isPasswordInvalid(formData.password);
+    if (errPassword) {
+      showStatus("error", errPassword);
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      showStatus("error", "Passwords do not match!");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      showStatus("info", "Coming Soon!");
+    } catch (err) {
+      console.error("Error submitting form:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,10 +67,10 @@ const Register = () => {
           </label>
           <input
             type="text"
-            id="fullName"
+            name="fullName"
             required
             value={formData.fullName}
-            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
             placeholder="Madan Tamang"
           />
@@ -41,9 +82,10 @@ const Register = () => {
           </label>
           <input
             type="email"
-            id="email"
+            name="email"
+            required
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
             placeholder="madan@sriyog.com"
           />
@@ -55,9 +97,10 @@ const Register = () => {
           </label>
           <input
             type="password"
-            id="password"
+            name="password"
+            required
             value={formData.password}
-            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
             placeholder="- - - - - - - -"
           />
@@ -69,9 +112,10 @@ const Register = () => {
           </label>
           <input
             type="password"
-            id="confirmPassword"
+            name="confirmPassword"
+            required
             value={formData.confirmPassword}
-            onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+            onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
             placeholder="- - - - - - - -"
           />
@@ -80,6 +124,7 @@ const Register = () => {
         <div className="flex flex-col gap-2 items-center mt-4">
           <button
             type="submit"
+            disabled={loading}
             className="w-full px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
             Register
           </button>

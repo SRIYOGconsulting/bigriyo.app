@@ -22,7 +22,7 @@ export const team = [
 export const services = [
   { icon: "/icons/user-id.svg", title: "Training", desc: "Join our classes to sharpen your skills." },
   { icon: "/icons/rocket.svg", title: "Workshop", desc: "Hands-in IT workshop & seminar." },
-  { icon: "/icons/speaker.svg", title: "Meeting", desc: "Book a Meeting to discuss and clarify your needs." },
+  { icon: "/icons/speaker.svg", title: "Meeting", desc: "Book a Meeting to discuss your needs." },
   { icon: "/icons/shield.svg", title: "Internship", desc: "Get experiences in real time projects." }
 ];
 

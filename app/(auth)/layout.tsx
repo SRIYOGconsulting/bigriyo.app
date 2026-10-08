@@ -9,8 +9,8 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
     <>
       <Ribbon name="Getting Started" showFontSize={false} />
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 my-12 md:my-24 px-4 lg:px-0">
-        <div className="hidden md:flex flex-col justify-between gap-6 shadow-xl rounded-bl-2xl rounded-tl-2xl p-8 lg:p-16 border border-border">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 my-12 md:my-24 px-4 md:px-24 lg:px-0">
+        <div className="hidden lg:flex flex-col justify-between gap-6 shadow-xl rounded-bl-2xl rounded-tl-2xl p-16 border border-border">
           <div className="font-bold">
             <p className="text-xl">Welcome to</p>
             <h3 className="text-3xl tracking-wide">BIGRIYO Repairing Services</h3>
@@ -29,7 +29,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
             <p>Professional repairing services all over Nepal.</p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center gap-8 border border-border shadow-xl rounded-2xl md:rounded-bl-none md:rounded-tl-none p-8 lg:p-16">
+        <div className="flex flex-col items-center justify-center gap-8 border border-border shadow-xl rounded-2xl lg:rounded-bl-none lg:rounded-tl-none p-8 md:p-16">
           {children}
         </div>
       </div>

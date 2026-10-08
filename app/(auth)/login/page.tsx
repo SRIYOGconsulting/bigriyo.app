@@ -1,17 +1,41 @@
 "use client";
 
+import { isEmailInvalid } from "@/utils/validate";
 import { useState } from "react";
 import Link from "next/link";
+import useStatus from "@/context/Status";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
+  const { showStatus } = useStatus();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+
+    const errEmail = isEmailInvalid(formData.email);
+    if (errEmail) {
+      showStatus("error", errEmail);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      showStatus("info", "Coming Soon!");
+    } catch (err) {
+      console.error("Error submitting form:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -25,9 +49,10 @@ const Login = () => {
             </label>
             <input
               type="email"
-              id="email"
+              name="email"
+              required
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={handleChange}
               className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
               placeholder="madan@sriyog.com"
             />
@@ -39,9 +64,10 @@ const Login = () => {
             </label>
             <input
               type="password"
-              id="password"
+              name="password"
+              required
               value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              onChange={handleChange}
               className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
               placeholder="- - - - - - - -"
             />
@@ -60,6 +86,7 @@ const Login = () => {
         <div className="flex flex-col gap-2 items-center">
           <button
             type="submit"
+            disabled={loading}
             className="w-full px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
             Log In
           </button>

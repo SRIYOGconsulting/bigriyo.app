@@ -1,4 +1,5 @@
 export * from "@/types/testimonial";
+export * from "@/types/validate";
 export * from "@/types/download";
 export * from "@/types/sidekick";
 export * from "@/types/glossary";

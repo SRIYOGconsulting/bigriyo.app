@@ -1,10 +1,15 @@
 "use client";
 
+import { isEmailInvalid, isNameInvalid, isPhoneNumberInvalid } from "@/utils/validate";
 import Ribbon from "@/components/ui/Ribbon";
+import useStatus from "@/context/Status";
 import Image from "next/image";
 import { useState } from "react";
 
+const availableServices = ["Kitchen", "Computer", "Electrics", "Electronics", "Other"];
+
 const Book = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     services: [] as string[],
@@ -20,8 +25,7 @@ const Book = () => {
     referralPhone: "",
     message: ""
   });
-
-  const availableServices = ["Kitchen", "Computer", "Electrics", "Electronics", "Other"];
+  const { showStatus } = useStatus();
 
   const handleServiceToggle = (service: string) => {
     setFormData((prev) => ({
@@ -32,7 +36,13 @@ const Book = () => {
     }));
   };
 
-  const handleClearForm = () => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+
+  const handleClearForm = () =>
     setFormData({
       fullName: "",
       services: [],
@@ -48,18 +58,43 @@ const Book = () => {
       referralPhone: "",
       message: ""
     });
-  };
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+
+    const errName = isNameInvalid(formData.fullName);
+    if (errName) {
+      showStatus("error", errName);
+      return;
+    }
+
+    const errEmail = isEmailInvalid(formData.email);
+    if (errEmail) {
+      showStatus("error", errEmail);
+      return;
+    }
+
+    const errPhoneNumber = isPhoneNumberInvalid("Nepal (+977)", formData.phone);
+    if (errPhoneNumber) {
+      showStatus("error", errPhoneNumber);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      showStatus("info", "Coming Soon!");
+    } catch (err) {
+      console.error("Error submitting form:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <Ribbon name="Booking" showFontSize={false} />
       <div className="max-w-7xl mx-auto min-h-screen py-4 md:py-12 px-4 lg:px-0">
-        <div className="bg-card text-card-foreground shadow-md rounded-2xl p-4 md:p-16 border border-border">
+        <div className="rounded-2xl p-4 md:p-8 lg:p-16 border border-border">
           {/* Header Section */}
           <div className="mb-6 pb-6 border-b border-border">
             <h1 className="text-xl md:text-3xl font-bold tracking-tight text-foreground">BIGRIYO Repairing Services</h1>
@@ -81,7 +116,7 @@ const Book = () => {
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-                  placeholder="John Doe"
+                  placeholder="Madan Tamang"
                 />
               </div>
 
@@ -117,7 +152,7 @@ const Book = () => {
                   id="budget"
                   required
                   value={formData.budget}
-                  onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
                   <option value="" disabled>
                     Select Budget Range
@@ -138,7 +173,7 @@ const Book = () => {
                   id="city"
                   required
                   value={formData.city}
-                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
                   <option value="Kathmandu">Kathmandu</option>
                   <option value="Lalitpur">Lalitpur</option>
@@ -156,9 +191,9 @@ const Book = () => {
                   type="text"
                   id="nearestLandmark"
                   value={formData.nearestLandmark}
-                  onChange={(e) => setFormData({ ...formData, nearestLandmark: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-                  placeholder="e.g. Near Bhatbhateni Supermarket"
+                  placeholder="Near Bhatbhateni Supermarket"
                 />
               </div>
 
@@ -172,7 +207,7 @@ const Book = () => {
                   id="phone"
                   required
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                   placeholder="98XXXXXXXX"
                 />
@@ -187,9 +222,9 @@ const Book = () => {
                   type="email"
                   id="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-                  placeholder="example@domain.com"
+                  placeholder="madan@sriyog.com"
                 />
               </div>
 
@@ -201,7 +236,7 @@ const Book = () => {
                 <select
                   id="propertyType"
                   value={formData.propertyType}
-                  onChange={(e) => setFormData({ ...formData, propertyType: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
                   <option value="">Select Property Type</option>
                   <option value="Residential Home">Residential Home</option>
@@ -220,7 +255,7 @@ const Book = () => {
                   type="date"
                   id="selectDate"
                   value={formData.selectDate}
-                  onChange={(e) => setFormData({ ...formData, selectDate: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                 />
               </div>
@@ -233,7 +268,7 @@ const Book = () => {
                 <select
                   id="timeSlot"
                   value={formData.timeSlot}
-                  onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
                   <option value="">Select Time Slot</option>
                   <option value="Morning (08:00 AM - 11:00 AM)">Morning (08:00 AM - 11:00 AM)</option>
@@ -251,7 +286,7 @@ const Book = () => {
                   id="referralSource"
                   required
                   value={formData.referralSource}
-                  onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
                   <option value="Google Search">Google Search</option>
                   <option value="Social Media (Facebook/Instagram)">Social Media (Facebook/Instagram)</option>
@@ -269,7 +304,7 @@ const Book = () => {
                   type="text"
                   id="referralPhone"
                   value={formData.referralPhone}
-                  onChange={(e) => setFormData({ ...formData, referralPhone: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                   placeholder="Optional"
                 />
@@ -284,7 +319,7 @@ const Book = () => {
                   id="message"
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground resize-y"
                   placeholder="Add any specific requirements or notes..."></textarea>
               </div>
@@ -302,6 +337,7 @@ const Book = () => {
 
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full sm:w-auto px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
                 Submit
               </button>
