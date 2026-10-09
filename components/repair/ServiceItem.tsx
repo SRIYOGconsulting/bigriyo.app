@@ -25,7 +25,7 @@ const ServiceItem = ({ service }: ServiceItemProps) => {
       </div>
       <div className="flex items-center justify-between text-center gap-4">
         <Link
-          href="/book"
+          href={`/book?repair=${service.slug}`}
           className="rounded-lg w-full bg-secondary border border-border px-6 py-2.5 text-sm font-semibold text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           Book Service
         </Link>

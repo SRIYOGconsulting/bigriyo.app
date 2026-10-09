@@ -3,13 +3,17 @@
 import { isEmailInvalid, isNameInvalid, isPhoneNumberInvalid } from "@/utils/validate";
 import Ribbon from "@/components/ui/Ribbon";
 import useStatus from "@/context/Status";
+import { serviceList } from "@/data";
 import Image from "next/image";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState, Suspense } from "react";
 
-const availableServices = ["Kitchen", "Computer", "Electrics", "Electronics", "Other"];
+const BookForm = () => {
+  const searchParams = useSearchParams();
+  const repairParam = searchParams.get("repair");
 
-const Book = () => {
   const [loading, setLoading] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>(serviceList[0]?.slug || "");
   const [formData, setFormData] = useState({
     fullName: "",
     services: [] as string[],
@@ -25,16 +29,37 @@ const Book = () => {
     referralPhone: "",
     message: ""
   });
+
   const { showStatus } = useStatus();
 
-  const handleServiceToggle = (service: string) => {
+  useEffect(() => {
+    if (!repairParam) return;
+
+    for (const category of serviceList) {
+      const matchedService = category.services.find(
+        (service) => service.slug.toLowerCase() === repairParam.toLowerCase()
+      );
+
+      if (matchedService) {
+        setActiveCategory(category.slug);
+        setFormData((prev) => ({
+          ...prev,
+          services: prev.services.includes(matchedService.name)
+            ? prev.services
+            : [...prev.services, matchedService.name]
+        }));
+        break;
+      }
+    }
+  }, [repairParam]);
+
+  const handleServiceToggle = (serviceName: string) =>
     setFormData((prev) => ({
       ...prev,
-      services: prev.services.includes(service)
-        ? prev.services.filter((s) => s !== service)
-        : [...prev.services, service]
+      services: prev.services.includes(serviceName)
+        ? prev.services.filter((s) => s !== serviceName)
+        : [...prev.services, serviceName]
     }));
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setFormData({
@@ -61,6 +86,11 @@ const Book = () => {
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
+
+    if (formData.services.length === 0) {
+      showStatus("error", "Please select at least one service.");
+      return;
+    }
 
     const errName = isNameInvalid(formData.fullName);
     if (errName) {
@@ -90,6 +120,8 @@ const Book = () => {
     }
   };
 
+  const currentCategoryData = serviceList.find((cat) => cat.slug === activeCategory);
+
   return (
     <>
       <Ribbon name="Booking" showFontSize={false} />
@@ -112,35 +144,79 @@ const Book = () => {
                 <input
                   type="text"
                   id="fullName"
+                  name="fullName"
                   required
                   value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
                   placeholder="Madan Tamang"
                 />
               </div>
 
-              {/* Select Services (Multi-select pill display) */}
+              {/* Dynamic Categorized Services Selection */}
               <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold mb-1">
+                <label className="block text-sm font-semibold mb-2">
                   Select Services <span className="text-failure">*</span>
                 </label>
-                <div className="flex flex-wrap gap-2 p-3 rounded-lg bg-background border border-border min-h-[46px] items-center">
-                  {availableServices.map((service) => {
-                    const isSelected = formData.services.includes(service);
+
+                {/* Category Navigation Tabs */}
+                <div className="flex flex-wrap gap-2 mb-3 border-b border-border pb-2">
+                  {serviceList.map((cat) => (
+                    <button
+                      key={cat.slug}
+                      type="button"
+                      onClick={() => setActiveCategory(cat.slug)}
+                      className={`text-xs md:text-sm font-medium px-3 py-1.5 rounded-lg transition-colors ${
+                        activeCategory === cat.slug
+                          ? "bg-primary text-primary-foreground font-semibold"
+                          : "bg-muted text-muted-foreground hover:bg-border"
+                      }`}>
+                      {cat.name}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Service Pills for Selected Category */}
+                <div className="flex flex-wrap gap-2 p-3 rounded-lg bg-background border border-border min-h-[50px] items-center">
+                  {currentCategoryData?.services.map((service) => {
+                    const isSelected = formData.services.includes(service.name);
                     return (
                       <button
-                        key={service}
+                        key={service.slug}
                         type="button"
-                        onClick={() => handleServiceToggle(service)}
+                        onClick={() => handleServiceToggle(service.name)}
                         className={`text-xs font-medium px-3 py-1.5 rounded-full transition-colors ${
                           isSelected ? "bg-primary text-primary-foreground" : "bg-muted text-foreground hover:bg-border"
                         }`}>
-                        {isSelected ? `✓ ${service}` : `+ ${service}`}
+                        {isSelected ? `✓ ${service.name}` : `+ ${service.name}`}
                       </button>
                     );
                   })}
                 </div>
+
+                {/* Summary of Selected Items */}
+                {formData.services.length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-xs text-muted-foreground mb-1.5 font-medium">
+                      Selected ({formData.services.length}):
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {formData.services.map((item) => (
+                        <span
+                          key={item}
+                          className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-muted text-foreground border border-border">
+                          {item}
+                          <button
+                            type="button"
+                            onClick={() => handleServiceToggle(item)}
+                            className="hover:text-failure font-bold ml-1">
+                            ×
+                          </button>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Budget in NPR */}
@@ -150,6 +226,7 @@ const Book = () => {
                 </label>
                 <select
                   id="budget"
+                  name="budget"
                   required
                   value={formData.budget}
                   onChange={handleChange}
@@ -171,6 +248,7 @@ const Book = () => {
                 </label>
                 <select
                   id="city"
+                  name="city"
                   required
                   value={formData.city}
                   onChange={handleChange}
@@ -190,6 +268,7 @@ const Book = () => {
                 <input
                   type="text"
                   id="nearestLandmark"
+                  name="nearestLandmark"
                   value={formData.nearestLandmark}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
@@ -205,6 +284,7 @@ const Book = () => {
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
                   required
                   value={formData.phone}
                   onChange={handleChange}
@@ -213,14 +293,15 @@ const Book = () => {
                 />
               </div>
 
-              {/* eMail */}
+              {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold mb-1">
-                  eMail
+                  Email
                 </label>
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
@@ -235,6 +316,7 @@ const Book = () => {
                 </label>
                 <select
                   id="propertyType"
+                  name="propertyType"
                   value={formData.propertyType}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
@@ -254,6 +336,7 @@ const Book = () => {
                 <input
                   type="date"
                   id="selectDate"
+                  name="selectDate"
                   value={formData.selectDate}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
@@ -267,6 +350,7 @@ const Book = () => {
                 </label>
                 <select
                   id="timeSlot"
+                  name="timeSlot"
                   value={formData.timeSlot}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground">
@@ -277,13 +361,14 @@ const Book = () => {
                 </select>
               </div>
 
-              {/* How did you know about us? */}
+              {/* Referral Source */}
               <div>
                 <label htmlFor="referralSource" className="block text-sm font-semibold mb-1">
                   How did you know about us? <span className="text-failure">*</span>
                 </label>
                 <select
                   id="referralSource"
+                  name="referralSource"
                   required
                   value={formData.referralSource}
                   onChange={handleChange}
@@ -295,7 +380,7 @@ const Book = () => {
                 </select>
               </div>
 
-              {/* Referral Phone number */}
+              {/* Referral Phone */}
               <div>
                 <label htmlFor="referralPhone" className="block text-sm font-semibold mb-1">
                   Referral Phone number
@@ -303,6 +388,7 @@ const Book = () => {
                 <input
                   type="text"
                   id="referralPhone"
+                  name="referralPhone"
                   value={formData.referralPhone}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
@@ -317,11 +403,13 @@ const Book = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground resize-y"
-                  placeholder="Add any specific requirements or notes..."></textarea>
+                  placeholder="Add any specific requirements or notes..."
+                />
               </div>
             </div>
 
@@ -357,4 +445,15 @@ const Book = () => {
   );
 };
 
-export default Book;
+export default function BookPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center text-sm text-muted-foreground">
+          Loading booking page...
+        </div>
+      }>
+      <BookForm />
+    </Suspense>
+  );
+}

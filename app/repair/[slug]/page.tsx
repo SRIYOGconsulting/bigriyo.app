@@ -67,7 +67,7 @@ const ServiceDetails = async ({ params }: ServiceDetailProps) => {
             <p className="mt-3 text-base drop-shadow-sm sm:text-lg">{service.shortDesc}</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <Link
-                href="/book"
+                href={`/book?repair=${service.slug}`}
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book Appointment
               </Link>
@@ -89,7 +89,7 @@ const ServiceDetails = async ({ params }: ServiceDetailProps) => {
           {service.features.map((feature, idx) => (
             <li
               key={idx}
-              className="flex items-center gap-3 rounded-full border border-border bg-card p-4 text-sm font-medium shadow-sm">
+              className="flex items-center gap-3 rounded-full border border-border bg-card px-8 py-4 text-sm font-medium shadow-sm">
               <span>{feature}</span>
             </li>
           ))}
