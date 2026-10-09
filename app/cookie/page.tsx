@@ -1,15 +1,15 @@
 import Ribbon from "@/components/ui/Ribbon";
 
-const cookiePolicy = () => {
+const CookiePolicy = () => {
   return (
     <div className="h-full">
       {/* Header / Ribbon */}
       <Ribbon name="Cookie Policy" showFontSize={true} />
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-0 mb-12 space-y-6">
-        <section className="footer p-6 rounded-xl shadow-md space-y-6">
-          <p className="about leading-relaxed">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 my-12">
+        <section className="rounded-xl p-6 shadow-md border border-border space-y-6">
+          <p className="leading-relaxed">
             At <span className="font-medium">SRIYOG Consulting Pvt. Ltd.</span>, At SRIYOG Consulting Pvt. Ltd., we
             value your privacy and are committed to ensuring a transparent and secure browsing experience. This Cookie
             Policy explains how and why cookies are used on our website, what types of cookies we employ, and the
@@ -17,7 +17,7 @@ const cookiePolicy = () => {
           </p>
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">Introduction</h2>
-            <p className="about leading-relaxed mb-2">
+            <p className="leading-relaxed mb-2">
               SRIYOG Consulting uses cookies and similar tracking technologies on https://www.SRIYOG.com to improve your
               experience and to operate our services effectively. This Cookie Policy explains what cookies are, how we
               use them, the types of cookies we use, and how you can manage or disable them if you prefer.
@@ -25,7 +25,7 @@ const cookiePolicy = () => {
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">What are Cookies & Tracking Technologies</h2>
-            <ul className="list-disc list-inside about space-y-1">
+            <ul className="list-disc list-inside space-y-1">
               <li>
                 Cookies are small text files placed on your device by your web browser when you visit the Website. They
                 store small amounts of data such as unique identifiers, preference settings, session information, and
@@ -43,7 +43,7 @@ const cookiePolicy = () => {
             <p className="about leading-relaxed mb-2">
               We use cookies and tracking technologies for the following purposes:
             </p>
-            <ul className="list-disc list-inside about space-y-1">
+            <ul className="list-disc list-inside space-y-1">
               <li>To provide and maintain our services (e.g., user login, session management, navigation).</li>
               <li>To remember your preferences and settings (e.g., language, display settings, session state).</li>
               <li>
@@ -58,7 +58,7 @@ const cookiePolicy = () => {
 
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">Consent and Cookie Settings</h2>
-            <ul className="list-disc list-inside about space-y-1">
+            <ul className="list-disc list-inside space-y-1">
               <li>
                 When you first visit our Website, you may see a “cookie banner” or notice asking for your consent
                 (depending on region and the types of cookies used).
@@ -73,7 +73,7 @@ const cookiePolicy = () => {
 
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">Third-Party Services & Cookies</h2>
-            <p className="about leading-relaxed">
+            <p className="leading-relaxed">
               We may use third-party services — such as analytics tools, marketing/advertising services, or integrations
               — which may set cookies on your device. These cookies are not under our direct control and are governed by
               each provider’s policy.
@@ -81,16 +81,16 @@ const cookiePolicy = () => {
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">Changes to this Cookie Policy</h2>
-            <p className="about leading-relaxed">
+            <p className="leading-relaxed">
               We may update this Cookie Policy from time to time. When we do, we will revise the “Last updated” date
               above.
             </p>
           </div>
           <div>
             <h2 className="text-2xl font-semibold text-secondary mb-2">Contact Us</h2>
-            <p className="about leading-relaxed mb-1">Email: support@sriyog.com</p>
-            <p className="about leading-relaxed mb-1">Phone: +977-XXXXXXXXXX</p>
-            <p className="about leading-relaxed">Address: [SRIYOG Consulting Address], Kathmandu, Nepal</p>
+            <p className="leading-relaxed mb-1">Email: support@sriyog.com</p>
+            <p className="leading-relaxed mb-1">Phone: +977-XXXXXXXXXX</p>
+            <p className="leading-relaxed">Address: [SRIYOG Consulting Address], Kathmandu, Nepal</p>
           </div>
         </section>
       </div>
@@ -98,4 +98,4 @@ const cookiePolicy = () => {
   );
 };
 
-export default cookiePolicy;
+export default CookiePolicy;

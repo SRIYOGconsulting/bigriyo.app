@@ -42,7 +42,7 @@ const Calendar = () => {
   return (
     <>
       <Ribbon name="Calendar" showFontSize={false} />
-      <div className="min-h-screen max-w-7xl mx-auto my-8 px-4 lg:px-0 transition-colors">
+      <div className="max-w-7xl mx-auto my-8 px-4 lg:px-0 transition-colors">
         <div className="bg-card text-card-foreground p-2 md:p-6 rounded-xl border border-border shadow-sm">
           {/* Controls Bar */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">

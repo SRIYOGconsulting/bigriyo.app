@@ -1,5 +1,6 @@
 import { teamMembers } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
+import Image from "next/image";
 
 const Team = () => {
   return (
@@ -12,13 +13,17 @@ const Team = () => {
         <div className="rounded-lg">
           <div className="flex flex-col md:flex-row gap-10 items-center md:items-start">
             <div className="flex flex-col items-center">
-              <img
-                src="/team/head.png"
-                className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg"
-                alt="Pracas"
-              />
+              <div className="relative w-40 h-40 md:w-56 md:h-56">
+                <Image
+                  fill
+                  alt="Pracas"
+                  src="/team/head.png"
+                  className="rounded-full object-cover shadow-lg"
+                  sizes="(max-width: 768px) 160px, 224px"
+                />
+              </div>
               <h2 className="text-[1em] md:text-[1.7em] font-bold mt-4 text-center">Pracas</h2>
-              <p className="text-[1em]  mt-1 text-center">C.T.O</p>
+              <p className="text-[1em] mt-1 text-center">C.T.O</p>
             </div>
 
             {/* Text */}
@@ -48,8 +53,20 @@ const Team = () => {
                 <p className="font-normal text-base md:text-[1em]">Follow Pracas on social media:</p>
 
                 <div className="flex gap-3 mt-2">
-                  <img src="/icons/x.svg" className="w-5 h-5 cursor-pointer hover:opacity-75" />
-                  <img src="/icons/linkedin.svg" className="w-5 h-5 cursor-pointer hover:opacity-75" />
+                  <Image
+                    src="/icons/x.svg"
+                    alt="X (Twitter)"
+                    width={20}
+                    height={20}
+                    className="cursor-pointer hover:opacity-75"
+                  />
+                  <Image
+                    src="/icons/linkedin.svg"
+                    alt="LinkedIn"
+                    width={20}
+                    height={20}
+                    className="cursor-pointer hover:opacity-75"
+                  />
                 </div>
               </div>
             </div>
@@ -61,14 +78,18 @@ const Team = () => {
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className=" card  rounded-lg p-6  flex flex-col items-center hover:shadow-md hover:-translate-y-1 transition-all">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-28 h-28 md:w-full md:h-full rounded-full object-cover shadow"
-              />
-              <h3 className=" font-semibold mt-5 text-[1.2em] ">{member.name}</h3>
-              <p className=" text-sm mt-2">{member.role}</p>
+              className="rounded-lg p-6 flex flex-col items-center hover:shadow-md hover:-translate-y-1 transition-all">
+              <div className="relative w-36 h-36 md:w-48 md:h-48">
+                <Image
+                  fill
+                  src={member.image}
+                  alt={member.name}
+                  className="rounded-full object-cover shadow-md"
+                  sizes="(max-width: 768px) 112px, 144px"
+                />
+              </div>
+              <h3 className="font-semibold mt-5 text-[1.2em]">{member.name}</h3>
+              <p className="text-sm mt-2">{member.role}</p>
             </div>
           ))}
         </div>

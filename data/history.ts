@@ -1,3 +1,22 @@
+export const keyFigures = [
+  {
+    id: 1,
+    name: "Pracas Upreti",
+    designation: "CTO",
+    image: "/history/1.png",
+    description:
+      "Played a pivotal role in designing our technician vetting frameworks and operational strategies, ensuring high standards of safety, quality, and service integrity across every project."
+  },
+  {
+    id: 2,
+    name: "Prekshya",
+    designation: "Field Supervisor",
+    image: "/history/2.png",
+    description:
+      "Spearheaded our AI matching system and technology roadmap, transforming standard repair requests into a seamless, automated, and transparent digital process."
+  }
+];
+
 export const events = [
   {
     id: 1,

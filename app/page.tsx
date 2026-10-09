@@ -1,14 +1,11 @@
 import { testimonials } from "@/data/testimonial";
-import { blogs, features, serviceList } from "@/data";
+import { blogs, features, partners, serviceList } from "@/data";
 import TestimonialItem from "@/components/testimonial/TestimonialItem";
 import ServiceItem from "@/components/repair/ServiceItem";
 import HeroBackground from "@/components/home/Background";
 import BlogItem from "@/components/blog/BlogItem";
 import Image from "next/image";
 import Link from "next/link";
-
-const PARTNER_COUNT = 14;
-const partnerLogos = Array.from({ length: PARTNER_COUNT }, (_, i) => i + 1);
 
 const Home = () => {
   return (
@@ -39,15 +36,12 @@ const Home = () => {
       </div>
 
       <section className="py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
-        <div className="flex w-max animate-scroll gap-4 items-center">
-          {[...partnerLogos, ...partnerLogos].map((n, i) => (
-            <div
-              key={`${n}-${i}`}
-              className="relative h-10 sm:h-12 w-[120px] sm:w-[140px] shrink-0"
-              aria-hidden={i >= PARTNER_COUNT}>
+        <div className="flex items-center gap-x-12 w-full animate-scroll">
+          {partners.map((partner) => (
+            <div key={partner.id} className="relative h-12 w-35 shrink-0">
               <Image
-                src={`/home/partners/${n}.png`}
-                alt={i < PARTNER_COUNT ? `Partner ${n}` : ""}
+                src={partner.image}
+                alt={partner.name}
                 fill
                 sizes="140px"
                 className="object-contain opacity-70 hover:opacity-100 transition-opacity"

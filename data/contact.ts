@@ -2,19 +2,19 @@ export const team = [
   {
     name: "Pracas",
     designation: "CTO",
-    img: "/contact/1.png",
+    image: "/contact/1.png",
     email: "pracas@sriyog.com"
   },
   {
     name: "Prekshya",
-    designation: "Field Supervisor ",
-    img: "/contact/2.png",
+    designation: "Field Supervisor",
+    image: "/contact/2.png",
     email: "prekshya@sriyog.com"
   },
   {
     name: "Bijay",
-    designation: " Business Manager ",
-    img: "/contact/1.png",
+    designation: " Business Manager",
+    image: "/contact/1.png",
     email: "bijay@sriyog.com"
   }
 ];

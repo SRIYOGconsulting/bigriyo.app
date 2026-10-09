@@ -7,10 +7,10 @@ const About = () => {
     <>
       <Ribbon name="About Us" showFontSize={true} />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-8">
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 mb-6">
           {/* Image on mobile */}
-          <div className="md:hidden overflow-hidden px-5 sm:px-0">
+          <div className="md:hidden overflow-hidden">
             <Image
               src="/about/1.png"
               alt="Repair Center Workshop"

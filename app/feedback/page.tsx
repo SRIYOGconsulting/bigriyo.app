@@ -3,75 +3,59 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Ribbon from "@/components/ui/Ribbon";
-
-interface Feedbackform {
-  firstname: string;
-  middlename: string;
-  lastname: string;
-  organization: string;
-  designation: string;
-  phone: number | null;
-  email: string;
-  country: string;
-  headshot: File | null;
-  service: string;
-  message: string;
-}
-
-const initialFormData: Feedbackform = {
-  firstname: "",
-  middlename: "",
-  lastname: "",
-  organization: "",
-  designation: "",
-  phone: null,
-  email: "",
-  country: "",
-  headshot: null,
-  service: "",
-  message: ""
-};
+import useStatus from "@/context/Status";
 
 const Feedback = () => {
   const [captchaToken, setCaptchaToken] = useState<String | null>(null);
-  const [formData, setFormData] = useState<Feedbackform>({
+  const [formData, setFormData] = useState({
     firstname: "",
     middlename: "",
     lastname: "",
     organization: "",
     designation: "",
-    phone: null,
+    phone: null as number | null,
     email: "",
     country: "",
-    headshot: null,
+    headshot: null as File | null,
     service: "",
     message: ""
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const { showStatus } = useStatus();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     if (!captchaToken) {
-      alert("Please verify you're not a robot!");
+      showStatus("info", "Please verify you're not a robot!");
       return;
     }
-    alert(`Captcha token received: ${captchaToken}`);
-    console.log("Feedback submitted:", formData);
-    alert("Thank you for your feedback!");
-    setFormData(initialFormData);
+    showStatus("info", "Thank you for your feedback!");
+    setFormData({
+      firstname: "",
+      middlename: "",
+      lastname: "",
+      organization: "",
+      designation: "",
+      phone: null,
+      email: "",
+      country: "",
+      headshot: null,
+      service: "",
+      message: ""
+    });
   };
 
   return (
-    <div className="w-full">
+    <>
       {/* Full-width Ribbon Header */}
       <Ribbon name="Feedback" showFontSize={false} />
 
       {/* FORM SECTION */}
-      <div className="px-4 lg:px-0 pt-8 pb-12 max-w-7xl mx-auto">
-        <p className="text-center  mb-10 px-2">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 pt-8 my-12">
+        <p className="text-center mb-10 px-2">
           Please share your experience with our services. Your feedback helps us improve.
         </p>
 
@@ -274,7 +258,7 @@ const Feedback = () => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 

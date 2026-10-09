@@ -8,11 +8,11 @@ const Contact = () => {
   return (
     <>
       <Ribbon name="Contact" showFontSize={false} />
-      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 my-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
-            <div className="border border-gray-300  rounded-lg p-6">
-              <h2 className="text-2xl font-bold  mb-3">Welcome to SRIYOG Consulting</h2>
+            <div className="border border-border rounded-lg p-6">
+              <h2 className="text-2xl font-bold mb-3">Welcome to SRIYOG Consulting</h2>
               <p className=" text-sm mb-4">
                 Welcome to SRIYOG Consulting! We're located at Rem.Work, Kamalpokhari, Kathmandu, Nepal
               </p>
@@ -47,7 +47,7 @@ const Contact = () => {
           <ContactForm />
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-12">
           <h2 className="text-3xl mb-2">Quick Contact</h2>
           <p className="mb-12">Quick contact the relevant people.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 max-w-6xl mx-auto">
@@ -56,7 +56,7 @@ const Contact = () => {
                 <Image
                   width={144}
                   height={144}
-                  src={member.img}
+                  src={member.image}
                   alt={member.name}
                   className="w-48 md:w-56 h-48 md:h-56 mx-auto rounded-full object-cover"
                 />
