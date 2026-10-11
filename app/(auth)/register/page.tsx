@@ -133,6 +133,9 @@ const Register = () => {
           </Link>
         </div>
       </form>
+      <Link href="/register/professional" className="text-sm hover:text-primary">
+        Register as a professional instead?
+      </Link>
     </>
   );
 };

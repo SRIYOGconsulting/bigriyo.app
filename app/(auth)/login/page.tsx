@@ -95,6 +95,9 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      <Link href="/login/professional" className="text-sm hover:text-primary">
+        Login as a professional instead?
+      </Link>
     </>
   );
 };
