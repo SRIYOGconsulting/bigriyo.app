@@ -1,4 +1,4 @@
-import FontSizeChanger from "@/components/ui/FontSizeChanger";
+import FontSizeChanger from "@/components/ribbon/FontSizeChanger";
 
 type RibbonProps = {
   name: string;

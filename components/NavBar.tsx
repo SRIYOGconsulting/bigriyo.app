@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { navLinks } from "@/constants";
-import MobileDrawer from "@/components/ui/MobileDrawer";
-import PromoBar from "@/components/ui/PromoBar";
+import MobileDrawer from "@/components/navbar/MobileDrawer";
+import PromoBar from "@/components/navbar/PromoBar";
 import Image from "next/image";
 import Link from "next/link";
 

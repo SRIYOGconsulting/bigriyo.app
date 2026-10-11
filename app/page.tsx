@@ -115,7 +115,7 @@ const Home = () => {
         </div>
         <div className="mt-12 flex justify-center">
           <Link
-            href="/blog"
+            href="/blogs"
             className="rounded-lg bg-secondary border-2 border-border px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-md transition-colors hover:bg-secondary/90">
             View All Blogs
           </Link>

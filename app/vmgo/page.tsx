@@ -1,10 +1,12 @@
+import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 
 const Vmgo = () => {
   return (
-    <div className="min-h-screen px-4 lg:px-0">
+    <>
+      <Ribbon name="Mission and Vision" showFontSize={false} />
       {/* Intro section */}
-      <section className="max-w-7xl mx-auto py-8">
+      <section className="max-w-7xl mx-auto my-8 px-4 lg:px-0">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 place-content-center place-items-center">
           <div className="flex flex-col justify-center items-center gap-3">
             <Image height={96} width={96} src="/vmgo/vision.png" alt="Vision Icon" className="w-24 h-24" />
@@ -109,7 +111,7 @@ const Vmgo = () => {
           />
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
