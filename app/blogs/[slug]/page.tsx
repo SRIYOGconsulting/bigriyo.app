@@ -45,7 +45,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
         <div className="container relative z-10 mx-auto max-w-7xl px-4 pb-12 lg:px-0">
           <nav className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <Link href="/blog" className="transition-colors hover:text-primary-foreground">
+            <Link href="/blogs" className="transition-colors hover:text-primary-foreground">
               Blogs
             </Link>
             <span>/</span>
@@ -74,7 +74,7 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
             </div>
             <div className="mt-6 flex items-center gap-4">
               <Link
-                href="/repair/book"
+                href="/book"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-md transition-colors hover:bg-primary/90">
                 Book a Repair
               </Link>
@@ -126,9 +126,9 @@ const BlogDetails = async ({ params }: BlogDetailProps) => {
         {/* Back Link */}
         <div className="mt-12">
           <Link
-            href="/blog"
+            href="/blogs"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-            Back to all blogs
+            &lt;- Back to all blogs
           </Link>
         </div>
       </div>
