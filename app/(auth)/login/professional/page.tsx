@@ -81,7 +81,9 @@ const ProfessionalLogin = () => {
               Remember me
             </label>
           </div>
-          <div className="hover:text-primary cursor-pointer">Forgot Password?</div>
+          <Link href="/forgot" className="hover:text-primary cursor-pointer">
+            Forgot Password?
+          </Link>
         </div>
         <div className="flex flex-col gap-2 items-center">
           <button

@@ -1,9 +1,10 @@
 "use client";
 
-import { isEmailInvalid, isNameInvalid, isPasswordInvalid, isPhoneNumberInvalid } from "@/utils/validate";
+import { isEmailInvalid, isNameInvalid, isPhoneNumberInvalid } from "@/utils/validate";
 import { useState } from "react";
-import Link from "next/link";
 import useStatus from "@/context/Status";
+import Image from "next/image";
+import Link from "next/link";
 
 const ProfessionalRegister = () => {
   const [loading, setLoading] = useState(false);
@@ -12,12 +13,11 @@ const ProfessionalRegister = () => {
     email: "",
     phone: "",
     workType: "Electical",
-    password: "",
-    confirmPassword: ""
+    certificate: null as File | null
   });
   const { showStatus } = useStatus();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -41,17 +41,6 @@ const ProfessionalRegister = () => {
     const errPhoneNumber = isPhoneNumberInvalid("Nepal (+977)", formData.phone);
     if (errPhoneNumber) {
       showStatus("error", errPhoneNumber);
-      return;
-    }
-
-    const errPassword = isPasswordInvalid(formData.password);
-    if (errPassword) {
-      showStatus("error", errPassword);
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      showStatus("error", "Passwords do not match!");
       return;
     }
 
@@ -110,7 +99,7 @@ const ProfessionalRegister = () => {
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="98xxxxxxxx"
+            placeholder="98XXXXXXXX"
           />
         </div>
 
@@ -118,44 +107,36 @@ const ProfessionalRegister = () => {
           <label htmlFor="workType" className="block text-sm font-semibold mb-1">
             Work Type <span className="text-failure">*</span>
           </label>
-          <input
-            type="text"
-            name="workType"
-            required
-            value={formData.workType}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="Electical"
-          />
+          <div className="relative h-10.5">
+            <select
+              name="workType"
+              value={formData.workType}
+              onChange={handleChange}
+              required
+              className="absolute inset-0 appearance-none w-full px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none">
+              <option value="Electrical">Electrical</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Computer">Computer</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Pumbing">Pumbing</option>
+              <option value="Others">Others? Specify Below.</option>
+            </select>
+            <span className="absolute right-3.5 pointer-events-none top-1/2 -translate-y-1/2 cursor-pointer">
+              <Image width={24} height={24} src="/icons/dropdown.svg" alt="dropdown" />
+            </span>
+          </div>
         </div>
 
         <div>
-          <label htmlFor="password" className="block text-sm font-semibold mb-1">
-            Password <span className="text-failure">*</span>
+          <label htmlFor="certificate" className="block text-sm font-semibold mb-1">
+            Certificate <span className="text-failure">*</span>
           </label>
           <input
-            type="password"
-            name="password"
+            type="file"
+            name="certificate"
+            onChange={(e) => setFormData({ ...formData, certificate: e.target.files ? e.target.files[0] : null })}
             required
-            value={formData.password}
-            onChange={handleChange}
             className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="- - - - - - - -"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="confirmPassword" className="block text-sm font-semibold mb-1">
-            Confirm Password <span className="text-failure">*</span>
-          </label>
-          <input
-            type="password"
-            name="confirmPassword"
-            required
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
-            placeholder="- - - - - - - -"
           />
         </div>
 
@@ -164,7 +145,7 @@ const ProfessionalRegister = () => {
             type="submit"
             disabled={loading}
             className="w-full px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
-            Register
+            Apply for Work
           </button>
           <Link href="/login/professional" className="text-xs text-muted-foreground hover:text-primary">
             Already have an account? Login here.

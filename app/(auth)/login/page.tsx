@@ -81,7 +81,9 @@ const Login = () => {
               Remember me
             </label>
           </div>
-          <div className="hover:text-primary cursor-pointer">Forgot Password?</div>
+          <Link href="/forgot" className="hover:text-primary cursor-pointer">
+            Forgot Password?
+          </Link>
         </div>
         <div className="flex flex-col gap-2 items-center">
           <button
@@ -95,9 +97,15 @@ const Login = () => {
           </Link>
         </div>
       </form>
-      <Link href="/login/professional" className="text-sm hover:text-primary">
-        Login as a professional instead?
-      </Link>
+      <div className="flex flex-col md:flex-row items-center gap-2">
+        <Link href="/login/professional" className="text-sm hover:text-primary">
+          Login as a professional?
+        </Link>
+        <span className="hidden md:block">|</span>
+        <Link href="/register/professional" className="text-sm hover:text-primary">
+          Register as a professional?
+        </Link>
+      </div>
     </>
   );
 };
