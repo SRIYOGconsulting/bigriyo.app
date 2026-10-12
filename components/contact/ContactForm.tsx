@@ -6,18 +6,20 @@ import { useState } from "react";
 import useStatus from "@/context/Status";
 import Image from "next/image";
 
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  countryCode: "Nepal (+977)",
+  phone: "",
+  extension: "",
+  topic: "Sales",
+  message: ""
+};
+
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    countryCode: "Nepal (+977)",
-    phone: "",
-    extension: "",
-    topic: "Sales",
-    message: ""
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const { showStatus } = useStatus();
 
@@ -28,18 +30,7 @@ const ContactForm = () => {
     });
   };
 
-  const handleClearForm = () => {
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      countryCode: "Nepal (+977)",
-      phone: "",
-      extension: "",
-      topic: "Sales",
-      message: ""
-    });
-  };
+  const handleClearForm = () => setFormData(initialFormData);
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
@@ -125,21 +116,26 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-semibold  mb-2">Country Code</label>
-            <select
-              name="countryCode"
-              value={formData.countryCode}
-              onChange={handleChange}
-              className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none">
-              {countries.map((country, index) => (
-                <option key={index} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
+            <label className="block text-sm font-semibold mb-2">Country Code</label>
+            <div className="relative">
+              <select
+                name="countryCode"
+                value={formData.countryCode}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none appearance-none pr-10">
+                {countries.map((country, index) => (
+                  <option key={index} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                <Image width={24} height={24} src="/icons/dropdown.svg" alt="dropdown" />
+              </span>
+            </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold  mb-2">Phone</label>
+            <label className="block text-sm font-semibold mb-2">Phone</label>
             <input
               type="tel"
               name="phone"
@@ -150,7 +146,7 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold  mb-2">Extension</label>
+            <label className="block text-sm font-semibold mb-2">Extension</label>
             <input
               type="text"
               name="extension"
@@ -163,26 +159,31 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold  mb-2">What do you need help with?</label>
-          <select
-            name="topic"
-            value={formData.topic}
-            onChange={handleChange}
-            className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none">
-            <option value="Sales">Sales</option>
-            <option value="Support">Support</option>
-            <option value="Billing">Billing</option>
-            <option value="Complain">Complain</option>
-            <option value="Training">Training</option>
-            <option value="Internship">Internship</option>
-            <option value="Certificates">Certificates</option>
-            <option value="Meeting">Meeting</option>
-            <option value="Others">Others</option>
-          </select>
+          <label className="block text-sm font-semibold mb-2">What do you need help with?</label>
+          <div className="relative">
+            <select
+              name="topic"
+              value={formData.topic}
+              onChange={handleChange}
+              className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none appearance-none pr-10">
+              <option value="Sales">Sales</option>
+              <option value="Support">Support</option>
+              <option value="Billing">Billing</option>
+              <option value="Complain">Complain</option>
+              <option value="Training">Training</option>
+              <option value="Internship">Internship</option>
+              <option value="Certificates">Certificates</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Others">Others</option>
+            </select>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+              <Image width={24} height={24} src="/icons/dropdown.svg" alt="dropdown" />
+            </span>
+          </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold  mb-2">Message</label>
+          <label className="block text-sm font-semibold mb-2">Message</label>
           <textarea
             name="message"
             placeholder="Message"
@@ -203,7 +204,7 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-40 cursor-pointer bg-teal-700 text-white py-2 rounded hover:bg-teal-800 transition-colors text-sm">
+            className="px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:bg-muted">
             Submit
           </button>
         </div>

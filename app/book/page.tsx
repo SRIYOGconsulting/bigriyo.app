@@ -8,27 +8,29 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState, Suspense } from "react";
 
+const initialFormData = {
+  fullName: "",
+  services: [] as string[],
+  budget: "",
+  city: "Kathmandu",
+  nearestLandmark: "",
+  phone: "",
+  email: "",
+  propertyType: "",
+  selectDate: "",
+  timeSlot: "",
+  referralSource: "Google Search",
+  referralPhone: "",
+  message: ""
+};
+
 const BookForm = () => {
   const searchParams = useSearchParams();
   const repairParam = searchParams.get("repair");
 
   const [loading, setLoading] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>(serviceList[0]?.slug || "");
-  const [formData, setFormData] = useState({
-    fullName: "",
-    services: [] as string[],
-    budget: "",
-    city: "Kathmandu",
-    nearestLandmark: "",
-    phone: "",
-    email: "",
-    propertyType: "",
-    selectDate: "",
-    timeSlot: "",
-    referralSource: "Google Search",
-    referralPhone: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const { showStatus } = useStatus();
 
@@ -67,22 +69,7 @@ const BookForm = () => {
       [e.target.name]: e.target.value
     });
 
-  const handleClearForm = () =>
-    setFormData({
-      fullName: "",
-      services: [],
-      budget: "",
-      city: "Kathmandu",
-      nearestLandmark: "",
-      phone: "",
-      email: "",
-      propertyType: "",
-      selectDate: "",
-      timeSlot: "",
-      referralSource: "Google Search",
-      referralPhone: "",
-      message: ""
-    });
+  const handleClearForm = () => setFormData(initialFormData);
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
@@ -426,7 +413,7 @@ const BookForm = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full sm:w-auto px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
+                className="px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:bg-muted">
                 Submit
               </button>
             </div>

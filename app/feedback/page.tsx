@@ -1,51 +1,87 @@
 "use client";
 
+import { isEmailInvalid, isNameInvalid, isPhoneNumberInvalid } from "@/utils/validate";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import Ribbon from "@/components/ui/Ribbon";
 import useStatus from "@/context/Status";
+import Image from "next/image";
+
+const SITE_CAPTCHA_KEY = "6LfeSyUsAAAAAHUNk-NbZKDKe6YqXU5WJxh9iscC";
+
+const initialFormData = {
+  firstname: "",
+  middlename: "",
+  lastname: "",
+  organization: "",
+  designation: "",
+  phone: "",
+  email: "",
+  country: "",
+  headshot: null as File | null,
+  service: "Website Development",
+  message: ""
+};
 
 const Feedback = () => {
+  const [loading, setLoading] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<String | null>(null);
-  const [formData, setFormData] = useState({
-    firstname: "",
-    middlename: "",
-    lastname: "",
-    organization: "",
-    designation: "",
-    phone: null as number | null,
-    email: "",
-    country: "",
-    headshot: null as File | null,
-    service: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const { showStatus } = useStatus();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const handleClearForm = () => setFormData(initialFormData);
+
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
+
     if (!captchaToken) {
       showStatus("info", "Please verify you're not a robot!");
       return;
     }
-    showStatus("info", "Thank you for your feedback!");
-    setFormData({
-      firstname: "",
-      middlename: "",
-      lastname: "",
-      organization: "",
-      designation: "",
-      phone: null,
-      email: "",
-      country: "",
-      headshot: null,
-      service: "",
-      message: ""
-    });
+
+    const errFirstName = isNameInvalid(formData.firstname);
+    if (errFirstName) {
+      showStatus("error", "Invalid First Name!");
+      return;
+    }
+
+    const errMiddleName = isNameInvalid(formData.middlename);
+    if (errMiddleName) {
+      showStatus("error", "Invalid Middle Name!");
+      return;
+    }
+
+    const errLastName = isNameInvalid(formData.lastname);
+    if (errLastName) {
+      showStatus("error", "Invalid Last Name!");
+      return;
+    }
+
+    const errEmail = isEmailInvalid(formData.email);
+    if (errEmail) {
+      showStatus("error", errEmail);
+      return;
+    }
+
+    const errPassword = isPhoneNumberInvalid("Nepal (+977)", formData.phone);
+    if (errPassword) {
+      showStatus("error", errPassword);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      showStatus("info", "Thank you for your feedback!");
+      handleClearForm();
+    } catch {
+      showStatus("error", "Something went wrong!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,25 +90,24 @@ const Feedback = () => {
       <Ribbon name="Feedback" showFontSize={false} />
 
       {/* FORM SECTION */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-0 pt-8 my-12">
-        <p className="text-center mb-10 px-2">
-          Please share your experience with our services. Your feedback helps us improve.
-        </p>
+      <div className="max-w-7xl mx-auto px-4 py-8 lg:px-0 my-12 rounded-xl border-border border-2">
+        <p className="text-center text-2xl font-bold">Your feedback helps us improve.</p>
+        <p className="text-center mb-8 text-xl font-semibold">Please share your experience with our services.</p>
 
-        <form
-          onSubmit={handleSubmit}
-          className=" space-y-6 md:space-y-0 md:grid sm:grid-cols-2 gap-4 p-6 sm:p-8 rounded-xl border-foreground/20 border-2">
+        <form onSubmit={handleSubmit} className="space-y-6 md:space-y-0 md:grid sm:grid-cols-2 gap-4 p-8">
           {/* Name */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">First Name *</label>
+            <label className="mb-2 font-medium">
+              First Name <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="firstname"
               value={formData.firstname}
               onChange={handleChange}
-              placeholder="Your First Name"
+              placeholder="Madan"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
@@ -84,142 +119,140 @@ const Feedback = () => {
               name="middlename"
               value={formData.middlename}
               onChange={handleChange}
-              placeholder="Your Middle Name"
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              placeholder="Laal"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Last Name */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Last Name *</label>
+            <label className="mb-2 font-medium">
+              Last Name <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="lastname"
               value={formData.lastname}
               onChange={handleChange}
-              placeholder="Your Last Name"
+              placeholder="Tamang"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Country */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Country *</label>
+            <label className="mb-2 font-medium">
+              Country <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="country"
               value={formData.country}
               onChange={handleChange}
-              placeholder="Your Last Name"
+              placeholder="Nepal"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Organization */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Organization *</label>
+            <label className="mb-2 font-medium">
+              Organization <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="organization"
               value={formData.organization}
               onChange={handleChange}
-              placeholder="Organization Name"
+              placeholder="SRIYOG"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Designation */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Designation *</label>
+            <label className="mb-2 font-medium">
+              Designation <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="designation"
               value={formData.designation}
               onChange={handleChange}
-              placeholder="Organization Name"
+              placeholder="Manager"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Phone */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Phone *</label>
+            <label className="mb-2 font-medium">
+              Phone <span className="text-failure">*</span>
+            </label>
             <input
               type="text"
               name="phone"
-              value={Number(formData.phone)}
-              onChange={(e) => setFormData({ ...formData, phone: Number(e.target.value) })}
-              placeholder="Your Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="98XXXXXXXX"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
 
           {/* Email */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Email</label>
+            <label className="mb-2 font-medium">
+              Email <span className="text-failure">*</span>
+            </label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="you@example.com"
+              placeholder="madan@sriyog.com"
               required
-              className="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none"
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
             />
           </div>
           {/* Headshot */}
           <div className="flex flex-col">
-            <label className="mb-2 font-medium">Headshot *</label>
+            <label className="mb-2 font-medium">
+              Headshot <span className="text-failure">*</span>
+            </label>
             <input
               type="file"
               name="headshot"
               onChange={(e) => setFormData({ ...formData, headshot: e.target.files ? e.target.files[0] : null })}
               required
-              className={`px-4 h-[50px] pt-2 rounded-md focus:ring-2 file:border-none file:mr-3 file:py-1 file:px-2 file:rounded-md file:shadow-md
-                file:cursor-pointer file:bg-red-50 file:text-red-600 border border-gray-300 file:hover:bg-red-100  focus:ring-teal-700 focus:outline-none`}
+              className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary text-foreground"
             />
           </div>
           {/* Service */}
-          <div className="flex flex-col ">
+          <div className="flex flex-col">
             <label htmlFor="service" className="mb-2 font-medium">
-              Service
+              Service <span className="text-failure">*</span>
             </label>
-            <div className="relative h-12">
+            <div className="relative h-10.5">
               <select
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
                 required
-                className="absolute inset-0 appearance-none w-full px-4 py-2  border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none">
-                <option value="">Select a service</option>
+                className="absolute inset-0 appearance-none w-full px-3 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none">
                 <option value="Website Development">Website Development</option>
                 <option value="Mobile App Development">Mobile App Development</option>
                 <option value="Social Media Marketing">Social Media Marketing</option>
                 <option value="SEO & Digital Marketing">SEO & Digital Marketing</option>
                 <option value="IT Consultation">IT Consultation</option>
               </select>
-              <span className="absolute right-5 pointer-events-none translate-y-1/2 top-1 cursor-pointer">
-                <svg
-                  fill="#4b4b4b"
-                  width="20px"
-                  height="20px"
-                  viewBox="-6.5 0 32 32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#4b4b4b">
-                  <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                  <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-                  <g id="SVGRepo_iconCarrier">
-                    <title>dropdown</title>{" "}
-                    <path d="M18.813 11.406l-7.906 9.906c-0.75 0.906-1.906 0.906-2.625 0l-7.906-9.906c-0.75-0.938-0.375-1.656 0.781-1.656h16.875c1.188 0 1.531 0.719 0.781 1.656z" />{" "}
-                  </g>
-                </svg>
+              <span className="absolute right-3.5 pointer-events-none top-1/2 -translate-y-1/2 cursor-pointer">
+                <Image width={24} height={24} src="/icons/dropdown.svg" alt="dropdown" />
               </span>
             </div>
           </div>
@@ -227,7 +260,7 @@ const Feedback = () => {
           {/* Feedback Message */}
           <div className="flex flex-col col-span-2">
             <label htmlFor="message" className="mb-2 font-medium">
-              Feedback
+              Feedback <span className="text-failure">*</span>
             </label>
             <textarea
               id="message"
@@ -237,11 +270,12 @@ const Feedback = () => {
               placeholder="Write your feedback here..."
               rows={5}
               required
-              className="px-4 py-2 border  border-gray-300 rounded-md focus:ring-2 focus:ring-teal-700 focus:outline-none resize-none"></textarea>
+              className="px-4 py-2 border border-border rounded-md focus:ring-2 focus:ring-secondary focus:outline-none"
+            />
           </div>
           <div className="flex items-center justify-center col-span-2 scale-75">
             <ReCAPTCHA
-              sitekey="6LfeSyUsAAAAAHUNk-NbZKDKe6YqXU5WJxh9iscC"
+              sitekey={SITE_CAPTCHA_KEY}
               onChange={(token: string | null) => setCaptchaToken(token)}
               size="normal"
               badge="inline"
@@ -249,11 +283,20 @@ const Feedback = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex items-center justify-center col-span-2">
+          <div className="col-span-2 pt-6 border-t border-border flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+            <button
+              type="button"
+              onClick={handleClearForm}
+              className="inline-flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <Image width={32} height={32} src="/icons/sync.svg" alt="clear" className="w-4 h-4 mr-2" />
+              Clear form
+            </button>
+
             <button
               type="submit"
-              className="bg-black text-white px-6 py-2 rounded-md font-medium hover:bg-gray-900 transition-all  sm:w-auto">
-              Submit Feedback
+              disabled={loading || !captchaToken}
+              className="px-6 py-2.5 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:bg-muted">
+              Submit
             </button>
           </div>
         </form>
