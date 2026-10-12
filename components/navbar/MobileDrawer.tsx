@@ -50,9 +50,9 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, setIsOpen, isDark, 
         }`}>
         <div className="flex flex-col h-full p-6 min-h-0">
           {/* Header - Fixed Top */}
-          <div className="flex justify-between items-center pb-4 mb-8 border-b border-border shrink-0">
-            <Link href="/" onClick={closeDrawer} className="flex gap-4 items-center">
-              <Image src="/icons/logo/1.svg" alt="logo" width={36} height={36} />
+          <div className="flex justify-between items-center pb-4 mb-4 border-b border-border shrink-0">
+            <Link href="/" onClick={closeDrawer} className="flex gap-2 items-center">
+              <Image src="/icons/logo/logo.png" alt="logo" width={96} height={96} className="w-12" />
               <div className="text-xl font-bold text-foreground">BIGRIYO</div>
             </Link>
             <button

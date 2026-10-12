@@ -91,7 +91,14 @@ const Footer = () => {
         {/* TOP SECTION */}
         <div className="max-w-7xl mx-auto px-4 lg:px-0 flex flex-col lg:flex-row lg:justify-between gap-10">
           <div className="w-full lg:w-[45%]">
-            <div className="mb-6 text-2xl">
+            <div className="flex items-center gap-2 mb-6 text-2xl">
+              <Image
+                src="/icons/logo/logo.png"
+                alt="BIGRIYO Logo"
+                width={144}
+                height={144}
+                className="w-12 object-contain"
+              />
               <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 BIGRIYO
               </Link>
