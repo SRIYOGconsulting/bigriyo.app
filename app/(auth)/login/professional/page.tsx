@@ -33,6 +33,7 @@ const ProfessionalLogin = () => {
       showStatus("info", "Coming Soon!");
     } catch (err) {
       console.error("Error submitting form:", err);
+      showStatus("error", "Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -41,8 +42,8 @@ const ProfessionalLogin = () => {
   return (
     <>
       <h3 className="text-3xl font-bold text-center">Login</h3>
-      <form onSubmit={handleSubmit} className="flex flex-col justify-between gap-4 w-full">
-        <div className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-16 w-full">
+        <div className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-1">
               Email <span className="text-failure">*</span>
@@ -73,33 +74,40 @@ const ProfessionalLogin = () => {
             />
           </div>
         </div>
-
-        <div className="flex items-center justify-between text-muted-foreground text-sm mt-8 mb-2 px-4">
-          <div className="flex items-center gap-1">
-            <input type="checkbox" name="rem_me" />
-            <label htmlFor="rem_me" className="hover:text-primary">
-              Remember me
-            </label>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between text-muted-foreground text-xs md:text-sm px-4">
+            <div className="flex items-center gap-1">
+              <input type="checkbox" name="rem_me" />
+              <label htmlFor="rem_me" className="hover:text-primary">
+                Remember me
+              </label>
+            </div>
+            <Link href="/forgot" className="hover:text-primary cursor-pointer">
+              Forgot Password?
+            </Link>
           </div>
-          <Link href="/forgot" className="hover:text-primary cursor-pointer">
-            Forgot Password?
-          </Link>
-        </div>
-        <div className="flex flex-col gap-2 items-center">
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
-            Log In
-          </button>
-          <Link href="/register/professional" className="text-xs text-muted-foreground hover:text-primary">
-            Don't have an account? Register here.
-          </Link>
+          <div className="flex flex-col gap-2 items-center">
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary">
+              Log In
+            </button>
+            <Link href="/register" className="text-xs text-muted-foreground hover:text-primary">
+              Don't have an account? Register here.
+            </Link>
+          </div>
         </div>
       </form>
-      <Link href="/login" className="text-sm hover:text-primary">
-        Login as a customer instead?
-      </Link>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-2">
+        <Link href="/login" className="text-sm hover:text-primary">
+          Login as a customer?
+        </Link>
+        <span className="hidden md:block">|</span>
+        <Link href="/register" className="text-sm hover:text-primary">
+          Register as a customer?
+        </Link>
+      </div>
     </>
   );
 };

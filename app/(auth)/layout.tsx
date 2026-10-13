@@ -55,7 +55,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
         </div>
 
         {/* Auth Form Container */}
-        <div className="flex flex-col items-center justify-center gap-8 border border-border shadow-xl rounded-2xl lg:rounded-bl-none lg:rounded-tl-none p-8 md:p-16">
+        <div className="flex flex-col items-center justify-between gap-8 border border-border shadow-xl rounded-2xl lg:rounded-bl-none lg:rounded-tl-none p-8 md:p-16">
           {children}
         </div>
       </div>

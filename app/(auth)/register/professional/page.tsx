@@ -49,6 +49,7 @@ const ProfessionalRegister = () => {
       showStatus("info", "Coming Soon!");
     } catch (err) {
       console.error("Error submitting form:", err);
+      showStatus("error", "Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -140,7 +141,7 @@ const ProfessionalRegister = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-2 items-center mt-4">
+        <div className="flex flex-col gap-2 items-center my-4">
           <button
             type="submit"
             disabled={loading}

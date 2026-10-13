@@ -2,15 +2,21 @@ import { countryCodes } from "@/constants";
 
 const minLength = 2;
 const maxLength = 50;
-const digit = /[0-9]/;
+const digit = /\d/;
 const upperCase = /[A-Z]/;
 const lowerCase = /[a-z]/;
-const nameRegex = /^[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\s'-]+$/;
+const codeRegex = /^\d{6}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const specialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const nameRegex = /^[a-zA-Z\u00C0-\u024F\u1E00-\u1EFF\s'\-]+$/;
 
 export const isEmailInvalid = (email: string): string | null => {
   if (!emailRegex.test(email.trim())) return "Invalid Email!";
+  return null;
+};
+
+export const isCodeInvalid = (code: string): string | null => {
+  if (!codeRegex.test(code.trim())) return "Invalid Code!";
   return null;
 };
 
