@@ -62,6 +62,7 @@ const ContactForm = () => {
       showStatus("info", "Coming Soon!");
     } catch (err) {
       console.error("Error submitting form:", err);
+      showStatus("error", "Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -193,7 +194,7 @@ const ContactForm = () => {
             className="w-full px-4 py-2.5 border rounded text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none"
           />
         </div>
-        <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4">
           <button
             type="button"
             onClick={handleClearForm}

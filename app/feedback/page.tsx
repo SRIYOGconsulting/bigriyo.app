@@ -77,7 +77,8 @@ const Feedback = () => {
     try {
       showStatus("info", "Thank you for your feedback!");
       handleClearForm();
-    } catch {
+    } catch (err) {
+      console.error("Error submitting form:", err);
       showStatus("error", "Something went wrong!");
     } finally {
       setLoading(false);
@@ -283,7 +284,7 @@ const Feedback = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="col-span-2 pt-6 border-t border-border flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+          <div className="col-span-2 pt-6 border-t border-border flex flex-col-reverse md:flex-row items-center justify-between gap-4">
             <button
               type="button"
               onClick={handleClearForm}

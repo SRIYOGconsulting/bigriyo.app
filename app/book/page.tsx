@@ -102,6 +102,7 @@ const BookForm = () => {
       showStatus("info", "Coming Soon!");
     } catch (err) {
       console.error("Error submitting form:", err);
+      showStatus("error", "Something went wrong!");
     } finally {
       setLoading(false);
     }
@@ -130,7 +131,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="text"
-                  id="fullName"
                   name="fullName"
                   required
                   value={formData.fullName}
@@ -212,7 +212,6 @@ const BookForm = () => {
                   Budget in NPR <span className="text-failure">*</span>
                 </label>
                 <select
-                  id="budget"
                   name="budget"
                   required
                   value={formData.budget}
@@ -234,7 +233,6 @@ const BookForm = () => {
                   City <span className="text-failure">*</span>
                 </label>
                 <select
-                  id="city"
                   name="city"
                   required
                   value={formData.city}
@@ -254,7 +252,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="text"
-                  id="nearestLandmark"
                   name="nearestLandmark"
                   value={formData.nearestLandmark}
                   onChange={handleChange}
@@ -270,7 +267,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="tel"
-                  id="phone"
                   name="phone"
                   required
                   value={formData.phone}
@@ -287,7 +283,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
@@ -302,7 +297,6 @@ const BookForm = () => {
                   Property Type
                 </label>
                 <select
-                  id="propertyType"
                   name="propertyType"
                   value={formData.propertyType}
                   onChange={handleChange}
@@ -322,7 +316,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="date"
-                  id="selectDate"
                   name="selectDate"
                   value={formData.selectDate}
                   onChange={handleChange}
@@ -336,7 +329,6 @@ const BookForm = () => {
                   Time Slot Selection
                 </label>
                 <select
-                  id="timeSlot"
                   name="timeSlot"
                   value={formData.timeSlot}
                   onChange={handleChange}
@@ -354,7 +346,6 @@ const BookForm = () => {
                   How did you know about us? <span className="text-failure">*</span>
                 </label>
                 <select
-                  id="referralSource"
                   name="referralSource"
                   required
                   value={formData.referralSource}
@@ -374,7 +365,6 @@ const BookForm = () => {
                 </label>
                 <input
                   type="text"
-                  id="referralPhone"
                   name="referralPhone"
                   value={formData.referralPhone}
                   onChange={handleChange}
@@ -389,7 +379,6 @@ const BookForm = () => {
                   Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   rows={4}
                   value={formData.message}
@@ -401,7 +390,7 @@ const BookForm = () => {
             </div>
 
             {/* Action Footer */}
-            <div className="pt-6 border-t border-border flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+            <div className="pt-6 border-t border-border flex flex-col-reverse md:flex-row items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={handleClearForm}
