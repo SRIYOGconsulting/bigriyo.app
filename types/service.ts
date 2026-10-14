@@ -1,3 +1,10 @@
+export interface ServiceReview {
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
 export interface Service {
   slug: string;
   name: string;
@@ -5,6 +12,10 @@ export interface Service {
   description: string;
   image: string;
   features: string[];
+  startingPrice: number;
+  rating: number;
+  reviewCount: number;
+  reviews: ServiceReview[];
 }
 
 export interface ServiceCategory {
