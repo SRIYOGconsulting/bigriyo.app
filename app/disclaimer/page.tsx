@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Disclaimer | BIGRIYO",
+  description: "Read the Disclaimer notice of BIGRIYO."
+};
 
 const Disclaimer = () => {
   return (

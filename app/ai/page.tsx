@@ -3,7 +3,7 @@ import Ribbon from "@/components/ui/Ribbon";
 
 export const metadata: Metadata = {
   title: "AI Usage Policy | BIGRIYO",
-  description: "Read BIGRIYO's Artificial Intelligence Usage Policy."
+  description: "Read the artificial intelligence usage policy of BIGRIYO."
 };
 
 const AIUsagePolicy = () => {

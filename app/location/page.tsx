@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Location | BIGRIYO",
+  description: "Get to know the central location of BIGRIYO."
+};
 
 const Location = () => {
   return (

@@ -1,5 +1,11 @@
 import { qrCardData } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "QR Codes | BIGRIYO",
+  description: "Use the important qr codes on BIGRIYO."
+};
 
 const Qr = () => {
   return (

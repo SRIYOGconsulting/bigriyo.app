@@ -1,6 +1,12 @@
 import ClapButton from "@/components/ui/ClapButton";
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Us | BIGRIYO",
+  description: "Get to know the minds behind BIGRIYO and their origin."
+};
 
 const About = () => {
   return (

@@ -1,5 +1,11 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Why Us | BIGRIYO",
+  description: "Get to know the reasons to choose BIGRIYO."
+};
 
 const WhyUs = () => {
   return (

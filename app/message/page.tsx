@@ -1,5 +1,11 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Our Message | BIGRIYO",
+  description: "Get to know the message from the mind behind BIGRIYO."
+};
 
 const Message = () => {
   return (

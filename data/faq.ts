@@ -1,4 +1,6 @@
-export const faqs = [
+import { FaqItem } from "@/types";
+
+export const faqs: FaqItem[] = [
   {
     id: 1,
     question: "What is BIGRIYO?",

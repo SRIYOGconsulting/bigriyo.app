@@ -1,5 +1,11 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Payment | BIGRIYO",
+  description: "Get to know the payment methods for BIGRIYO."
+};
 
 const Payment = () => {
   return (

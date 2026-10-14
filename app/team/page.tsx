@@ -1,6 +1,12 @@
 import { teamMembers } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Team | BIGRIYO",
+  description: "Get to know the team behind BIGRIYO."
+};
 
 const Team = () => {
   return (

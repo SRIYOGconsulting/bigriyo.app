@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Services | BIGRIYO",
+  description: "Read the terms of services of BIGRIYO."
+};
 
 const TermsOfServices = () => {
   return (

@@ -1,5 +1,11 @@
 import { featured, videos } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Videos | BIGRIYO",
+  description: "Browse our curated list of videos from BIGRIYO."
+};
 
 const Videos = () => {
   return (

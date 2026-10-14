@@ -1,5 +1,11 @@
 import { events } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Timeline | BIGRIYO",
+  description: "Get to know our timeline of majors events of BIGRIYO."
+};
 
 const Timeline = () => {
   return (

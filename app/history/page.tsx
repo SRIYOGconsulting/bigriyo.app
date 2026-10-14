@@ -1,6 +1,12 @@
 import { events, keyFigures } from "@/data";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our History | BIGRIYO",
+  description: "Get to know the origin and evolution of BIGRIYO."
+};
 
 const History = () => {
   return (

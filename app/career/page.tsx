@@ -1,7 +1,13 @@
 import Ribbon from "@/components/ui/Ribbon";
 import { partners } from "@/data";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Your Career | BIGRIYO",
+  description: "Join BIGRIYO for a chance of an excellent career."
+};
 
 const Career = () => {
   return (

@@ -36,7 +36,7 @@ const Home = () => {
       </div>
 
       <section className="py-8 bg-gray-50 overflow-hidden" aria-label="Partner organizations">
-        <div className="flex items-center gap-x-12 w-full animate-scroll">
+        <div className="flex items-center gap-x-12 w-full">
           {partners.map((partner) => (
             <div key={partner.id} className="relative h-12 w-35 shrink-0">
               <Image

@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | BIGRIYO",
+  description: "Read the privacy policy of BIGRIYO."
+};
 
 const PrivacyPolicy = () => {
   return (

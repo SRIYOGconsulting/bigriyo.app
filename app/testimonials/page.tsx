@@ -1,6 +1,12 @@
 import TestimonialItem from "@/components/testimonial/TestimonialItem";
 import Ribbon from "@/components/ui/Ribbon";
 import { testimonials } from "@/data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Testimonials | BIGRIYO",
+  description: "Get to know what others say about BIGRIYO."
+};
 
 const Testimonials = () => {
   return (

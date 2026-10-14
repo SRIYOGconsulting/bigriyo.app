@@ -9,3 +9,4 @@ export * from "@/types/gallery";
 export * from "@/types/status";
 export * from "@/types/video";
 export * from "@/types/blog";
+export * from "@/types/faq";

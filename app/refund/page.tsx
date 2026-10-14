@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Refund Policy | BIGRIYO",
+  description: "Read the refund policy of BIGRIYO."
+};
 
 const RefundPolicy = () => {
   return (

@@ -1,4 +1,10 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Internship | BIGRIYO",
+  description: "Join the internship opportunities at BIGRIYO."
+};
 
 const Internship = () => {
   return (

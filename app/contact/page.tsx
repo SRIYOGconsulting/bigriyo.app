@@ -3,6 +3,12 @@ import ContactForm from "@/components/contact/ContactForm";
 import Ribbon from "@/components/ui/Ribbon";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quick Contact | BIGRIYO",
+  description: "Contact BIGRIYO and our team regarding your queries."
+};
 
 const Contact = () => {
   return (

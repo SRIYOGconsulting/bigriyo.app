@@ -1,6 +1,12 @@
 import { downloadsData } from "@/data";
 import DownloadBtn from "@/components/download/DownloadBtn";
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Downloads | BIGRIYO",
+  description: "Download digital products from BIGRIYO."
+};
 
 const Download = () => {
   return (

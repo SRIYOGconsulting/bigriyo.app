@@ -1,5 +1,11 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Our Vision | BIGRIYO",
+  description: "Get to know the mission and vision of BIGRIYO."
+};
 
 const Vmgo = () => {
   return (

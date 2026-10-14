@@ -1,8 +1,14 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cookie Usage Policy | BIGRIYO",
+  description: "Read the cookie usage policy of BIGRIYO."
+};
 
 const CookiePolicy = () => {
   return (
-    <div className="h-full">
+    <>
       {/* Header / Ribbon */}
       <Ribbon name="Cookie Policy" showFontSize={true} />
 
@@ -94,7 +100,7 @@ const CookiePolicy = () => {
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

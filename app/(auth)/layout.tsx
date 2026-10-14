@@ -1,9 +1,15 @@
 import Ribbon from "@/components/ui/Ribbon";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: "Getting Started | BIGRIYO",
+  description: "Join BIGRIYO and begin your journey with us."
+};
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
@@ -13,13 +19,7 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
         {/* Brand & Informational Content */}
         <div className="hidden lg:flex flex-col justify-between gap-6 shadow-xl rounded-bl-2xl rounded-tl-2xl p-12 lg:p-16 border border-border">
           <div className="flex items-center gap-4">
-            <Image
-              src="/icons/logo/logo.png"
-              alt="BIGRIYO Logo"
-              width={196}
-              height={196}
-              className="w-16 object-contain"
-            />
+            <Image src="/home/logo.png" alt="BIGRIYO Logo" width={196} height={196} className="w-16 object-contain" />
             <div className="font-bold">
               <p className="text-sm text-muted-foreground uppercase tracking-wider">Welcome to</p>
               <h3 className="text-2xl lg:text-3xl tracking-wide">BIGRIYO Repairing Services</h3>
