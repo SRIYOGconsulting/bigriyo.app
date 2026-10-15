@@ -1,182 +1,53 @@
 import { MetadataRoute } from "next";
 
+type SitemapItem = {
+  url: string;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  priority: number;
+};
+
+const sitemapData: SitemapItem[] = [
+  { url: "/", changeFrequency: "daily", priority: 1.0 },
+  { url: "/about", changeFrequency: "monthly", priority: 0.8 },
+  { url: "/contact", changeFrequency: "yearly", priority: 0.6 },
+  { url: "/notice", changeFrequency: "weekly", priority: 0.8 },
+  { url: "/feedback", changeFrequency: "monthly", priority: 0.6 },
+  { url: "/team", changeFrequency: "monthly", priority: 0.7 },
+  { url: "/vmgo", changeFrequency: "yearly", priority: 0.7 },
+  { url: "/history", changeFrequency: "yearly", priority: 0.6 },
+  { url: "/why", changeFrequency: "yearly", priority: 0.7 },
+  { url: "/timeline", changeFrequency: "yearly", priority: 0.5 },
+  { url: "/gallery", changeFrequency: "weekly", priority: 0.8 },
+  { url: "/career", changeFrequency: "weekly", priority: 0.7 },
+  { url: "/repair", changeFrequency: "yearly", priority: 0.8 },
+  { url: "/qr", changeFrequency: "yearly", priority: 0.4 },
+  { url: "/glossary", changeFrequency: "monthly", priority: 0.7 },
+  { url: "/message", changeFrequency: "monthly", priority: 0.6 },
+  { url: "/calendar", changeFrequency: "daily", priority: 0.9 },
+  { url: "/faq", changeFrequency: "monthly", priority: 0.7 },
+  { url: "/payment", changeFrequency: "yearly", priority: 0.6 },
+  { url: "/internship", changeFrequency: "weekly", priority: 0.7 },
+  { url: "/download", changeFrequency: "monthly", priority: 0.6 },
+  { url: "/videos", changeFrequency: "weekly", priority: 0.8 },
+  { url: "/blogs", changeFrequency: "weekly", priority: 0.8 },
+  { url: "/testimonials", changeFrequency: "weekly", priority: 0.8 },
+  { url: "/ai", changeFrequency: "yearly", priority: 0.4 },
+  { url: "/location", changeFrequency: "yearly", priority: 0.4 },
+  { url: "/refund", changeFrequency: "yearly", priority: 0.5 },
+  { url: "/cookie", changeFrequency: "yearly", priority: 0.5 },
+  { url: "/tos", changeFrequency: "yearly", priority: 0.6 },
+  { url: "/privacy", changeFrequency: "yearly", priority: 0.6 },
+  { url: "/disclaimer", changeFrequency: "yearly", priority: 0.6 }
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://bigriyo.app";
   const lastModDate = new Date("2025-11-21");
 
-  return [
-    // Main Pages
-    {
-      url: `${baseUrl}/`,
-      lastModified: lastModDate,
-      changeFrequency: "daily",
-      priority: 1.0
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/notice`,
-      lastModified: lastModDate,
-      changeFrequency: "weekly",
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/feedback`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/team`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.7
-    },
-
-    // VMGO Group
-    {
-      url: `${baseUrl}/vmgo`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/history`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/why`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/timeline`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.5
-    },
-
-    // General Content
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: lastModDate,
-      changeFrequency: "weekly",
-      priority: 0.8
-    },
-    {
-      url: `${baseUrl}/career`,
-      lastModified: lastModDate,
-      changeFrequency: "weekly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/qr`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.4
-    },
-    {
-      url: `${baseUrl}/glossary`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/message`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.6
-    },
-
-    // Functional Pages
-    {
-      url: `${baseUrl}/calendar`,
-      lastModified: lastModDate,
-      changeFrequency: "daily",
-      priority: 0.9
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/payment`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/internship`,
-      lastModified: lastModDate,
-      changeFrequency: "weekly",
-      priority: 0.7
-    },
-    {
-      url: `${baseUrl}/download`,
-      lastModified: lastModDate,
-      changeFrequency: "monthly",
-      priority: 0.6
-    },
-
-    // Media
-    {
-      url: `${baseUrl}/videos`,
-      lastModified: lastModDate,
-      changeFrequency: "weekly",
-      priority: 0.8
-    },
-
-    // Legal & Policy
-    {
-      url: `${baseUrl}/location`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.4
-    },
-    {
-      url: `${baseUrl}/refund`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.5
-    },
-    {
-      url: `${baseUrl}/cookie`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.5
-    },
-    {
-      url: `${baseUrl}/tos`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    },
-    {
-      url: `${baseUrl}/disclaimer`,
-      lastModified: lastModDate,
-      changeFrequency: "yearly",
-      priority: 0.6
-    }
-  ];
+  return sitemapData.map((item) => ({
+    url: `${baseUrl}${item.url === "/" ? "" : item.url}`,
+    lastModified: lastModDate,
+    changeFrequency: item.changeFrequency,
+    priority: item.priority
+  }));
 }
