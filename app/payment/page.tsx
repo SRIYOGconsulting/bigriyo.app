@@ -1,6 +1,7 @@
 import Ribbon from "@/components/ui/Ribbon";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Payment | BIGRIYO",
@@ -10,52 +11,44 @@ export const metadata: Metadata = {
 const Payment = () => {
   return (
     <div>
-      {/* Page Header */}
       <Ribbon name="Payment" showFontSize={false} />
-
-      {/* Main Payment Section */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-0 py-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* ===== Left: Bank Details ===== */}
-        <div className=" space-y-3 text-center lg:text-left">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0 my-16">
+        <h3 className="text-2xl md:text-3xl text-center mb-12 md:mb-2">Our Payment Gateway</h3>
+        <p className="hidden md:block text-2xl text-muted-foreground text-center mb-24">
+          Transfer the payment to our bank account or use the QR code directly.
+        </p>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="space-y-12">
+            <Image
+              width={600}
+              height={800}
+              src="/payment/1.png"
+              alt="Sriyog Consulting Logo"
+              className="w-48 md:w-64 mx-auto lg:mx-0"
+            />
+            <div className="space-y-3 md:text-xl">
+              <p>
+                Account Name: <span className="font-semibold">Sriyog Consulting Pvt Ltd.</span>
+              </p>
+              <p>Account Number: 00701017502051</p>
+              <p>Branch: Kathmandu</p>
+              <p>SWIFT CODE: NARBNPKA</p>
+              <p>
+                URL:{" "}
+                <Link href="https://www.nabilbank.com" target="_blank" rel="noreferrer" className="underline">
+                  www.nabilbank.com
+                </Link>
+              </p>
+            </div>
+            <p className="text-xl md:text-2xl">VAT Number: 606683203</p>
+          </div>
           <Image
-            width={600}
-            height={800}
-            src="/payment/1.png"
-            alt="Sriyog Consulting Logo"
-            className="w-60 sm:w-56 mb-5 mx-auto lg:mx-0"
-          />
-
-          <p className="flex flex-col text-xl">
-            <span>Account Name:</span> <span className="font-semibold">Sriyog Consulting Pvt Ltd.</span>
-          </p>
-          <p className="text-xl">Account number: 00701017502051</p>
-          <p className="text-xl">Branch: Kathmandu</p>
-          <p className="text-xl">SWIFT CODE: NARBNPKA</p>
-          <p className="text-xl">
-            URL:{" "}
-            <a href="https://www.nabilbank.com" target="_blank" rel="noreferrer" className=" underline">
-              www.nabilbank.com
-            </a>
-          </p>
-          <p className="pt-8 text-2xl ">VAT Number: 606683203</p>
-        </div>
-
-        {/* ===== Right: QR Code Section ===== */}
-        <div className="flex flex-col justify-center items-center">
-          <Image
-            width={600}
-            height={800}
+            width={400}
+            height={700}
             src="/payment/1.webp"
             alt="Payment QR"
-            className="w-full h-full max-h-[50vh] rounded-3xl object-contain p-2"
+            className="bg-card p-4 object-contain rounded-xl"
           />
-
-          <div className="text-center font-semibold space-y-2 text-sm mb-2">
-            <p className="text-lg sm:text-xl">Sriyog Consulting Pvt Ltd.</p>
-            <p>Account No: 00701017502051</p>
-            <p>Branch: Kathmandu</p>
-            <p>Bank: Nabil Bank Ltd.</p>
-          </div>
         </div>
       </div>
     </div>
