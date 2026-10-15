@@ -65,37 +65,37 @@ export const contactBoxLinks = [
 
 export const footSocialLinks = [
   {
-    href: "#",
+    href: "https://x.com",
     src: "/icons/x.svg",
     alt: "X"
   },
   {
-    href: "#",
+    href: "https://linkedin.com",
     src: "/icons/linkedin.svg",
     alt: "LinkedIn"
   },
   {
-    href: "#",
+    href: "https://youtube.com",
     src: "/icons/youtube.svg",
     alt: "YouTube"
   },
   {
-    href: "#",
+    href: "https://trello.com",
     src: "/icons/trello.svg",
     alt: "Trello"
   },
   {
-    href: "#",
+    href: "https://signal.org",
     src: "/icons/signal.svg",
     alt: "Signal"
   },
   {
-    href: "#",
+    href: "https://discord.com",
     src: "/icons/discord.svg",
     alt: "Discord"
   },
   {
-    href: "#",
+    href: "https://viber.com",
     src: "/icons/viber.svg",
     alt: "Viber"
   }
