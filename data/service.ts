@@ -728,8 +728,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Water Pump Repair",
         shortDesc: "Submersible, jet pump, and pressure pump service.",
         description:
-          "Resolve priming issues, motor winding failures, and water delivery drops across submersible and centrifugal pumps. We replace worn impellers, service bearings, and check capacitors for reliable overhead tank filling.",
-        features: ["Impeller replacement", "Bearing grease & swap", "Capacitor check"],
+          "Resolve priming issues, motor winding failures, and water delivery drops across submersible and centrifugal pumps. We thoroughly troubleshoot electrical faults, replace worn impellers, service bearings, and check capacitors to ensure reliable overhead tank filling and uninterrupted water supply for your home.",
+        features: ["Impeller replacement", "Bearing grease & swap", "Capacitor check", "Motor winding inspection"],
         image: "/repair/other/pump.jpg",
         startingPrice: 800,
         rating: 4.8,
@@ -748,8 +748,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Door & Lock Repair",
         shortDesc: "Hinge alignment, latch replacement, and wooden repair.",
         description:
-          "Fix sagging doors, sticking deadbolts, and broken frame hinges. We plane and align swollen wooden doors, replace worn lock cylinders, and reinforce hinges for enhanced home security and smooth closure.",
-        features: ["Lock cylinder swap", "Plane & align edges", "Hinge reinforcement"],
+          "Fix sagging doors, sticking deadbolts, and broken frame hinges. We plane and align swollen wooden doors, replace worn lock cylinders, and reinforce hinges for enhanced home security and smooth closure. Our carpenters ensure seamless locking mechanisms and noise-free movement.",
+        features: ["Lock cylinder swap", "Plane & align edges", "Hinge reinforcement", "Latch & deadbolt fix"],
         image: "/repair/other/door.jpg",
         startingPrice: 500,
         rating: 4.6,
@@ -768,8 +768,13 @@ export const serviceList: ServiceCategory[] = [
         name: "Solar Panel Repair",
         shortDesc: "Cleaning, inverter link, and output diagnostics.",
         description:
-          "Maximize your solar energy output with deep glass surface cleaning and comprehensive connection inspections. We check DC wiring integrity and verify inverter synchronization to ensure optimal power generation.",
-        features: ["Glass surface cleaning", "DC wiring inspection", "Inverter sync check"],
+          "Maximize your solar energy output with deep glass surface cleaning and comprehensive connection inspections. We check DC wiring integrity, test battery charge controllers, and verify inverter synchronization to ensure optimal power generation and long-term system efficiency.",
+        features: [
+          "Glass surface cleaning",
+          "DC wiring inspection",
+          "Inverter sync check",
+          "Charge controller testing"
+        ],
         image: "/repair/other/solar.jpg",
         startingPrice: 1000,
         rating: 4.7,
@@ -788,8 +793,8 @@ export const serviceList: ServiceCategory[] = [
         name: "EV Charger Repair",
         shortDesc: "Wallbox mounting, cabling, and power fault fixes.",
         description:
-          "Keep your electric vehicle charging safely with certified high-voltage cable testing, breaker upgrades, and professional wallbox mounting. We verify grounding integrity to prevent electrical trips during fast sessions.",
-        features: ["Earthing verification", "Wallbox mounting", "Breaker upgrade"],
+          "Keep your electric vehicle charging safely with certified high-voltage cable testing, breaker upgrades, and professional wallbox mounting. We verify grounding integrity, fix communication errors between charger and EV, and ensure optimal power delivery to prevent electrical trips during fast sessions.",
+        features: ["Earthing verification", "Wallbox mounting", "Breaker upgrade", "High-voltage cable test"],
         image: "/repair/other/evcharger.jpg",
         startingPrice: 1200,
         rating: 4.9,
@@ -808,8 +813,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Revolving Chair Repair",
         shortDesc: "Hydraulic gas lift, wheel castor, and base swap.",
         description:
-          "Fix sinking office chairs, broken tilt mechanisms, and squeaky bases. We replace faulty hydraulic gas lift cylinders and broken castor wheels to restore smooth height adjustment and mobility at your workspace.",
-        features: ["Hydraulic cylinder swap", "Castor wheel replacement", "Base plate repair"],
+          "Fix sinking office chairs, broken tilt mechanisms, and squeaky bases. We replace faulty hydraulic gas lift cylinders, install smooth-gliding castor wheels, and repair broken armrests and tilt plates to restore ergonomic comfort and mobility at your workspace.",
+        features: ["Hydraulic cylinder swap", "Castor wheel replacement", "Base plate repair", "Tilt mechanism fix"],
         image: "/repair/other/chair.jpg",
         startingPrice: 450,
         rating: 4.6,
@@ -828,8 +833,13 @@ export const serviceList: ServiceCategory[] = [
         name: "Sofa and Couch Repair",
         shortDesc: "Cushion sagging, spring fix, and fabric renewal.",
         description:
-          "Restore original comfort to your living room seating with high-density foam filling, webbing and spring tightening, and structural frame joint repairs to eliminate sagging and wear.",
-        features: ["Foam re-padding", "Webbing & spring tightening", "Frame joint repair"],
+          "Restore original comfort and elegance to your living room seating with high-density foam re-padding, webbing and spring tightening, and structural frame joint repairs. We eliminate sagging seat cushions, fix broken wooden supports, and restore firm lumbar support.",
+        features: [
+          "Foam re-padding",
+          "Webbing & spring tightening",
+          "Frame joint repair",
+          "Cushion firmness adjustment"
+        ],
         image: "/repair/other/sofa.jpg",
         startingPrice: 1500,
         rating: 4.7,
@@ -848,8 +858,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Water Tank Repair",
         shortDesc: "Leak patching, sludge removal, and sanitization.",
         description:
-          "Hygienic high-pressure cleaning and sludge removal combined with polyurethane leak sealing for plastic and concrete residential water tanks, ensuring clean and safe household water supply.",
-        features: ["Vacuum sludge clearance", "UV disinfection", "Polyurethane leak seal"],
+          "Hygienic high-pressure cleaning and sludge removal combined with polyurethane leak sealing for plastic and concrete residential water tanks. We sterilize interior surfaces with anti-bacterial treatments and repair structural cracks to ensure clean and safe household water supply.",
+        features: ["Vacuum sludge clearance", "UV disinfection", "Polyurethane leak seal", "Anti-bacterial coating"],
         image: "/repair/other/tank.jpg",
         startingPrice: 1000,
         rating: 4.8,
@@ -868,8 +878,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Commode Repair",
         shortDesc: "Flush valve, wax ring, and seat cover replacement.",
         description:
-          "Stop running toilet water, fix internal flush tank mechanisms, replace leaking wax rings, and secure loose seat hinges to ensure clean and trouble-free bathroom facilities.",
-        features: ["Flush kit replacement", "Wax ring reseal", "Seat hinge fix"],
+          "Stop running toilet water, fix internal flush tank mechanisms, replace leaking wax rings, and secure loose seat hinges. Our plumbers resolve water seepage around the base, replace faulty siphon kits, and ensure clean, odor-free, and trouble-free bathroom facilities.",
+        features: ["Flush kit replacement", "Wax ring reseal", "Seat hinge fix", "Base leak repair"],
         image: "/repair/other/commode.jpg",
         startingPrice: 500,
         rating: 4.5,
@@ -888,8 +898,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Window Repair",
         shortDesc: "Sliding track, glass pane, and latch fixes.",
         description:
-          "Repair aluminum, UPVC, and wooden windows for smooth sliding operation. We replace track rollers, seal cracked glass panes, and install fresh handles and latches to improve weatherproofing.",
-        features: ["Track roller replacement", "Glass pane sealing", "Handle replacement"],
+          "Repair aluminum, UPVC, and wooden windows for smooth sliding and quiet operation. We replace worn track rollers, seal cracked glass panes, install fresh handles and locking latches, and apply weatherstripping to eliminate drafts and rain seepage.",
+        features: ["Track roller replacement", "Glass pane sealing", "Handle replacement", "Weatherstrip fitting"],
         image: "/repair/other/window.jpg",
         startingPrice: 400,
         rating: 4.4,
@@ -908,8 +918,8 @@ export const serviceList: ServiceCategory[] = [
         name: "General Plumbing Repair",
         shortDesc: "Pipe leak fixes, tap changes, and blockage clearance.",
         description:
-          "Comprehensive plumbing repairs for kitchens, bathrooms, and outdoor pipes. Our experienced plumbers fix concealed pipe leaks, install modern taps and mixer valves, clear stubborn drain blockages, and ensure proper water pressure throughout your property.",
-        features: ["Pipe leak repair", "Tap & mixer fitting", "Drain unblocking"],
+          "Comprehensive plumbing repairs for kitchens, bathrooms, and outdoor pipework. Our experienced plumbers fix concealed pipe leaks, install modern taps and mixer valves, clear stubborn drain blockages, and check water pressure throughout your property for a leak-free home.",
+        features: ["Pipe leak repair", "Tap & mixer fitting", "Drain unblocking", "Pressure check"],
         image: "/repair/other/plumbing.jpg",
         startingPrice: 400,
         rating: 4.9,
@@ -928,8 +938,8 @@ export const serviceList: ServiceCategory[] = [
         name: "False Ceiling Repair",
         shortDesc: "Gypsum sheet fix, crack sealing, and sagging repair.",
         description:
-          "Restore damaged false ceilings due to water leakage, physical damage, or structural sagging. We seamlessly patch cracked gypsum boards, re-anchor loose metal grid channels, and perform precise touch-up painting for an invisible finish.",
-        features: ["Crack patching", "Channel re-anchoring", "Spot painting"],
+          "Restore damaged false ceilings caused by water leaks, physical impacts, or structural sagging. We seamlessly patch cracked gypsum boards, re-anchor loose metal grid channels, repair POP moldings, and perform precise touch-up painting for an invisible, flawless finish.",
+        features: ["Crack patching", "Channel re-anchoring", "Spot painting", "POP molding fix"],
         image: "/repair/other/ceiling.jpg",
         startingPrice: 1200,
         rating: 4.6,
@@ -948,8 +958,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Generator Repair",
         shortDesc: "Diesel & petrol generator servicing & alternator fixes.",
         description:
-          "Engine oil changing, spark plug checks, and voltage regulator adjustments for residential and commercial backup generators. We service carburetors, overhaul faulty starter motors, and calibrate AVR units for stable voltage delivery.",
-        features: ["Oil & filter change", "AVR replacement", "Starter motor overhaul"],
+          "Engine oil changing, spark plug checks, and voltage regulator adjustments for residential and commercial backup generators. We service carburetors, overhaul faulty starter motors, clean fuel injectors, and calibrate AVR units for stable, flicker-free power output.",
+        features: ["Oil & filter change", "AVR replacement", "Starter motor overhaul", "Carburetor tuning"],
         image: "/repair/other/generator.jpg",
         startingPrice: 1500,
         rating: 4.7,
@@ -968,8 +978,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Lift & Escalator Repair",
         shortDesc: "Safety inspection, motor check, and track alignment.",
         description:
-          "Commercial and residential elevator and escalator maintenance and repairs. Our certified technicians execute comprehensive safety brake testing, align guide rails, calibrate door sensors, and lubricate high-tension cables for smooth operation.",
-        features: ["Safety brake test", "Door sensor calibration", "Cable lubrication"],
+          "Commercial and residential elevator and escalator maintenance and repairs. Our certified technicians execute comprehensive safety brake testing, align guide rails, calibrate door sensors, inspect control panels, and lubricate high-tension cables for smooth and safe operation.",
+        features: ["Safety brake test", "Door sensor calibration", "Cable lubrication", "Rail alignment"],
         image: "/repair/other/lift.jpg",
         startingPrice: 3500,
         rating: 4.8,
@@ -988,8 +998,13 @@ export const serviceList: ServiceCategory[] = [
         name: "Treadmill Repair",
         shortDesc: "Belt alignment, motor controller, and deck lubrication.",
         description:
-          "Fix slipping belts, control panel error codes (E01, E02), and incline motor failures. We lubricate running decks, replace worn drive belts, and repair motor control boards to keep your home or commercial gym equipment running smoothly.",
-        features: ["Belt lubrication & tensioning", "Control board fix", "Drive belt replacement"],
+          "Fix slipping belts, control panel error codes (E01, E02), and incline motor failures. We lubricate running decks with 100% silicone oil, replace worn drive belts, and repair motor control boards to keep your home or commercial fitness equipment performing smoothly.",
+        features: [
+          "Belt lubrication & tensioning",
+          "Control board fix",
+          "Drive belt replacement",
+          "Incline motor check"
+        ],
         image: "/repair/other/treadmill.jpg",
         startingPrice: 1000,
         rating: 4.5,
@@ -1008,8 +1023,8 @@ export const serviceList: ServiceCategory[] = [
         name: "Lawn Mower Repair",
         shortDesc: "Blade sharpening, starter pull cord, and engine tuning.",
         description:
-          "Tune up electric and petrol lawn mowers for clean cutting and peak lawn maintenance. We sharpen and balance dull cutting blades, clean clogged carburetors, and replace snapped starter pull cords for fast engine starts.",
-        features: ["Blade sharpening & balancing", "Carburetor cleaning", "Pull cord change"],
+          "Tune up electric and petrol lawn mowers for clean cutting and peak lawn maintenance. We sharpen and balance dull cutting blades, clean clogged carburetors, replace snapped starter pull cords, and clean spark plugs for reliable engine starts.",
+        features: ["Blade sharpening & balancing", "Carburetor cleaning", "Pull cord change", "Spark plug service"],
         image: "/repair/other/lawnmower.jpg",
         startingPrice: 700,
         rating: 4.4,
