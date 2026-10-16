@@ -2,8 +2,8 @@ import { MetadataRoute } from "next";
 
 type SitemapItem = {
   url: string;
-  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
   priority: number;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
 };
 
 const sitemapData: SitemapItem[] = [
